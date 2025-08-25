@@ -1,6 +1,6 @@
-
 import { Heart, Users, Award, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
 
 const About = () => {
@@ -12,7 +12,7 @@ const About = () => {
     },
     {
       icon: <Shield className="w-12 h-12 text-healthcare-teal" />,
-      title: "Trust & Safety",
+      title: "Trust & Safety", 
       description: "Rigorous background checks, licensing, and insurance for complete peace of mind."
     },
     {
@@ -221,9 +221,11 @@ const About = () => {
                 reference verification, and ongoing training to ensure they meet our high standards of 
                 care and professionalism.
               </p>
-              <Button className="btn-healthcare">
-                Learn About Our Services
-              </Button>
+              <Link to="/services">
+                <Button className="btn-healthcare">
+                  Learn About Our Services
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -237,9 +239,11 @@ const About = () => {
             Let us show you how our family-centered approach to healthcare can make a difference 
             in your life or the life of your loved one.
           </p>
-          <Button className="btn-healthcare-secondary text-lg px-8 py-4">
-            Contact Us Today
-          </Button>
+          <Link to="/contact">
+            <Button className="btn-healthcare-secondary text-lg px-8 py-4">
+              Contact Us Today
+            </Button>
+          </Link>
         </div>
       </section>
 

@@ -1,9 +1,9 @@
-
 import { useState } from 'react';
 import { Heart, Users, Clock, Shield, MapPin, Award, CheckCircle, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactModal from '@/components/ContactModal';
 import Footer from '@/components/Footer';
+import HeroSlider from '@/components/HeroSlider';
 
 const Home = () => {
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
@@ -12,7 +12,7 @@ const Home = () => {
   const services = [
     {
       icon: <Heart className="w-8 h-8 text-healthcare-pink" />,
-      title: "Personal Care",
+      title: "Personal Care", 
       description: "Bathing, grooming, toileting, and daily living assistance with dignity and respect."
     },
     {
@@ -92,11 +92,7 @@ const Home = () => {
             </div>
             
             <div className="animate-slide-in">
-              <img 
-                src="/lovable-uploads/23edfb5d-5a50-425b-8d59-b2ece29e919d.png"
-                alt="Healthcare professional with warm smile showing professionalism and care"
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
-              />
+              <HeroSlider />
             </div>
           </div>
         </div>
