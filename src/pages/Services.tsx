@@ -4,6 +4,7 @@ import { Heart, Users, Utensils, Home, Car, Pill, Stethoscope, Clock, Shield, Do
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import ContactModal from '@/components/ContactModal';
+import Footer from '@/components/Footer';
 
 const Services = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -305,7 +306,7 @@ const Services = () => {
             
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80"
+                src="/lovable-uploads/16682b85-c531-44fb-99d8-0f58b6f5d250.png"
                 alt="Healthcare professional providing round-the-clock care"
                 className="rounded-2xl shadow-xl w-full h-[500px] object-cover"
               />
@@ -336,6 +337,8 @@ const Services = () => {
         onClose={() => setIsModalOpen(false)}
         type="consultation"
       />
+
+      <Footer />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Heart, Users, Clock, Shield, MapPin, Award, CheckCircle, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactModal from '@/components/ContactModal';
+import Footer from '@/components/Footer';
 
 const Home = () => {
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
@@ -92,8 +93,8 @@ const Home = () => {
             
             <div className="animate-slide-in">
               <img 
-                src="/lovable-uploads/664f32a6-55ee-491f-a192-14978b6ea13e.png"
-                alt="Compassionate caregiver assisting elderly woman in wheelchair"
+                src="/lovable-uploads/23edfb5d-5a50-425b-8d59-b2ece29e919d.png"
+                alt="Healthcare professional with warm smile showing professionalism and care"
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
             </div>
@@ -131,8 +132,8 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80"
-                alt="Diverse healthcare team with elderly patients"
+                src="/lovable-uploads/1e91caf8-562b-44e0-b88a-de8b391a9afe.png"
+                alt="Healthcare professional providing personalized care to elderly patient"
                 className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
               />
             </div>
@@ -211,21 +212,30 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="section-padding">
-        <div className="container-custom">
+      {/* Service Areas - Enhanced */}
+      <section className="section-padding relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-healthcare-teal/85"></div>
+        </div>
+        
+        <div className="container-custom relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-healthcare-teal mb-4">Areas We Serve</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-white mb-4">Areas We Serve</h2>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Premier Healthcare of Georgia proudly serves families across metro Atlanta and surrounding counties.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {counties.map((county, index) => (
-              <div key={index} className="healthcare-card text-center animate-fade-in" style={{animationDelay: `${index * 0.05}s`}}>
-                <MapPin className="w-8 h-8 text-healthcare-teal mx-auto mb-3" />
-                <h4 className="font-semibold text-lg text-gray-800">{county} County</h4>
+              <div key={index} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center animate-fade-in hover:bg-white/20 transition-all duration-300" style={{animationDelay: `${index * 0.05}s`}}>
+                <MapPin className="w-8 h-8 text-white mx-auto mb-3" />
+                <h4 className="font-semibold text-lg text-white">{county} County</h4>
               </div>
             ))}
           </div>
@@ -291,6 +301,8 @@ const Home = () => {
         onClose={() => setIsCareNeedsModalOpen(false)}
         type="care-needs"
       />
+
+      <Footer />
     </div>
   );
 };

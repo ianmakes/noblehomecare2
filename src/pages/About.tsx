@@ -1,6 +1,7 @@
 
 import { Heart, Users, Award, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Footer from '@/components/Footer';
 
 const About = () => {
   const values = [
@@ -63,8 +64,8 @@ const About = () => {
             </div>
             <div className="animate-slide-in">
               <img 
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
-                alt="Healthcare professional with elderly patient showing care and compassion"
+                src="/lovable-uploads/b19d0c3b-be10-4ca1-9382-fd43a462f1dd.png"
+                alt="Healthcare professional providing compassionate care to elderly patient"
                 className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
               />
             </div>
@@ -78,8 +79,8 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80"
-                alt="Multi-generational family showing love and care"
+                src="/lovable-uploads/6f352895-bf60-4dc8-9529-23e02a20dd26.png"
+                alt="Caregiver assisting elderly man in wheelchair showing compassionate care"
                 className="rounded-2xl shadow-xl w-full h-[500px] object-cover"
               />
             </div>
@@ -191,8 +192,8 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80"
-                alt="Diverse healthcare team showing professionalism and care"
+                src="/lovable-uploads/3e069c0b-7cb3-4af4-b494-d95049867d09.png"
+                alt="Healthcare professional providing emotional support and care to patient"
                 className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
               />
             </div>
@@ -241,6 +242,8 @@ const About = () => {
           </Button>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
