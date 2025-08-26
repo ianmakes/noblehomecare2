@@ -7,9 +7,9 @@ const HeroSlider = () => {
 
   const slides = [
     {
-      image: "/lovable-uploads/23edfb5d-5a50-425b-8d59-b2ece29e919d.png",
-      caption: "Personal Care",
-      description: "Compassionate assistance with daily living activities"
+      image: "/lovable-uploads/3600bcd1-540d-44f8-a44b-51a1dbe8d8af.png",
+      caption: "Transportation Services",
+      description: "Safe and reliable transportation assistance for appointments and errands"
     },
     {
       image: "/lovable-uploads/1e91caf8-562b-44e0-b88a-de8b391a9afe.png",
@@ -17,21 +17,21 @@ const HeroSlider = () => {
       description: "Professional medical care in your home"
     },
     {
-      image: "/lovable-uploads/3e069c0b-7cb3-4af4-b494-d95049867d09.png",
+      image: "/lovable-uploads/ea030fec-429e-4901-a84b-b3e41ab539b4.png",
       caption: "Companionship",
       description: "Emotional support and social engagement"
     },
     {
-      image: "/lovable-uploads/6f352895-bf60-4dc8-9529-23e02a20dd26.png",
-      caption: "Around-The-Clock Care",
-      description: "24/7 comprehensive care services"
+      image: "/lovable-uploads/6fa0a03b-e067-490d-a537-9e1a7e82a019.png",
+      caption: "Nutritional Support",
+      description: "Meal preparation and nutritional guidance for healthy living"
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Changed from 4000 to 5000 (5 seconds)
+    }, 5000); // 5 seconds per slide
     return () => clearInterval(timer);
   }, [slides.length]);
 
