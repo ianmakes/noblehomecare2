@@ -1,31 +1,31 @@
-
 import { useState } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import ContactModal from './ContactModal';
-
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   const location = useLocation();
-
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/contact' },
-  ];
-
+  const navItems = [{
+    name: 'Home',
+    path: '/'
+  }, {
+    name: 'About Us',
+    path: '/about'
+  }, {
+    name: 'Services',
+    path: '/services'
+  }, {
+    name: 'Contact',
+    path: '/contact'
+  }];
   const isActive = (path: string) => location.pathname === path;
-
   const handleNavClick = () => {
     setIsOpen(false);
     // Scroll to top when navigating
     window.scrollTo(0, 0);
   };
-
-  return (
-    <>
+  return <>
       <nav className="bg-white shadow-lg sticky top-0 z-50">
         {/* Top bar with contact info */}
         <div className="healthcare-gradient">
@@ -53,11 +53,7 @@ const Navigation = () => {
           <div className="flex justify-between items-center py-4">
             <Link to="/" onClick={handleNavClick} className="flex items-center space-x-2">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/2909d7d7-73f4-4f9b-aef7-2baced74c861.png" 
-                  alt="Premier Healthcare Logo" 
-                  className="w-10 h-10"
-                />
+                <img src="/lovable-uploads/2909d7d7-73f4-4f9b-aef7-2baced74c861.png" alt="Premier Healthcare Logo" className="w-10 h-10" />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-healthcare-teal">Premier Healthcare</h1>
@@ -67,70 +63,35 @@ const Navigation = () => {
 
             {/* Desktop navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={handleNavClick}
-                  className={`text-gray-700 hover:text-healthcare-teal font-medium transition-colors duration-200 ${
-                    isActive(item.path) ? 'text-healthcare-teal border-b-2 border-healthcare-teal pb-1' : ''
-                  }`}
-                >
+              {navItems.map(item => <Link key={item.name} to={item.path} onClick={handleNavClick} className={`text-gray-700 hover:text-healthcare-teal font-medium transition-colors duration-200 ${isActive(item.path) ? 'text-healthcare-teal border-b-2 border-healthcare-teal pb-1' : ''}`}>
                   {item.name}
-                </Link>
-              ))}
-              <button 
-                onClick={() => setIsConsultationModalOpen(true)}
-                className="btn-healthcare"
-              >
+                </Link>)}
+              <button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare bg-lime-500 hover:bg-lime-400">
                 Get Care Today
               </button>
             </div>
 
             {/* Mobile menu button */}
-            <button
-              className="md:hidden"
-              onClick={() => setIsOpen(!isOpen)}
-            >
+            <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
 
           {/* Mobile navigation */}
-          {isOpen && (
-            <div className="md:hidden pb-4">
+          {isOpen && <div className="md:hidden pb-4">
               <div className="flex flex-col space-y-4">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className={`text-gray-700 hover:text-healthcare-teal font-medium py-2 ${
-                      isActive(item.path) ? 'text-healthcare-teal' : ''
-                    }`}
-                    onClick={handleNavClick}
-                  >
+                {navItems.map(item => <Link key={item.name} to={item.path} className={`text-gray-700 hover:text-healthcare-teal font-medium py-2 ${isActive(item.path) ? 'text-healthcare-teal' : ''}`} onClick={handleNavClick}>
                     {item.name}
-                  </Link>
-                ))}
-                <button 
-                  onClick={() => setIsConsultationModalOpen(true)}
-                  className="btn-healthcare w-full"
-                >
+                  </Link>)}
+                <button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare w-full">
                   Get Care Today
                 </button>
               </div>
-            </div>
-          )}
+            </div>}
         </div>
       </nav>
 
-      <ContactModal 
-        isOpen={isConsultationModalOpen}
-        onClose={() => setIsConsultationModalOpen(false)}
-        type="consultation"
-      />
-    </>
-  );
+      <ContactModal isOpen={isConsultationModalOpen} onClose={() => setIsConsultationModalOpen(false)} type="consultation" />
+    </>;
 };
-
 export default Navigation;
