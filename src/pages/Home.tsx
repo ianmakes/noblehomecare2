@@ -117,7 +117,7 @@ const Home = () => {
                     <p className="text-gray-600">All our caregivers are thoroughly vetted, licensed, and insured for your peace of mind.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-4 bg-[#000a00]/0">
                   <CheckCircle className="w-6 h-6 text-healthcare-teal mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-lg mb-2">24/7 Availability</h4>
