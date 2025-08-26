@@ -53,9 +53,9 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				'healthcare-teal': 'hsl(var(--healthcare-teal))',
-				'healthcare-teal-light': 'hsl(var(--healthcare-teal-light))',
-				'healthcare-teal-dark': 'hsl(var(--healthcare-teal-dark))',
+				'healthcare-teal': 'hsl(var(--healthcare-green))',
+				'healthcare-teal-light': 'hsl(var(--healthcare-green-light))',
+				'healthcare-teal-dark': 'hsl(var(--healthcare-green-dark))',
 				'healthcare-pink': 'hsl(var(--healthcare-pink))',
 				'healthcare-gray': 'hsl(var(--healthcare-gray))',
 				'healthcare-gray-light': 'hsl(var(--healthcare-gray-light))',

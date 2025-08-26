@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -51,8 +52,12 @@ const Navigation = () => {
         <div className="container-custom">
           <div className="flex justify-between items-center py-4">
             <Link to="/" onClick={handleNavClick} className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-healthcare-teal rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">P</span>
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/9e0257e1-eb18-4e90-8aa7-4a316bac1497.png" 
+                  alt="Premier Healthcare Logo" 
+                  className="w-10 h-10 rounded-lg"
+                />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-healthcare-teal">Premier Healthcare</h1>

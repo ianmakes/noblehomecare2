@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox';
 import { Phone, Clock } from 'lucide-react';
 import { toast } from 'sonner';
+import { sendFormEmail } from '@/utils/emailService';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -40,6 +41,10 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Send email
+    sendFormEmail(formData, type);
+    
     toast.success('Thank you! Our care team will contact you within 24 hours.');
     onClose();
   };
