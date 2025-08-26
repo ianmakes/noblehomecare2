@@ -60,7 +60,7 @@ const Home = () => {
                 <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
                   Get Free Consultation
                 </Button>
-                <Button onClick={() => setIsCareNeedsModalOpen(true)} className="btn-healthcare-outline bg-white/10 border-white text-white hover:bg-white hover:text-healthcare-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
+                <Button onClick={() => setIsCareNeedsModalOpen(true)} className="btn-healthcare-outline border-white hover:text-healthcare-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 bg-slate-50 text-lime-600">
                   Assess Care Needs
                 </Button>
               </div>
