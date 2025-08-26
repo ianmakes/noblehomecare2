@@ -128,7 +128,7 @@ const Home = () => {
                   <CheckCircle className="w-6 h-6 text-healthcare-teal mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-lg mb-2">Family-Centered Approach</h4>
-                    <p className="text-gray-600">Regular status reports to family members and transparent communication throughout care.</p>
+                    <p className="text-gray-600 bg-lime-500">Regular status reports to family members and transparent communication throughout care.</p>
                   </div>
                 </div>
               </div>
