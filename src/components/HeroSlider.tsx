@@ -31,7 +31,7 @@ const HeroSlider = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Changed to 5 seconds
+    }, 4000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -49,7 +49,7 @@ const HeroSlider = () => {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 transition-opacity duration-500 ${
             index === currentSlide ? 'opacity-100' : 'opacity-0'
           }`}
         >
