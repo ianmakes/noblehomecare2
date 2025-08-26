@@ -53,12 +53,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				'healthcare-teal': 'hsl(var(--healthcare-teal))',
-				'healthcare-teal-light': 'hsl(var(--healthcare-teal-light))',
-				'healthcare-teal-dark': 'hsl(var(--healthcare-teal-dark))',
-				'healthcare-pink': 'hsl(var(--healthcare-pink))',
-				'healthcare-gray': 'hsl(var(--healthcare-gray))',
-				'healthcare-gray-light': 'hsl(var(--healthcare-gray-light))',
+				'healthcare-teal': '77 35% 58%', // Main green color
+				'healthcare-teal-light': '77 42% 68%', // Lighter green
+				'healthcare-teal-dark': '77 28% 48%', // Darker green
+				'healthcare-pink': '333 71% 58%', // Keeping pink accent
+				'healthcare-gray': '215 20% 65%',
+				'healthcare-gray-light': '210 40% 96%',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

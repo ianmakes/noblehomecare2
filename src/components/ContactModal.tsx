@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -9,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox';
 import { Phone, Clock } from 'lucide-react';
 import { toast } from 'sonner';
+import { sendFormEmail } from '@/utils/emailService';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -38,10 +38,28 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
     'Skilled Nursing', 'Around-The-Clock Care'
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Thank you! Our care team will contact you within 24 hours.');
-    onClose();
+    
+    try {
+      await sendFormEmail(formData, type);
+      toast.success('Thank you! Your request has been sent. Our care team will contact you within 24 hours.');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        county: '',
+        careType: [],
+        urgency: '',
+        message: '',
+      });
+      
+      onClose();
+    } catch (error) {
+      toast.error('There was an issue sending your request. Please try calling us directly.');
+    }
   };
 
   const handleCareTypeChange = (careType: string, checked: boolean) => {
