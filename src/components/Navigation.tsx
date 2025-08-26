@@ -27,8 +27,8 @@ const Navigation = () => {
   return (
     <>
       <nav className="bg-white shadow-lg sticky top-0 z-50">
-        {/* Top bar with contact info */}
-        <div className="healthcare-gradient">
+        {/* Top bar with contact info - Hidden on mobile */}
+        <div className="healthcare-gradient hidden md:block">
           <div className="container-custom">
             <div className="flex justify-between items-center py-2 text-white text-sm">
               <div className="flex items-center space-x-4">
@@ -41,7 +41,7 @@ const Navigation = () => {
                   <span>service.premierhealthcarega@gmail.com</span>
                 </div>
               </div>
-              <div className="hidden md:block">
+              <div>
                 <span className="font-medium">Your Care. Your Comfort. Your Home.</span>
               </div>
             </div>
@@ -50,18 +50,18 @@ const Navigation = () => {
 
         {/* Main navigation */}
         <div className="container-custom">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-3 md:py-4">
             <Link to="/" onClick={handleNavClick} className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/9e0257e1-eb18-4e90-8aa7-4a316bac1497.png" 
                   alt="Premier Healthcare Logo" 
-                  className="w-10 h-10 rounded-lg"
+                  className="w-8 h-8 md:w-10 md:h-10 rounded-lg"
                 />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-healthcare-teal">Premier Healthcare</h1>
-                <p className="text-sm text-gray-600">of Georgia, Inc.</p>
+                <h1 className="text-lg md:text-xl font-bold text-healthcare-teal">Premier Healthcare</h1>
+                <p className="text-xs md:text-sm text-gray-600">of Georgia, Inc.</p>
               </div>
             </Link>
 
@@ -113,7 +113,10 @@ const Navigation = () => {
                   </Link>
                 ))}
                 <button 
-                  onClick={() => setIsConsultationModalOpen(true)}
+                  onClick={() => {
+                    setIsConsultationModalOpen(true);
+                    setIsOpen(false);
+                  }}
                   className="btn-healthcare w-full"
                 >
                   Get Care Today

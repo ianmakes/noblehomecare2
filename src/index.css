@@ -85,29 +85,29 @@
   }
 
   h1 {
-    @apply text-4xl lg:text-5xl;
+    @apply text-2xl md:text-4xl lg:text-5xl;
   }
 
   h2 {
-    @apply text-3xl lg:text-4xl;
+    @apply text-xl md:text-3xl lg:text-4xl;
   }
 
   h3 {
-    @apply text-2xl lg:text-3xl;
+    @apply text-lg md:text-2xl lg:text-3xl;
   }
 }
 
 @layer components {
   .btn-healthcare {
-    @apply bg-healthcare-teal hover:bg-healthcare-teal-dark text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl;
+    @apply bg-healthcare-teal hover:bg-healthcare-teal-dark text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl text-sm md:text-base;
   }
 
   .btn-healthcare-secondary {
-    @apply bg-healthcare-pink hover:bg-pink-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl;
+    @apply bg-healthcare-pink hover:bg-pink-600 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl text-sm md:text-base;
   }
 
   .btn-healthcare-outline {
-    @apply border-2 border-healthcare-teal text-healthcare-teal hover:bg-healthcare-teal hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply border-2 border-healthcare-teal text-healthcare-teal hover:bg-healthcare-teal hover:text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 text-sm md:text-base;
   }
 
   .healthcare-gradient {
@@ -115,14 +115,25 @@
   }
 
   .healthcare-card {
-    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100;
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 border border-gray-100;
   }
 
   .section-padding {
-    @apply py-16 lg:py-24;
+    @apply py-12 md:py-16 lg:py-24;
   }
 
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  .healthcare-card {
+    @apply p-4;
+  }
+  
+  .section-padding {
+    @apply py-8;
   }
 }
