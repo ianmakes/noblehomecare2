@@ -1,68 +1,48 @@
-
 import { useState } from 'react';
 import { Heart, Users, Clock, Shield, MapPin, Award, CheckCircle, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactModal from '@/components/ContactModal';
 import Footer from '@/components/Footer';
 import HeroSlider from '@/components/HeroSlider';
-
 const Home = () => {
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   const [isCareNeedsModalOpen, setIsCareNeedsModalOpen] = useState(false);
-
-  const services = [
-    {
-      icon: <Heart className="w-8 h-8 text-healthcare-primary" />,
-      title: "Personal Care", 
-      description: "Bathing, grooming, toileting, and daily living assistance with dignity and respect."
-    },
-    {
-      icon: <Users className="w-8 h-8 text-healthcare-secondary" />,
-      title: "Companionship",
-      description: "Friendly conversation, emotional support, and social engagement activities."
-    },
-    {
-      icon: <Clock className="w-8 h-8 text-healthcare-primary" />,
-      title: "Around-The-Clock Care",
-      description: "24-hour comprehensive care services tailored to your specific needs."
-    },
-    {
-      icon: <Shield className="w-8 h-8 text-healthcare-secondary" />,
-      title: "Skilled Nursing",
-      description: "Professional nursing care by licensed RNs and LPNs for medical conditions."
-    }
-  ];
-
-  const counties = [
-    'Fayette', 'Fulton', 'Clayton', 'Cobb', 'Coweta',
-    'DeKalb', 'Carroll', 'Douglas', 'Gwinnett', 'Henry'
-  ];
-
-  const careProcess = [
-    {
-      step: "1",
-      title: "Care Needs Assessment",
-      description: "Complete our quick questionnaire to help us understand your specific care requirements."
-    },
-    {
-      step: "2", 
-      title: "Free Consultation",
-      description: "Our care team will contact you within 24 hours to discuss your needs and answer questions."
-    },
-    {
-      step: "3",
-      title: "Personalized Care Plan",
-      description: "We create a custom care plan tailored to your unique situation and preferences."
-    },
-    {
-      step: "4",
-      title: "Caregiver Matching",
-      description: "We match you with qualified, compassionate caregivers who fit your personality and needs."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const services = [{
+    icon: <Heart className="w-8 h-8 text-healthcare-primary" />,
+    title: "Personal Care",
+    description: "Bathing, grooming, toileting, and daily living assistance with dignity and respect."
+  }, {
+    icon: <Users className="w-8 h-8 text-healthcare-secondary" />,
+    title: "Companionship",
+    description: "Friendly conversation, emotional support, and social engagement activities."
+  }, {
+    icon: <Clock className="w-8 h-8 text-healthcare-primary" />,
+    title: "Around-The-Clock Care",
+    description: "24-hour comprehensive care services tailored to your specific needs."
+  }, {
+    icon: <Shield className="w-8 h-8 text-healthcare-secondary" />,
+    title: "Skilled Nursing",
+    description: "Professional nursing care by licensed RNs and LPNs for medical conditions."
+  }];
+  const counties = ['Fayette', 'Fulton', 'Clayton', 'Cobb', 'Coweta', 'DeKalb', 'Carroll', 'Douglas', 'Gwinnett', 'Henry'];
+  const careProcess = [{
+    step: "1",
+    title: "Care Needs Assessment",
+    description: "Complete our quick questionnaire to help us understand your specific care requirements."
+  }, {
+    step: "2",
+    title: "Free Consultation",
+    description: "Our care team will contact you within 24 hours to discuss your needs and answer questions."
+  }, {
+    step: "3",
+    title: "Personalized Care Plan",
+    description: "We create a custom care plan tailored to your unique situation and preferences."
+  }, {
+    step: "4",
+    title: "Caregiver Matching",
+    description: "We match you with qualified, compassionate caregivers who fit your personality and needs."
+  }];
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="healthcare-gradient text-white py-12 md:py-16 lg:py-24">
         <div className="container-custom">
@@ -77,16 +57,10 @@ const Home = () => {
                 that help you maintain independence and dignity in the comfort of your own home.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                <Button 
-                  onClick={() => setIsConsultationModalOpen(true)}
-                  className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4"
-                >
+                <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
                   Get Free Consultation
                 </Button>
-                <Button 
-                  onClick={() => setIsCareNeedsModalOpen(true)}
-                  className="btn-healthcare-outline bg-white/10 border-white text-white hover:bg-white hover:text-healthcare-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4"
-                >
+                <Button onClick={() => setIsCareNeedsModalOpen(true)} className="btn-healthcare-outline bg-white/10 border-white text-white hover:bg-white hover:text-healthcare-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
                   Assess Care Needs
                 </Button>
               </div>
@@ -110,15 +84,15 @@ const Home = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="healthcare-card text-center animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+            {services.map((service, index) => <div key={index} className="healthcare-card text-center animate-fade-in" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
                 <div className="flex justify-center mb-4">
                   {service.icon}
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold mb-3 text-gray-800">{service.title}</h3>
                 <p className="text-sm md:text-base text-gray-600">{service.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -128,11 +102,7 @@ const Home = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <img 
-                src="/lovable-uploads/da2b87a9-d374-4af8-aa31-a98453ea65fa.png"
-                alt="Diverse healthcare professional providing compassionate care to elderly patient"
-                className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover"
-              />
+              <img src="/lovable-uploads/da2b87a9-d374-4af8-aa31-a98453ea65fa.png" alt="Diverse healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
             </div>
             
             <div>
@@ -164,10 +134,7 @@ const Home = () => {
               </div>
               
               <div className="mt-6 md:mt-8">
-                <Button 
-                  onClick={() => setIsConsultationModalOpen(true)}
-                  className="btn-healthcare"
-                >
+                <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare">
                   Learn More About Our Services
                 </Button>
               </div>
@@ -208,11 +175,7 @@ const Home = () => {
             </div>
             
             <div>
-              <img 
-                src="/lovable-uploads/8c0494eb-78a4-4c3a-9b01-dcbf91d3b46e.png"
-                alt="Healthcare professional providing medication assistance to elderly patient"
-                className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover"
-              />
+              <img src="/lovable-uploads/8c0494eb-78a4-4c3a-9b01-dcbf91d3b46e.png" alt="Healthcare professional providing medication assistance to elderly patient" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
             </div>
           </div>
         </div>
@@ -229,22 +192,19 @@ const Home = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {careProcess.map((process, index) => (
-              <div key={index} className="text-center animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-healthcare-secondary text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto mb-4">
+            {careProcess.map((process, index) => <div key={index} className="text-center animate-fade-in" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-healthcare-secondary text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto mb-4 bg-lime-400">
                   {process.step}
                 </div>
                 <h3 className="text-base md:text-lg font-semibold mb-3 text-gray-800">{process.title}</h3>
                 <p className="text-sm md:text-base text-gray-600">{process.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           <div className="text-center mt-8 md:mt-12">
-            <Button 
-              onClick={() => setIsCareNeedsModalOpen(true)}
-              className="btn-healthcare text-base md:text-lg px-6 md:px-8 py-3 md:py-4"
-            >
+            <Button onClick={() => setIsCareNeedsModalOpen(true)} className="btn-healthcare text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
               Start Your Care Assessment
             </Button>
           </div>
@@ -253,12 +213,9 @@ const Home = () => {
 
       {/* Service Areas - Enhanced with better overlay */}
       <section className="py-12 md:py-16 lg:py-24 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`,
-          }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`
+      }}>
           <div className="absolute inset-0 bg-healthcare-secondary/90"></div>
         </div>
         
@@ -271,12 +228,12 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-            {counties.map((county, index) => (
-              <div key={index} className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl p-4 md:p-6 text-center animate-fade-in hover:bg-white/25 transition-all duration-300" style={{animationDelay: `${index * 0.05}s`}}>
+            {counties.map((county, index) => <div key={index} className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl p-4 md:p-6 text-center animate-fade-in hover:bg-white/25 transition-all duration-300" style={{
+            animationDelay: `${index * 0.05}s`
+          }}>
                 <MapPin className="w-6 h-6 md:w-8 md:h-8 text-white mx-auto mb-2 md:mb-3" />
                 <h4 className="font-semibold text-sm md:text-lg text-white">{county} County</h4>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -311,18 +268,12 @@ const Home = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-            <Button 
-              onClick={() => window.open('tel:470-210-7666')}
-              className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 flex items-center justify-center space-x-2"
-            >
+            <Button onClick={() => window.open('tel:470-210-7666')} className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 flex items-center justify-center space-x-2">
               <Phone size={18} className="md:hidden" />
               <Phone size={20} className="hidden md:block" />
               <span>Call Now: 470-210-7666</span>
             </Button>
-            <Button 
-              onClick={() => setIsConsultationModalOpen(true)}
-              className="btn-healthcare-outline bg-white/10 border-white text-white hover:bg-white hover:text-healthcare-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4"
-            >
+            <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-outline bg-white/10 border-white text-white hover:bg-white hover:text-healthcare-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
               Schedule Free Consultation
             </Button>
           </div>
@@ -330,21 +281,11 @@ const Home = () => {
       </section>
 
       {/* Contact Modals */}
-      <ContactModal 
-        isOpen={isConsultationModalOpen}
-        onClose={() => setIsConsultationModalOpen(false)}
-        type="consultation"
-      />
+      <ContactModal isOpen={isConsultationModalOpen} onClose={() => setIsConsultationModalOpen(false)} type="consultation" />
       
-      <ContactModal 
-        isOpen={isCareNeedsModalOpen}
-        onClose={() => setIsCareNeedsModalOpen(false)}
-        type="care-needs"
-      />
+      <ContactModal isOpen={isCareNeedsModalOpen} onClose={() => setIsCareNeedsModalOpen(false)} type="care-needs" />
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
