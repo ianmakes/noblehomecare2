@@ -146,7 +146,7 @@ const Home = () => {
       {/* Care Process */}
       <section className="section-padding bg-healthcare-gray-light">
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 bg-[#317631]/[0.51]">
             <h2 className="text-healthcare-teal mb-4">Easy Steps To Get Private Nursing</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Getting started with Premier Healthcare of Georgia is simple and straightforward.
