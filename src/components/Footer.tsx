@@ -1,9 +1,6 @@
-
 import { Heart, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-gray-800 text-white">
+  return <footer className="bg-gray-800 text-white">
       <div className="container-custom py-12">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Logo and Tagline Column */}
@@ -73,10 +70,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-healthcare-teal" />
-                <a 
-                  href="mailto:service.premierhealthcarega@gmail.com" 
-                  className="text-gray-300 hover:text-white text-sm break-all"
-                >
+                <a href="mailto:service.premierhealthcarega@gmail.com" className="text-gray-300 hover:text-white text-sm break-all">
                   service.premierhealthcarega@gmail.com
                 </a>
               </div>
@@ -112,13 +106,9 @@ const Footer = () => {
 
         {/* Bottom Border */}
         <div className="mt-8 pt-6 border-t border-gray-700 text-center">
-          <p className="text-sm text-gray-400">
-            © 2024 Premier Healthcare of Georgia, Inc. All rights reserved. | Licensed & Insured
-          </p>
+          <p className="text-sm text-gray-400">© 2025 Premier Healthcare of Georgia, Inc. All rights reserved. | Licensed & Insured</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
