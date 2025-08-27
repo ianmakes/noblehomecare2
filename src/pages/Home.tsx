@@ -4,12 +4,14 @@ import { Button } from '@/components/ui/button';
 import ContactModal from '@/components/ContactModal';
 import Footer from '@/components/Footer';
 import HeroSlider from '@/components/HeroSlider';
+
 const Home = () => {
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   const [isCareNeedsModalOpen, setIsCareNeedsModalOpen] = useState(false);
+
   const services = [{
     icon: <Heart className="w-8 h-8 text-healthcare-primary" />,
-    title: "Personal Care",
+    title: "Personal Care", 
     description: "Bathing, grooming, toileting, and daily living assistance with dignity and respect."
   }, {
     icon: <Users className="w-8 h-8 text-healthcare-secondary" />,
@@ -24,13 +26,15 @@ const Home = () => {
     title: "Skilled Nursing",
     description: "Professional nursing care by licensed RNs and LPNs for medical conditions."
   }];
+
   const counties = ['Fayette', 'Fulton', 'Clayton', 'Cobb', 'Coweta', 'DeKalb', 'Carroll', 'Douglas', 'Gwinnett', 'Henry'];
+
   const careProcess = [{
     step: "1",
     title: "Care Needs Assessment",
     description: "Complete our quick questionnaire to help us understand your specific care requirements."
   }, {
-    step: "2",
+    step: "2", 
     title: "Free Consultation",
     description: "Our care team will contact you within 24 hours to discuss your needs and answer questions."
   }, {
@@ -42,15 +46,25 @@ const Home = () => {
     title: "Caregiver Matching",
     description: "We match you with qualified, compassionate caregivers who fit your personality and needs."
   }];
-  return <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="healthcare-gradient text-white py-12 md:py-16 lg:py-24">
-        <div className="container-custom">
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section - Enhanced Background */}
+      <section className="relative healthcare-gradient text-white py-12 md:py-16 lg:py-24 overflow-hidden">
+        {/* Enhanced Background Pattern */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 via-transparent to-healthcare-pink/20"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/3 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl"></div>
+        </div>
+        
+        <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="animate-fade-in">
               <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
                 Living With Heart,<br />
-                <span className="text-primary-light">Loving With Care</span>
+                <span className="text-primary-light bg-gradient-to-r from-pink-200 to-teal-200 bg-clip-text text-transparent">Loving With Care</span>
               </h1>
               <p className="text-lg md:text-xl mb-6 md:mb-8 text-white/90 leading-relaxed">
                 At Premier Healthcare of Georgia, we provide compassionate, personalized home care services 
@@ -84,15 +98,15 @@ const Home = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {services.map((service, index) => <div key={index} className="healthcare-card text-center animate-fade-in" style={{
-            animationDelay: `${index * 0.1}s`
-          }}>
+            {services.map((service, index) => (
+              <div key={index} className="healthcare-card text-center animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="flex justify-center mb-4">
                   {service.icon}
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold mb-3 text-gray-800">{service.title}</h3>
                 <p className="text-sm md:text-base text-gray-600">{service.description}</p>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -192,15 +206,15 @@ const Home = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {careProcess.map((process, index) => <div key={index} className="text-center animate-fade-in" style={{
-            animationDelay: `${index * 0.1}s`
-          }}>
+            {careProcess.map((process, index) => (
+              <div key={index} className="text-center animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-healthcare-secondary text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto mb-4 bg-lime-400">
                   {process.step}
                 </div>
                 <h3 className="text-base md:text-lg font-semibold mb-3 text-gray-800">{process.title}</h3>
                 <p className="text-sm md:text-base text-gray-600">{process.description}</p>
-              </div>)}
+              </div>
+            ))}
           </div>
           
           <div className="text-center mt-8 md:mt-12">
@@ -211,29 +225,27 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Service Areas - Enhanced with better overlay */}
+      {/* Service Areas - Enhanced with White Overlay */}
       <section className="py-12 md:py-16 lg:py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`
-      }}>
-          <div className="absolute inset-0 bg-healthcare-secondary/90"></div>
+        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`}}>
+          <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
         </div>
         
         <div className="container-custom relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-white mb-4">Areas We Serve</h2>
-            <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto">
+            <h2 className="text-healthcare-secondary mb-4">Areas We Serve</h2>
+            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
               Premier Healthcare of Georgia proudly serves families across metro Atlanta and surrounding counties.
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-            {counties.map((county, index) => <div key={index} className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl p-4 md:p-6 text-center animate-fade-in hover:bg-white/25 transition-all duration-300" style={{
-            animationDelay: `${index * 0.05}s`
-          }}>
-                <MapPin className="w-6 h-6 md:w-8 md:h-8 text-white mx-auto mb-2 md:mb-3" />
-                <h4 className="font-semibold text-sm md:text-lg text-white">{county} County</h4>
-              </div>)}
+            {counties.map((county, index) => (
+              <div key={index} className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl p-4 md:p-6 text-center animate-fade-in hover:bg-white/95 transition-all duration-300 shadow-sm" style={{animationDelay: `${index * 0.05}s`}}>
+                <MapPin className="w-6 h-6 md:w-8 md:h-8 text-healthcare-teal mx-auto mb-2 md:mb-3" />
+                <h4 className="font-semibold text-sm md:text-lg text-gray-800">{county} County</h4>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -286,6 +298,8 @@ const Home = () => {
       <ContactModal isOpen={isCareNeedsModalOpen} onClose={() => setIsCareNeedsModalOpen(false)} type="care-needs" />
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Home;

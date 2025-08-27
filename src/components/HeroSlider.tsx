@@ -25,6 +25,16 @@ const HeroSlider = () => {
       image: "/lovable-uploads/6fa0a03b-e067-490d-a537-9e1a7e82a019.png",
       caption: "Nutritional Support",
       description: "Meal preparation and nutritional guidance for healthy living"
+    },
+    {
+      image: "/lovable-uploads/da2b87a9-d374-4af8-aa31-a98453ea65fa.png",
+      caption: "Personal Care",
+      description: "Bathing, grooming, toileting, and daily living assistance with dignity and respect"
+    },
+    {
+      image: "/lovable-uploads/8c0494eb-78a4-4c3a-9b01-dcbf91d3b46e.png",
+      caption: "Around-The-Clock Care",
+      description: "24-hour comprehensive care services tailored to your specific needs"
     }
   ];
 
@@ -59,8 +69,8 @@ const HeroSlider = () => {
             className="w-full h-full object-cover"
           />
           
-          {/* Caption Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
+          {/* Caption Overlay - Adjusted for mobile */}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 pb-16 md:pb-6">
             <div className="text-white">
               <h3 className="text-2xl font-bold mb-2">{slide.caption}</h3>
               <p className="text-white/90 text-lg">{slide.description}</p>
@@ -84,8 +94,8 @@ const HeroSlider = () => {
         <ChevronRight size={24} />
       </button>
 
-      {/* Dots Indicator */}
-      <div className="absolute bottom-6 right-6 flex space-x-2">
+      {/* Dots Indicator - Positioned above caption on mobile */}
+      <div className="absolute bottom-4 right-6 flex space-x-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}

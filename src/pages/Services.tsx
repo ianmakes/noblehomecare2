@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Heart, Users, Utensils, Home, Car, Pill, Stethoscope, Clock, Shield, DollarSign, CreditCard, Building } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -18,7 +17,7 @@ const Services = () => {
     },
     {
       icon: <Users className="w-8 h-8 text-healthcare-teal" />,
-      title: "Companionship",
+      title: "Companionship", 
       description: "Friendly conversation, emotional support, and social engagement activities to reduce isolation.",
       features: ["Conversation & Socialization", "Reading Together", "Games & Activities", "Emotional Support", "Community Engagement"]
     },
@@ -120,14 +119,14 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Tabs */}
+      {/* Services Tabs - Mobile Responsive */}
       <section className="section-padding">
         <div className="container-custom">
           <Tabs defaultValue="personal-care" className="w-full">
-            <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 mb-12">
-              <TabsTrigger value="personal-care" className="text-base">Personal Care Services</TabsTrigger>
-              <TabsTrigger value="specialized" className="text-base">Specialized Care</TabsTrigger>
-              <TabsTrigger value="payment" className="text-base">Payment Options</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 mb-12 h-auto gap-1 sm:gap-0 bg-muted p-1">
+              <TabsTrigger value="personal-care" className="text-sm sm:text-base py-3 px-2 whitespace-nowrap">Personal Care</TabsTrigger>
+              <TabsTrigger value="specialized" className="text-sm sm:text-base py-3 px-2 whitespace-nowrap">Specialized Care</TabsTrigger>
+              <TabsTrigger value="payment" className="text-sm sm:text-base py-3 px-2 whitespace-nowrap">Payment Options</TabsTrigger>
             </TabsList>
             
             <TabsContent value="personal-care">
