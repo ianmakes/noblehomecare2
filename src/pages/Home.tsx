@@ -1,6 +1,8 @@
+
 import { useState } from 'react';
 import { Heart, Users, Clock, Shield, MapPin, Award, CheckCircle, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import ContactModal from '@/components/ContactModal';
 import Footer from '@/components/Footer';
 import HeroSlider from '@/components/HeroSlider';
@@ -49,14 +51,18 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Enhanced Background */}
+      {/* Hero Section - Enhanced Background with Animations */}
       <section className="relative healthcare-gradient text-white py-12 md:py-16 lg:py-24 overflow-hidden">
-        {/* Enhanced Background Pattern */}
+        {/* Enhanced Background Pattern with Animations */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 via-transparent to-healthcare-pink/20"></div>
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/3 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/3 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          {/* Floating elements */}
+          <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-white/10 rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-white/10 rounded-full animate-bounce" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-white/10 rounded-full animate-bounce" style={{animationDelay: '2.5s'}}></div>
         </div>
         
         <div className="container-custom relative z-10">
@@ -64,17 +70,17 @@ const Home = () => {
             <div className="animate-fade-in">
               <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
                 Living With Heart,<br />
-                <span className="text-primary-light bg-gradient-to-r from-pink-200 to-teal-200 bg-clip-text text-transparent">Loving With Care</span>
+                <span className="text-primary-light bg-gradient-to-r from-pink-200 to-teal-200 bg-clip-text text-transparent animate-pulse">Loving With Care</span>
               </h1>
               <p className="text-lg md:text-xl mb-6 md:mb-8 text-white/90 leading-relaxed">
                 At Premier Healthcare of Georgia, we provide compassionate, personalized home care services 
                 that help you maintain independence and dignity in the comfort of your own home.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
+                <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 transform hover:scale-105 transition-all duration-300">
                   Get Free Consultation
                 </Button>
-                <Button onClick={() => setIsCareNeedsModalOpen(true)} className="btn-healthcare-outline border-white hover:text-healthcare-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 bg-slate-50 text-lime-600">
+                <Button onClick={() => setIsCareNeedsModalOpen(true)} className="btn-healthcare-outline border-white hover:text-healthcare-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 bg-slate-50 text-lime-600 transform hover:scale-105 transition-all duration-300">
                   Assess Care Needs
                 </Button>
               </div>
@@ -87,11 +93,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-12 md:py-16 lg:py-24 bg-healthcare-accent">
+      {/* Services Overview - White Background */}
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="container-custom">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-healthcare-secondary mb-4">Our Core Services</h2>
+            <h2 className="text-healthcare-teal font-bold mb-4">Our Core Services</h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               We provide the care you enjoy, the peace of mind your family deserves.
             </p>
@@ -111,8 +117,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-12 md:py-16 lg:py-24">
+      {/* Why Choose Us - Light Background */}
+      <section className="py-12 md:py-16 lg:py-24 bg-healthcare-accent">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
@@ -120,7 +126,7 @@ const Home = () => {
             </div>
             
             <div>
-              <h2 className="text-healthcare-secondary mb-4 md:mb-6">
+              <h2 className="text-healthcare-teal font-bold mb-4 md:mb-6">
                 We believe the heart of healthcare is service to others
               </h2>
               <div className="space-y-4 md:space-y-6">
@@ -148,21 +154,24 @@ const Home = () => {
               </div>
               
               <div className="mt-6 md:mt-8">
-                <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare">
-                  Learn More About Our Services
-                </Button>
+                <Link to="/services">
+                  <Button className="btn-healthcare">
+                    Learn More About Our Services
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Additional Care Services Section */}
-      <section className="py-12 md:py-16 lg:py-24 bg-healthcare-accent">
-        <div className="container-custom">
+      {/* Additional Care Services Section - Background Image with Overlay */}
+      <section className="py-12 md:py-16 lg:py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/5 to-healthcare-pink/5"></div>
+        <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <h2 className="text-healthcare-secondary mb-4 md:mb-6">Comprehensive Care Services</h2>
+              <h2 className="text-healthcare-teal font-bold mb-4 md:mb-6">Comprehensive Care Services</h2>
               <div className="space-y-4 md:space-y-6">
                 <div className="flex items-start space-x-4">
                   <Heart className="w-5 h-5 md:w-6 md:h-6 text-healthcare-primary mt-1 flex-shrink-0" />
@@ -195,11 +204,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Care Process */}
-      <section className="py-12 md:py-16 lg:py-24 bg-healthcare-accent">
+      {/* Care Process - White Background */}
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="container-custom">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-healthcare-secondary mb-4">Easy Steps To Get Private Nursing</h2>
+            <h2 className="text-healthcare-teal font-bold mb-4">Easy Steps To Get Private Nursing</h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               Getting started with Premier Healthcare of Georgia is simple and straightforward.
             </p>
@@ -228,12 +237,12 @@ const Home = () => {
       {/* Service Areas - Enhanced with White Overlay */}
       <section className="py-12 md:py-16 lg:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`}}>
-          <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-white/90 backdrop-blur-sm"></div>
         </div>
         
         <div className="container-custom relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-healthcare-secondary mb-4">Areas We Serve</h2>
+            <h2 className="text-healthcare-teal font-bold mb-4">Areas We Serve</h2>
             <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
               Premier Healthcare of Georgia proudly serves families across metro Atlanta and surrounding counties.
             </p>
@@ -253,7 +262,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="healthcare-gradient text-white py-12 md:py-16 lg:py-24">
         <div className="container-custom text-center">
-          <h2 className="mb-4 md:mb-6">
+          <h2 className="font-bold mb-4 md:mb-6">
             You get better because<br />
             <span className="text-primary-light">we care better</span>
           </h2>

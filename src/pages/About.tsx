@@ -155,9 +155,9 @@ const About = () => {
         </div>
       </section>
 
-      {/* Diverse Care Services Section - Background Image with Overlay */}
-      <section className="section-padding relative bg-gradient-to-br from-healthcare-teal/5 to-healthcare-pink/5">
-        <div className="absolute inset-0 bg-white/80"></div>
+      {/* Diverse Care Services Section - Background with Overlay */}
+      <section className="section-padding relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/5 to-healthcare-pink/5"></div>
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -225,9 +225,12 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Care Team - Light Background */}
-      <section className="section-padding bg-healthcare-accent">
-        <div className="container-custom">
+      {/* Our Care Team - Background Image with Overlay */}
+      <section className="section-padding relative">
+        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`}}>
+          <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
+        </div>
+        <div className="container-custom relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-healthcare-teal font-bold mb-4">Our Professional Care Team</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -258,7 +261,7 @@ const About = () => {
             </div>
           </div>
           
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
             <div className="text-center">
               <h3 className="text-2xl font-semibold text-healthcare-secondary mb-4">
                 Rigorous Screening & Training
