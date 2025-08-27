@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Heart, Users, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,7 +8,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
 import Footer from '@/components/Footer';
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -18,20 +16,10 @@ const Contact = () => {
     county: '',
     careType: [],
     urgency: '',
-    message: '',
+    message: ''
   });
-
-  const counties = [
-    'Fayette', 'Fulton', 'Clayton', 'Cobb', 'Coweta', 
-    'DeKalb', 'Carroll', 'Douglas', 'Gwinnett', 'Henry'
-  ];
-
-  const careTypes = [
-    'Personal Care', 'Companionship', 'Meal Preparation', 
-    'Light Housekeeping', 'Transportation', 'Medication Supervision',
-    'Skilled Nursing', 'Around-The-Clock Care'
-  ];
-
+  const counties = ['Fayette', 'Fulton', 'Clayton', 'Cobb', 'Coweta', 'DeKalb', 'Carroll', 'Douglas', 'Gwinnett', 'Henry'];
+  const careTypes = ['Personal Care', 'Companionship', 'Meal Preparation', 'Light Housekeeping', 'Transportation', 'Medication Supervision', 'Skilled Nursing', 'Around-The-Clock Care'];
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success('Thank you! Our care team will contact you within 24 hours.');
@@ -43,28 +31,23 @@ const Contact = () => {
       county: '',
       careType: [],
       urgency: '',
-      message: '',
+      message: ''
     });
   };
-
   const handleCareTypeChange = (careType: string, checked: boolean) => {
     setFormData(prev => ({
       ...prev,
-      careType: checked 
-        ? [...prev.careType, careType]
-        : prev.careType.filter(type => type !== careType)
+      careType: checked ? [...prev.careType, careType] : prev.careType.filter(type => type !== careType)
     }));
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="healthcare-gradient text-white section-padding">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-cyan-900">
               Contact Premier Healthcare<br />
-              <span className="text-pink-200">of Georgia</span>
+              <span className="text-cyan-900">of Georgia</span>
             </h1>
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
               Ready to start your journey to better care? Our compassionate team is here to help 
@@ -82,10 +65,7 @@ const Contact = () => {
               <Phone className="w-12 h-12 text-healthcare-teal mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">Call Us</h3>
               <p className="text-gray-600 mb-4">Speak with our care coordinators</p>
-              <a 
-                href="tel:470-210-7666" 
-                className="text-healthcare-teal font-semibold text-lg hover:text-healthcare-teal-dark transition-colors"
-              >
+              <a href="tel:470-210-7666" className="text-healthcare-teal font-semibold text-lg hover:text-healthcare-teal-dark transition-colors">
                 470-210-7666
               </a>
             </div>
@@ -94,10 +74,7 @@ const Contact = () => {
               <Mail className="w-12 h-12 text-healthcare-pink mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">Email Us</h3>
               <p className="text-gray-600 mb-4">Send us your questions anytime</p>
-              <a 
-                href="mailto:service.premierhealthcarega@gmail.com" 
-                className="text-healthcare-teal font-semibold hover:text-healthcare-teal-dark transition-colors break-all"
-              >
+              <a href="mailto:service.premierhealthcarega@gmail.com" className="text-healthcare-teal font-semibold hover:text-healthcare-teal-dark transition-colors break-all">
                 service.premierhealthcarega@gmail.com
               </a>
             </div>
@@ -132,47 +109,41 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name *</Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                      required
-                    />
+                    <Input id="name" value={formData.name} onChange={e => setFormData(prev => ({
+                    ...prev,
+                    name: e.target.value
+                  }))} required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number *</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                      required
-                    />
+                    <Input id="phone" type="tel" value={formData.phone} onChange={e => setFormData(prev => ({
+                    ...prev,
+                    phone: e.target.value
+                  }))} required />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="email">Email Address</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                    />
+                    <Input id="email" type="email" value={formData.email} onChange={e => setFormData(prev => ({
+                    ...prev,
+                    email: e.target.value
+                  }))} />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="county">County *</Label>
-                    <Select value={formData.county} onValueChange={(value) => setFormData(prev => ({ ...prev, county: value }))}>
+                    <Select value={formData.county} onValueChange={value => setFormData(prev => ({
+                    ...prev,
+                    county: value
+                  }))}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select your county" />
                       </SelectTrigger>
                       <SelectContent>
-                        {counties.map((county) => (
-                          <SelectItem key={county} value={county.toLowerCase()}>
+                        {counties.map(county => <SelectItem key={county} value={county.toLowerCase()}>
                             {county} County
-                          </SelectItem>
-                        ))}
+                          </SelectItem>)}
                       </SelectContent>
                     </Select>
                   </div>
@@ -181,22 +152,19 @@ const Contact = () => {
                 <div className="space-y-2">
                   <Label>Care Services Needed (Select all that apply)</Label>
                   <div className="grid grid-cols-2 gap-3">
-                    {careTypes.map((careType) => (
-                      <div key={careType} className="flex items-center space-x-2">
-                        <Checkbox
-                          id={careType}
-                          checked={formData.careType.includes(careType)}
-                          onCheckedChange={(checked) => handleCareTypeChange(careType, checked as boolean)}
-                        />
+                    {careTypes.map(careType => <div key={careType} className="flex items-center space-x-2">
+                        <Checkbox id={careType} checked={formData.careType.includes(careType)} onCheckedChange={checked => handleCareTypeChange(careType, checked as boolean)} />
                         <Label htmlFor={careType} className="text-sm">{careType}</Label>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="urgency">How soon do you need care?</Label>
-                  <Select value={formData.urgency} onValueChange={(value) => setFormData(prev => ({ ...prev, urgency: value }))}>
+                  <Select value={formData.urgency} onValueChange={value => setFormData(prev => ({
+                  ...prev,
+                  urgency: value
+                }))}>
                     <SelectTrigger>
                       <SelectValue placeholder="Select timeframe" />
                     </SelectTrigger>
@@ -211,13 +179,10 @@ const Contact = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="message">Tell us about your care needs</Label>
-                  <Textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                    placeholder="Describe your specific care needs, concerns, or questions. The more details you provide, the better we can help you."
-                    rows={4}
-                  />
+                  <Textarea id="message" value={formData.message} onChange={e => setFormData(prev => ({
+                  ...prev,
+                  message: e.target.value
+                }))} placeholder="Describe your specific care needs, concerns, or questions. The more details you provide, the better we can help you." rows={4} />
                 </div>
 
                 <Button type="submit" className="btn-healthcare w-full text-lg py-3">
@@ -283,10 +248,7 @@ const Contact = () => {
               <div className="bg-healthcare-teal text-white rounded-xl p-6">
                 <h4 className="font-semibold text-lg mb-3">Need Immediate Help?</h4>
                 <p className="mb-4">Call us now to speak with a care coordinator</p>
-                <Button 
-                  onClick={() => window.open('tel:470-210-7666')}
-                  className="btn-healthcare-secondary w-full"
-                >
+                <Button onClick={() => window.open('tel:470-210-7666')} className="btn-healthcare-secondary w-full">
                   <Phone className="mr-2" size={16} />
                   Call 470-210-7666
                 </Button>
@@ -307,19 +269,15 @@ const Contact = () => {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {counties.map((county, index) => (
-              <div key={index} className="healthcare-card text-center">
+            {counties.map((county, index) => <div key={index} className="healthcare-card text-center">
                 <MapPin className="w-6 h-6 text-healthcare-teal mx-auto mb-2" />
                 <h4 className="font-semibold text-gray-800">{county}</h4>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
