@@ -3,7 +3,12 @@ import { Heart, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } fr
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  return <footer className="bg-gray-800 text-white">
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <footer className="bg-gray-800 text-white">
       <div className="container-custom py-12">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Logo and Tagline Column */}
@@ -31,22 +36,38 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-healthcare-teal transition-colors">
+                <Link 
+                  to="/" 
+                  onClick={handleLinkClick}
+                  className="text-gray-300 hover:text-healthcare-teal transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-healthcare-teal transition-colors">
+                <Link 
+                  to="/about" 
+                  onClick={handleLinkClick}
+                  className="text-gray-300 hover:text-healthcare-teal transition-colors"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-healthcare-teal transition-colors">
+                <Link 
+                  to="/services" 
+                  onClick={handleLinkClick}
+                  className="text-gray-300 hover:text-healthcare-teal transition-colors"
+                >
                   Our Services
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-healthcare-teal transition-colors">
+                <Link 
+                  to="/contact" 
+                  onClick={handleLinkClick}
+                  className="text-gray-300 hover:text-healthcare-teal transition-colors"
+                >
                   Contact Us
                 </Link>
               </li>
@@ -112,7 +133,8 @@ const Footer = () => {
           <p className="text-sm text-gray-400">© 2025 Premier Healthcare of Georgia, Inc. All rights reserved. | Licensed & Insured</p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
 
 export default Footer;

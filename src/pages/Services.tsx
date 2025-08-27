@@ -92,7 +92,8 @@ const Services = () => {
       icon: <CreditCard className="w-8 h-8 text-healthcare-pink" />,
       title: "Medicaid Waiver Programs",
       description: "CCSP, SOURCE, and other community-based funding options.",
-      methods: ["CCSP Program", "SOURCE Program", "Community Waivers", "Application Support"]
+      methods: ["CCSP Program", "SOURCE Program", "Community Waivers", "Application Support"],
+      comingSoon: true
     }
   ];
 
@@ -102,7 +103,7 @@ const Services = () => {
       <section className="healthcare-gradient text-white section-padding">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-teal-800">
               Comprehensive Home Care<br />
               <span className="text-pink-200">Services</span>
             </h1>
@@ -120,14 +121,29 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Tabs - Mobile Responsive */}
+      {/* Services Tabs - Enhanced Design */}
       <section className="section-padding">
         <div className="container-custom">
           <Tabs defaultValue="personal-care" className="w-full">
-            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 mb-12 h-auto gap-1 sm:gap-0 bg-muted p-1">
-              <TabsTrigger value="personal-care" className="text-xs sm:text-sm lg:text-base py-2 sm:py-3 px-1 sm:px-2 whitespace-nowrap">Personal Care</TabsTrigger>
-              <TabsTrigger value="specialized" className="text-xs sm:text-sm lg:text-base py-2 sm:py-3 px-1 sm:px-2 whitespace-nowrap">Specialized Care</TabsTrigger>
-              <TabsTrigger value="payment" className="text-xs sm:text-sm lg:text-base py-2 sm:py-3 px-1 sm:px-2 whitespace-nowrap">Payment Options</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 mb-12 h-auto gap-2 bg-healthcare-teal/10 p-2 rounded-xl">
+              <TabsTrigger 
+                value="personal-care" 
+                className="font-semibold text-sm sm:text-base py-3 px-4 rounded-lg data-[state=active]:bg-healthcare-teal data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300"
+              >
+                Personal Care
+              </TabsTrigger>
+              <TabsTrigger 
+                value="specialized" 
+                className="font-semibold text-sm sm:text-base py-3 px-4 rounded-lg data-[state=active]:bg-healthcare-teal data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300"
+              >
+                Specialized Care
+              </TabsTrigger>
+              <TabsTrigger 
+                value="payment" 
+                className="font-semibold text-sm sm:text-base py-3 px-4 rounded-lg data-[state=active]:bg-healthcare-teal data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300"
+              >
+                Payment Options
+              </TabsTrigger>
             </TabsList>
             
             <TabsContent value="personal-care">
@@ -219,7 +235,12 @@ const Services = () => {
               
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 {paymentOptions.map((option, index) => (
-                  <div key={index} className="healthcare-card animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+                  <div key={index} className="healthcare-card animate-fade-in relative" style={{animationDelay: `${index * 0.1}s`}}>
+                    {option.comingSoon && (
+                      <div className="absolute top-4 right-4 bg-healthcare-pink text-white px-3 py-1 rounded-full text-sm font-medium">
+                        Coming Soon
+                      </div>
+                    )}
                     <div className="flex items-center space-x-3 mb-4">
                       {option.icon}
                       <h3 className="text-xl font-semibold">{option.title}</h3>
@@ -240,7 +261,7 @@ const Services = () => {
               <div className="bg-gradient-to-r from-healthcare-teal/10 to-healthcare-pink/10 rounded-2xl p-8">
                 <div className="text-center">
                   <h3 className="text-2xl font-semibold text-healthcare-teal mb-4">
-                    Coming Soon: Additional Funding Options
+                    Additional Funding Options
                   </h3>
                   <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
                     We're constantly expanding our payment options and working with additional community 
@@ -273,7 +294,7 @@ const Services = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-16 h-12 sm:w-12 sm:h-12 bg-healthcare-teal text-white rounded-lg flex items-center justify-center font-bold text-sm whitespace-nowrap flex-shrink-0">
+                  <div className="w-12 h-12 bg-healthcare-teal text-white rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0">
                     1-4
                   </div>
                   <div className="flex-1 min-w-0">
@@ -283,7 +304,7 @@ const Services = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-16 h-12 sm:w-12 sm:h-12 bg-healthcare-pink text-white rounded-lg flex items-center justify-center font-bold text-sm whitespace-nowrap flex-shrink-0">
+                  <div className="w-12 h-12 bg-healthcare-pink text-white rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0">
                     8-12
                   </div>
                   <div className="flex-1 min-w-0">
@@ -293,7 +314,7 @@ const Services = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-16 h-12 sm:w-12 sm:h-12 bg-healthcare-teal text-white rounded-lg flex items-center justify-center font-bold text-sm whitespace-nowrap flex-shrink-0">
+                  <div className="w-12 h-12 bg-healthcare-teal text-white rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0">
                     24
                   </div>
                   <div className="flex-1 min-w-0">

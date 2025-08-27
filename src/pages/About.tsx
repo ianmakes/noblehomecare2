@@ -47,6 +47,25 @@ const About = () => {
     }
   ];
 
+  // Alternating commitment card colors
+  const commitmentCards = [
+    {
+      icon: <Shield className="w-12 h-12 text-healthcare-teal mx-auto mb-4" />,
+      title: "Safe, High-Quality Care",
+      description: "Providing safe, high-quality, and compassionate care that meets the highest standards of healthcare excellence."
+    },
+    {
+      icon: <Users className="w-12 h-12 text-gray-800 mx-auto mb-4" />,
+      title: "Supporting Independence", 
+      description: "Supporting independence while ensuring peace of mind for families through comprehensive care planning and communication."
+    },
+    {
+      icon: <Heart className="w-12 h-12 text-healthcare-teal mx-auto mb-4" />,
+      title: "Building Trust",
+      description: "Building trust through respect, kindness, and professionalism in every interaction with our clients and their families."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -74,7 +93,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Story */}
+      {/* Our Story - White Background */}
       <section className="section-padding">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -87,7 +106,7 @@ const About = () => {
             </div>
             
             <div>
-              <h2 className="text-healthcare-secondary mb-6">The Heart of Our Company</h2>
+              <h2 className="text-healthcare-teal font-bold mb-6">The Heart of Our Company</h2>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
                   The heart of our company was born out of family. When my grandmother needed care, 
@@ -113,11 +132,11 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Commitment */}
+      {/* Our Commitment - Light Background */}
       <section className="section-padding bg-healthcare-accent">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-healthcare-secondary mb-4">Our Commitment</h2>
+            <h2 className="text-healthcare-teal font-bold mb-4">Our Commitment</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We are dedicated to providing exceptional care that makes a real difference in the lives 
               of our clients and their families.
@@ -125,42 +144,24 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="healthcare-card text-center">
-              <Shield className="w-12 h-12 text-healthcare-secondary mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Safe, High-Quality Care</h3>
-              <p className="text-gray-600">
-                Providing safe, high-quality, and compassionate care that meets the highest standards 
-                of healthcare excellence.
-              </p>
-            </div>
-            
-            <div className="healthcare-card text-center">
-              <Users className="w-12 h-12 text-healthcare-primary mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Supporting Independence</h3>
-              <p className="text-gray-600">
-                Supporting independence while ensuring peace of mind for families through 
-                comprehensive care planning and communication.
-              </p>
-            </div>
-            
-            <div className="healthcare-card text-center">
-              <Heart className="w-12 h-12 text-healthcare-secondary mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Building Trust</h3>
-              <p className="text-gray-600">
-                Building trust through respect, kindness, and professionalism in every 
-                interaction with our clients and their families.
-              </p>
-            </div>
+            {commitmentCards.map((card, index) => (
+              <div key={index} className="healthcare-card text-center">
+                {card.icon}
+                <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
+                <p className="text-gray-600">{card.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Diverse Care Services Section */}
-      <section className="section-padding">
-        <div className="container-custom">
+      {/* Diverse Care Services Section - Background Image with Overlay */}
+      <section className="section-padding relative bg-gradient-to-br from-healthcare-teal/5 to-healthcare-pink/5">
+        <div className="absolute inset-0 bg-white/80"></div>
+        <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-healthcare-secondary mb-6">Culturally Sensitive Care</h2>
+              <h2 className="text-healthcare-teal font-bold mb-6">Culturally Sensitive Care</h2>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
                   We understand that quality healthcare goes beyond medical expertise—it requires 
@@ -200,11 +201,11 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Values */}
+      {/* Our Values - White Background */}
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-healthcare-secondary mb-4">Our Core Values</h2>
+            <h2 className="text-healthcare-teal font-bold mb-4">Our Core Values</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               These values guide everything we do and every decision we make in serving our clients and their families.
             </p>
@@ -224,11 +225,11 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Care Team */}
+      {/* Our Care Team - Light Background */}
       <section className="section-padding bg-healthcare-accent">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-healthcare-secondary mb-4">Our Professional Care Team</h2>
+            <h2 className="text-healthcare-teal font-bold mb-4">Our Professional Care Team</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our diverse team of healthcare professionals brings expertise, compassion, and dedication 
               to every client we serve.
@@ -280,7 +281,7 @@ const About = () => {
       {/* Contact CTA */}
       <section className="healthcare-gradient text-white section-padding">
         <div className="container-custom text-center">
-          <h2 className="mb-6">Ready to Experience Compassionate Care?</h2>
+          <h2 className="font-bold mb-6">Ready to Experience Compassionate Care?</h2>
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Let us show you how our family-centered approach to healthcare can make a difference 
             in your life or the life of your loved one.
