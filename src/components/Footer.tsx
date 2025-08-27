@@ -1,4 +1,7 @@
+
 import { Heart, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return <footer className="bg-gray-800 text-white">
       <div className="container-custom py-12">
@@ -28,24 +31,24 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/" className="text-gray-300 hover:text-healthcare-teal transition-colors">
+                <Link to="/" className="text-gray-300 hover:text-healthcare-teal transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="text-gray-300 hover:text-healthcare-teal transition-colors">
+                <Link to="/about" className="text-gray-300 hover:text-healthcare-teal transition-colors">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services" className="text-gray-300 hover:text-healthcare-teal transition-colors">
+                <Link to="/services" className="text-gray-300 hover:text-healthcare-teal transition-colors">
                   Our Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="text-gray-300 hover:text-healthcare-teal transition-colors">
+                <Link to="/contact" className="text-gray-300 hover:text-healthcare-teal transition-colors">
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
             
@@ -111,4 +114,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default Footer;

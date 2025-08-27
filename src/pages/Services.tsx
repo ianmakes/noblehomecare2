@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Heart, Users, Utensils, Home, Car, Pill, Stethoscope, Clock, Shield, DollarSign, CreditCard, Building } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -124,9 +125,9 @@ const Services = () => {
         <div className="container-custom">
           <Tabs defaultValue="personal-care" className="w-full">
             <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 mb-12 h-auto gap-1 sm:gap-0 bg-muted p-1">
-              <TabsTrigger value="personal-care" className="text-sm sm:text-base py-3 px-2 whitespace-nowrap">Personal Care</TabsTrigger>
-              <TabsTrigger value="specialized" className="text-sm sm:text-base py-3 px-2 whitespace-nowrap">Specialized Care</TabsTrigger>
-              <TabsTrigger value="payment" className="text-sm sm:text-base py-3 px-2 whitespace-nowrap">Payment Options</TabsTrigger>
+              <TabsTrigger value="personal-care" className="text-xs sm:text-sm lg:text-base py-2 sm:py-3 px-1 sm:px-2 whitespace-nowrap">Personal Care</TabsTrigger>
+              <TabsTrigger value="specialized" className="text-xs sm:text-sm lg:text-base py-2 sm:py-3 px-1 sm:px-2 whitespace-nowrap">Specialized Care</TabsTrigger>
+              <TabsTrigger value="payment" className="text-xs sm:text-sm lg:text-base py-2 sm:py-3 px-1 sm:px-2 whitespace-nowrap">Payment Options</TabsTrigger>
             </TabsList>
             
             <TabsContent value="personal-care">
@@ -259,7 +260,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Care Hours */}
+      {/* Care Hours - Fixed Mobile Layout */}
       <section className="section-padding bg-healthcare-gray-light">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -272,32 +273,32 @@ const Services = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-healthcare-teal text-white rounded-lg flex items-center justify-center font-bold">
+                  <div className="w-16 h-12 sm:w-12 sm:h-12 bg-healthcare-teal text-white rounded-lg flex items-center justify-center font-bold text-sm whitespace-nowrap flex-shrink-0">
                     1-4
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-lg mb-2">Short-Term Visits</h4>
-                    <p className="text-gray-600">Perfect for medication reminders, meal preparation, or companionship visits.</p>
+                    <p className="text-gray-600 text-sm sm:text-base">Perfect for medication reminders, meal preparation, or companionship visits.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-healthcare-pink text-white rounded-lg flex items-center justify-center font-bold">
+                  <div className="w-16 h-12 sm:w-12 sm:h-12 bg-healthcare-pink text-white rounded-lg flex items-center justify-center font-bold text-sm whitespace-nowrap flex-shrink-0">
                     8-12
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-lg mb-2">Half-Day Care</h4>
-                    <p className="text-gray-600">Comprehensive daytime or evening care including personal care and household tasks.</p>
+                    <p className="text-gray-600 text-sm sm:text-base">Comprehensive daytime or evening care including personal care and household tasks.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-healthcare-teal text-white rounded-lg flex items-center justify-center font-bold">
+                  <div className="w-16 h-12 sm:w-12 sm:h-12 bg-healthcare-teal text-white rounded-lg flex items-center justify-center font-bold text-sm whitespace-nowrap flex-shrink-0">
                     24
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-lg mb-2">Around-the-Clock Care</h4>
-                    <p className="text-gray-600">Continuous care and monitoring for clients with complex needs or recovering from surgery.</p>
+                    <p className="text-gray-600 text-sm sm:text-base">Continuous care and monitoring for clients with complex needs or recovering from surgery.</p>
                   </div>
                 </div>
               </div>

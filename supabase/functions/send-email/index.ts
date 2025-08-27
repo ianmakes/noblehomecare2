@@ -101,7 +101,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log('Sending email with data:', formData);
 
     const emailResponse = await resend.emails.send({
-      from: "Premier Healthcare of Georgia <noreply@premierhealthcarega.com>",
+      from: "Premier Healthcare of Georgia <no-reply@resend.dev>",
       to: ["service.premierhealthcarega@gmail.com"],
       subject: subject,
       html: htmlTemplate,
