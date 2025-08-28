@@ -1,333 +1,299 @@
-import { useState, useEffect } from 'react';
-import { Heart, Users, Award, Shield, Clock, CheckCircle, Star, Target, Eye, Lightbulb } from 'lucide-react';
+
+import { Heart, Users, Award, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
 
 const About = () => {
-  // Mouse interaction state for hero section
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  const team = [
-    {
-      name: "Dr. Sarah Johnson",
-      role: "Chief Medical Officer",
-      image: "/lovable-uploads/da2b87a9-d374-4af8-aa31-a98453ea65fa.png",
-      description: "Over 15 years of experience in geriatric medicine and home healthcare management."
-    },
-    {
-      name: "Michael Chen",
-      role: "Director of Operations",
-      image: "/lovable-uploads/8c0494eb-78a4-4c3a-9b01-dcbf91d3b46e.png",
-      description: "Specialist in healthcare operations with a focus on patient-centered care coordination."
-    },
-    {
-      name: "Lisa Rodriguez",
-      role: "Head of Nursing",
-      image: "/lovable-uploads/ea030fec-429e-4901-a84b-b3e41ab539b4.png",
-      description: "Licensed RN with expertise in home health services and compassionate patient care."
-    }
-  ];
-
   const values = [
     {
-      icon: <Heart className="w-8 h-8 text-healthcare-teal" />,
+      icon: <Heart className="w-12 h-12 text-healthcare-primary" />,
       title: "Compassionate Care",
-      description: "Every interaction is guided by empathy, respect, and genuine concern for our clients' well-being."
+      description: "Every client is treated like family, with dignity, respect, and genuine care."
     },
     {
-      icon: <Shield className="w-8 h-8 text-black" />,
-      title: "Professional Excellence",
-      description: "Our team maintains the highest standards of medical and personal care through continuous training."
+      icon: <Shield className="w-12 h-12 text-healthcare-secondary" />,
+      title: "Trust & Safety", 
+      description: "Rigorous background checks, licensing, and insurance for complete peace of mind."
     },
     {
-      icon: <Users className="w-8 h-8 text-healthcare-teal" />,
-      title: "Family-Centered Approach",
-      description: "We work closely with families to ensure coordinated care that meets everyone's needs."
+      icon: <Users className="w-12 h-12 text-healthcare-primary" />,
+      title: "Family-Centered",
+      description: "We understand the importance of family involvement in the care process."
     },
     {
-      icon: <Clock className="w-8 h-8 text-black" />,
-      title: "Reliable Service",
-      description: "Dependable care you can count on, available when you need it most, 24/7."
+      icon: <Award className="w-12 h-12 text-healthcare-secondary" />,
+      title: "Excellence",
+      description: "Committed to providing the highest quality of care and service standards."
     }
   ];
 
-  const stats = [
-    { number: "14,656+", label: "Families Served", icon: <Users className="w-6 h-6 text-healthcare-teal" /> },
-    { number: "98%", label: "Satisfaction Rate", icon: <Star className="w-6 h-6 text-healthcare-teal" /> },
-    { number: "15+", label: "Years Experience", icon: <Award className="w-6 h-6 text-healthcare-teal" /> },
-    { number: "24/7", label: "Care Available", icon: <Clock className="w-6 h-6 text-healthcare-teal" /> }
+  const teamMembers = [
+    {
+      role: "Certified Nursing Assistants (CNAs)",
+      description: "Trained professionals providing hands-on personal care and daily living assistance."
+    },
+    {
+      role: "Personal Care Assistants (PCAs)", 
+      description: "Compassionate caregivers focused on maintaining client independence and comfort."
+    },
+    {
+      role: "Companions & Sitters",
+      description: "Friendly, engaging companions providing social interaction and emotional support."
+    },
+    {
+      role: "Skilled Nursing Staff (RNs/LPNs)",
+      description: "Licensed nurses providing medical care and health monitoring services."
+    }
+  ];
+
+  // Alternating commitment card colors
+  const commitmentCards = [
+    {
+      icon: <Shield className="w-12 h-12 text-healthcare-teal mx-auto mb-4" />,
+      title: "Safe, High-Quality Care",
+      description: "Providing safe, high-quality, and compassionate care that meets the highest standards of healthcare excellence."
+    },
+    {
+      icon: <Users className="w-12 h-12 text-gray-800 mx-auto mb-4" />,
+      title: "Supporting Independence", 
+      description: "Supporting independence while ensuring peace of mind for families through comprehensive care planning and communication."
+    },
+    {
+      icon: <Heart className="w-12 h-12 text-healthcare-teal mx-auto mb-4" />,
+      title: "Building Trust",
+      description: "Building trust through respect, kindness, and professionalism in every interaction with our clients and their families."
+    }
   ];
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Interactive Background */}
-      <section 
-        className="relative healthcare-gradient text-white py-12 md:py-16 lg:py-24 overflow-hidden"
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
-      >
-        {/* Interactive Background Elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Base gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 via-transparent to-healthcare-pink/20"></div>
-          
-          {/* Animated floating orbs */}
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-          
-          {/* Interactive cursor followers */}
-          {isHovering && (
-            <>
-              <div 
-                className="absolute w-32 h-32 bg-white/3 rounded-full blur-2xl transition-all duration-700 ease-out"
-                style={{
-                  left: mousePosition.x - 64,
-                  top: mousePosition.y - 64,
-                  transform: 'translate(-50%, -50%)'
-                }}
-              />
-              <div 
-                className="absolute w-20 h-20 bg-healthcare-pink/10 rounded-full blur-xl transition-all duration-1000 ease-out"
-                style={{
-                  left: mousePosition.x - 40,
-                  top: mousePosition.y - 40,
-                  transform: 'translate(-30%, -70%)'
-                }}
-              />
-              <div 
-                className="absolute w-16 h-16 bg-healthcare-teal/10 rounded-full blur-lg transition-all duration-500 ease-out"
-                style={{
-                  left: mousePosition.x - 32,
-                  top: mousePosition.y - 32,
-                  transform: 'translate(-70%, -30%)'
-                }}
-              />
-            </>
-          )}
-          
-          {/* Floating particles */}
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/20 rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
-          <div className="absolute top-3/4 right-1/4 w-1.5 h-1.5 bg-white/15 rounded-full animate-bounce" style={{animationDelay: '1.5s'}}></div>
-          <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-white/10 rounded-full animate-bounce" style={{animationDelay: '2.5s'}}></div>
-          <div className="absolute top-1/3 left-1/2 w-2.5 h-2.5 bg-white/15 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
-        </div>
-        
-        <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      {/* Hero Section */}
+      <section className="healthcare-gradient text-white section-padding">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight text-healthcare-teal">
-                About Premier Healthcare<br />
-                <span className="text-white">of Georgia</span>
+              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+                Our Story Begins With<br />
+                <span className="text-primary-light">Family</span>
               </h1>
-              <p className="text-lg md:text-xl mb-6 md:mb-8 text-white/90 leading-relaxed">
-                Since 2009, we've been providing exceptional home healthcare services across Georgia, 
-                helping families maintain their independence with dignity and compassion.
+              <p className="text-xl text-white/90 leading-relaxed">
+                Founded on the belief that everyone deserves compassionate, personalized care, 
+                Premier Healthcare of Georgia was born from a deeply personal experience of caring for family.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                <Link to="/services">
-                  <Button className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 transform hover:scale-105 transition-all duration-300">
-                    Our Services
-                  </Button>
-                </Link>
-                <Link to="/contact">
-                  <Button className="btn-healthcare-outline border-white hover:text-healthcare-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 bg-slate-50 text-lime-600 transform hover:scale-105 transition-all duration-300">
-                    Contact Us
-                  </Button>
-                </Link>
+            </div>
+            <div className="animate-slide-in">
+              <img 
+                src="/lovable-uploads/15bc09e2-4d42-4ece-8306-58522dcd86bb.png"
+                alt="Healthcare professional providing compassionate care to elderly patient"
+                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Story - White Background */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src="/lovable-uploads/7686592a-70f2-4b59-9fae-75d514f90cfc.png"
+                alt="Caregiver assisting elderly woman showing compassionate care"
+                className="rounded-2xl shadow-xl w-full h-[500px] object-cover"
+              />
+            </div>
+            
+            <div>
+              <h2 className="text-healthcare-teal font-bold mb-6">The Heart of Our Company</h2>
+              <div className="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                  The heart of our company was born out of family. When my grandmother needed care, 
+                  I saw firsthand how important it is to have compassionate, reliable, and personalized 
+                  support at home. Entrusting someone to care for her showed me that true home care 
+                  goes beyond daily tasks—it's about dignity, trust, and creating comfort for both 
+                  the client and their family.
+                </p>
+                <p>
+                  Inspired by her journey, I founded Premier Healthcare of Georgia with the mission 
+                  to provide the same level of care, respect, and attentiveness to others that I 
+                  wanted for my own loved one. Every client we serve is treated like family, 
+                  because we know what it means to entrust someone with the care of those you love most.
+                </p>
+                <div className="bg-healthcare-secondary/10 p-6 rounded-lg border-l-4 border-healthcare-secondary">
+                  <p className="font-medium text-healthcare-secondary italic">
+                    "At Premier Healthcare of Georgia, our passion is personal—and our care is from the heart."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Commitment - Light Background */}
+      <section className="section-padding bg-healthcare-accent">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-healthcare-teal font-bold mb-4">Our Commitment</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We are dedicated to providing exceptional care that makes a real difference in the lives 
+              of our clients and their families.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {commitmentCards.map((card, index) => (
+              <div key={index} className="healthcare-card text-center">
+                {card.icon}
+                <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
+                <p className="text-gray-600">{card.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Diverse Care Services Section - Background with Overlay */}
+      <section className="section-padding relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/5 to-healthcare-pink/5"></div>
+        <div className="container-custom relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-healthcare-teal font-bold mb-6">Culturally Sensitive Care</h2>
+              <div className="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                  We understand that quality healthcare goes beyond medical expertise—it requires 
+                  cultural sensitivity and respect for diverse backgrounds, traditions, and preferences. 
+                  Our diverse team of caregivers reflects the communities we serve.
+                </p>
+                <p>
+                  From dietary preferences to communication styles, we ensure that each client receives 
+                  care that honors their cultural identity and personal values. This approach creates 
+                  a more comfortable and trusting environment for both clients and their families.
+                </p>
+                <div className="flex items-start space-x-4">
+                  <Heart className="w-6 h-6 text-healthcare-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2">Multilingual Support</h4>
+                    <p className="text-gray-600">Our team includes caregivers who speak multiple languages to ensure clear communication.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <Users className="w-6 h-6 text-healthcare-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2">Cultural Awareness Training</h4>
+                    <p className="text-gray-600">All our staff receive training in cultural competency and sensitivity.</p>
+                  </div>
+                </div>
               </div>
             </div>
             
-            <div className="animate-slide-in">
+            <div>
               <img 
-                src="/lovable-uploads/da2b87a9-d374-4af8-aa31-a98453ea65fa.png" 
-                alt="Premier Healthcare of Georgia team providing compassionate care" 
-                className="rounded-2xl shadow-2xl w-full h-[400px] md:h-[500px] object-cover"
+                src="/lovable-uploads/cdf8a634-5e38-4f78-bafd-6f8f97f82efd.png"
+                alt="Diverse healthcare professional providing care with cultural sensitivity"
+                className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Story Section - White Background */}
-      <section className="py-12 md:py-16 lg:py-24">
+      {/* Our Values - White Background */}
+      <section className="section-padding">
         <div className="container-custom">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-healthcare-teal font-bold mb-4">Our Story</h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Founded in 2009 by a team of dedicated healthcare professionals, Premier Healthcare of Georgia was born out of a desire to provide more personalized and compassionate care to families in need.
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div>
-              <p className="text-gray-600 mb-6 md:mb-8">
-                We recognized that many individuals thrive best in the comfort and familiarity of their own homes. Our mission became to deliver high-quality, in-home care services that allow our clients to maintain their independence and dignity.
-              </p>
-              <p className="text-gray-600">
-                Over the years, we've grown from a small team to a leading provider of home healthcare in Georgia. But our commitment to our founding principles remains unchanged: to provide compassionate, reliable, and personalized care that makes a positive difference in the lives of our clients and their families.
-              </p>
-            </div>
-            
-            <div>
-              <img src="/lovable-uploads/3600bcd1-540d-44f8-a44b-51a1dbe8d8af.png" alt="Healthcare professional assisting elderly patient at home" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Mission Section - Light Background with Subtle Pattern */}
-      <section className="py-12 md:py-16 lg:py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/5 to-healthcare-pink/5"></div>
-        <div className="container-custom relative z-10">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-healthcare-teal font-bold mb-4">Our Mission</h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              To provide compassionate, reliable, and personalized home healthcare services that enhance the quality of life for our clients and their families.
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
-            <div className="text-center healthcare-card animate-fade-in">
-              <Target className="w-8 h-8 text-healthcare-teal mx-auto mb-3" />
-              <h3 className="text-lg font-semibold mb-2 text-gray-800">Client-Centered Care</h3>
-              <p className="text-sm text-gray-600">We prioritize the unique needs and preferences of each client, ensuring personalized care plans.</p>
-            </div>
-            
-            <div className="text-center healthcare-card animate-fade-in" style={{animationDelay: '0.1s'}}>
-              <Eye className="w-8 h-8 text-healthcare-teal mx-auto mb-3" />
-              <h3 className="text-lg font-semibold mb-2 text-gray-800">Compassionate Support</h3>
-              <p className="text-sm text-gray-600">Our caregivers provide emotional support and companionship, fostering a sense of well-being.</p>
-            </div>
-            
-            <div className="text-center healthcare-card animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <Lightbulb className="w-8 h-8 text-healthcare-teal mx-auto mb-3" />
-              <h3 className="text-lg font-semibold mb-2 text-gray-800">Professional Excellence</h3>
-              <p className="text-sm text-gray-600">We maintain the highest standards of medical and personal care through continuous training and oversight.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Values Section - White Background */}
-      <section className="py-12 md:py-16 lg:py-24">
-        <div className="container-custom">
-          <div className="text-center mb-12 md:mb-16">
+          <div className="text-center mb-16">
             <h2 className="text-healthcare-teal font-bold mb-4">Our Core Values</h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Our values guide every action we take, ensuring we deliver the highest standard of care.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              These values guide everything we do and every decision we make in serving our clients and their families.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div key={index} className="healthcare-card text-center animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="flex justify-center mb-4">
                   {value.icon}
                 </div>
-                <h3 className="text-lg md:text-xl font-semibold mb-3 text-gray-800">{value.title}</h3>
-                <p className="text-sm md:text-base text-gray-600">{value.description}</p>
+                <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Team Section - Background Image with Overlay */}
-      <section className="py-12 md:py-16 lg:py-24 relative">
+      {/* Our Care Team - Background Image with Overlay */}
+      <section className="section-padding relative">
         <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`}}>
-          <div className="absolute inset-0 bg-white/90 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
         </div>
         <div className="container-custom relative z-10">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-healthcare-teal font-bold mb-4">Meet Our Team</h2>
-            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-              Our team of experienced and compassionate professionals is dedicated to providing the best possible care.
+          <div className="text-center mb-16">
+            <h2 className="text-healthcare-teal font-bold mb-4">Our Professional Care Team</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our diverse team of healthcare professionals brings expertise, compassion, and dedication 
+              to every client we serve.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="healthcare-card text-center animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
-                <img src={member.image} alt={member.name} className="rounded-full w-24 h-24 mx-auto mb-4 object-cover" />
-                <h3 className="text-lg font-semibold mb-2 text-gray-800">{member.name}</h3>
-                <p className="text-sm text-gray-600 mb-3">{member.role}</p>
-                <p className="text-sm text-gray-600">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Commitment Section - White Background */}
-      <section className="py-12 md:py-16 lg:py-24">
-        <div className="container-custom">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-healthcare-teal font-bold mb-4">Our Commitment</h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              We are committed to providing the highest quality of care and support to our clients and their families.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <div className="flex items-start space-x-4 animate-fade-in">
-              <CheckCircle className="w-6 h-6 text-healthcare-teal flex-shrink-0" />
-              <div>
-                <h4 className="font-semibold text-base mb-2 text-gray-800">Personalized Care Plans</h4>
-                <p className="text-sm text-gray-600">We tailor our care plans to meet the unique needs and preferences of each client.</p>
-              </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            <div>
+              <img 
+                src="/lovable-uploads/09449ac1-8944-4327-8545-881177fb32e1.png"
+                alt="Healthcare professional providing emotional support and care to patient"
+                className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
+              />
             </div>
             
-            <div className="flex items-start space-x-4 animate-fade-in" style={{animationDelay: '0.1s'}}>
-              <CheckCircle className="w-6 h-6 text-healthcare-teal flex-shrink-0" />
-              <div>
-                <h4 className="font-semibold text-base mb-2 text-gray-800">Experienced Caregivers</h4>
-                <p className="text-sm text-gray-600">Our caregivers are thoroughly vetted, trained, and dedicated to providing compassionate care.</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start space-x-4 animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <CheckCircle className="w-6 h-6 text-healthcare-teal flex-shrink-0" />
-              <div>
-                <h4 className="font-semibold text-base mb-2 text-gray-800">24/7 Availability</h4>
-                <p className="text-sm text-gray-600">We are available around the clock to provide care and support when you need it most.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section - Healthcare Gradient Background */}
-      <section className="healthcare-gradient text-white py-12 md:py-16 lg:py-24">
-        <div className="container-custom text-center">
-          <h2 className="font-bold mb-4 md:mb-6">
-            Our Dedication in Numbers
-          </h2>
-          <p className="text-lg md:text-xl text-white/90 mb-6 md:mb-8 max-w-3xl mx-auto">
-            We measure our success by the positive impact we have on the lives of our clients and their families.
-          </p>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="flex items-center justify-center space-x-2 mb-3">
-                  {stat.icon}
-                  <div className="text-3xl md:text-4xl font-bold">{stat.number}</div>
+            <div className="space-y-6">
+              {teamMembers.map((member, index) => (
+                <div key={index} className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-healthcare-secondary rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2 text-healthcare-secondary">{member.role}</h4>
+                    <p className="text-gray-600">{member.description}</p>
+                  </div>
                 </div>
-                <div className="text-sm md:text-base text-white/80">{stat.label}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+          
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold text-healthcare-secondary mb-4">
+                Rigorous Screening & Training
+              </h3>
+              <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
+                Every member of our care team undergoes comprehensive background checks, drug screening, 
+                reference verification, and ongoing training to ensure they meet our high standards of 
+                care and professionalism.
+              </p>
+              <Link to="/services">
+                <Button className="btn-healthcare">
+                  Learn About Our Services
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="healthcare-gradient text-white section-padding">
+        <div className="container-custom text-center">
+          <h2 className="font-bold mb-6">Ready to Experience Compassionate Care?</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Let us show you how our family-centered approach to healthcare can make a difference 
+            in your life or the life of your loved one.
+          </p>
+          <Link to="/contact">
+            <Button className="btn-healthcare-secondary text-lg px-8 py-4">
+              Contact Us Today
+            </Button>
+          </Link>
         </div>
       </section>
 
