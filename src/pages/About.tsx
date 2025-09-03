@@ -132,7 +132,46 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Commitment - Light Background */}
+      {/* About Our Founder - Light Background */}
+      <section className="section-padding bg-healthcare-accent">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-healthcare-teal font-bold mb-6">Meet Our Founder</h2>
+              <div className="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                  Augustina Gibson is originally from Ghana and brings a global perspective and compassion to her work in healthcare. 
+                  With a Bachelor of Science in Nursing, she has built a diversified career serving individuals with intellectual 
+                  and developmental disabilities (IDD).
+                </p>
+                <p>
+                  For more than 15 years, she directed a day program where she demonstrated her commitment to instilling hope, 
+                  dignity, and healing in underserved communities. Building on this foundation, she established Premier Healthcare 
+                  of Georgia to continue her mission of providing personalized and compassionate home care services.
+                </p>
+                <p>
+                  In her spare time, Augustina enjoys spending time with her husband and children.
+                </p>
+                <div className="bg-healthcare-primary/10 p-6 rounded-lg border-l-4 border-healthcare-primary">
+                  <p className="font-medium text-healthcare-primary">
+                    <strong>Mission:</strong> To provide personalized and compassionate home care services that honor dignity and inspire hope in every client we serve.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <img 
+                src="/lovable-uploads/15bc09e2-4d42-4ece-8306-58522dcd86bb.png"
+                alt="Augustina Gibson, Founder of Premier Healthcare of Georgia"
+                className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Commitment - White Background */}
       <section className="section-padding bg-healthcare-accent">
         <div className="container-custom">
           <div className="text-center mb-16">
