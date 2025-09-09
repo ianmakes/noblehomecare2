@@ -1,4 +1,3 @@
-
 import { supabase } from '@/integrations/supabase/client';
 
 interface FormData {
@@ -11,7 +10,7 @@ interface FormData {
   message: string;
 }
 
-export const sendFormEmail = async (formData: FormData, formType: 'consultation' | 'care-needs') => {
+export const sendFormEmail = async (formData: FormData, formType: 'consultation' | 'care-needs' | 'job-application') => {
   try {
     console.log('Sending email via Supabase Edge Function:', { formData, formType });
     
@@ -35,7 +34,9 @@ export const sendFormEmail = async (formData: FormData, formType: 'consultation'
     // Fallback to mailto as backup
     const subject = formType === 'consultation' 
       ? 'New Free Consultation Request - Premier Healthcare of Georgia'
-      : 'New Care Needs Assessment - Premier Healthcare of Georgia';
+      : formType === 'care-needs'
+      ? 'New Care Needs Assessment - Premier Healthcare of Georgia'
+      : 'New Job Application - Premier Healthcare of Georgia';
 
     const body = `Contact Information:
 - Name: ${formData.name}
@@ -50,8 +51,8 @@ Care Requirements:
 ${formData.message ? `Additional Information:\n${formData.message}` : ''}
 
 ---
-This ${formType === 'consultation' ? 'consultation request' : 'care assessment'} was submitted through premierhealthcarega.com
-Please respond within 24 hours as promised to the client.`;
+This ${formType === 'consultation' ? 'consultation request' : formType === 'care-needs' ? 'care assessment' : 'job application'} was submitted through premierhealthcarega.com
+Please respond within 24 hours as promised to the ${formType === 'job-application' ? 'applicant' : 'client'}.`;
 
     const mailtoLink = `mailto:service.premierhealthcarega@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoLink);
