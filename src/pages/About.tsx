@@ -163,9 +163,9 @@ const About = () => {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 to-healthcare-primary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
               <img 
-                src="/lovable-uploads/4e296e6f-b5e4-4ab5-ad5c-32d29981d48a.png"
+                src="/lovable-uploads/a2734e4d-72c1-4860-90ed-a2ff6a0a0772.png"
                 alt="Augustina Gibson, Founder of Premier Healthcare of Georgia"
-                className="relative rounded-2xl shadow-xl w-full h-[400px] object-cover transform group-hover:scale-105 transition-all duration-500 border-2 border-white/50"
+                className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto object-contain transform group-hover:scale-105 transition-all duration-500 border-2 border-white/50"
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-healthcare-teal/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
             </div>

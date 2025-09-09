@@ -8,8 +8,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { toast } from 'sonner';
-import { Heart, Users, Shield, Award, Briefcase, Clock, Star } from 'lucide-react';
+import { Heart, Users, Shield, Award, Briefcase, Clock, Star, Mail, FileText, Upload } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { sendFormEmail } from '@/utils/emailService';
 
@@ -26,6 +27,8 @@ const jobApplicationSchema = z.object({
   experience: z.string().min(1, 'Please select your experience level'),
   availability: z.array(z.string()).min(1, 'Please select at least one availability option'),
   certifications: z.string().optional(),
+  coverLetter: z.string().min(50, 'Please provide a cover letter (minimum 50 characters)'),
+  resume: z.string().min(1, 'Please upload your resume'),
   previousExperience: z.string().min(10, 'Please provide details about your previous experience'),
   whyInterested: z.string().min(10, 'Please tell us why you are interested in this position'),
   references: z.string().min(10, 'Please provide at least one reference'),
@@ -37,6 +40,7 @@ type JobApplicationForm = z.infer<typeof jobApplicationSchema>;
 
 const Jobs = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const form = useForm<JobApplicationForm>({
     resolver: zodResolver(jobApplicationSchema),
@@ -53,6 +57,8 @@ const Jobs = () => {
       experience: '',
       availability: [],
       certifications: '',
+      coverLetter: '',
+      resume: '',
       previousExperience: '',
       whyInterested: '',
       references: '',
@@ -79,6 +85,11 @@ Experience Level: ${data.experience}
 Availability: ${data.availability.join(', ')}
 Certifications: ${data.certifications || 'None specified'}
 
+Cover Letter:
+${data.coverLetter}
+
+Resume: ${data.resume}
+
 Previous Experience:
 ${data.previousExperience}
 
@@ -93,6 +104,7 @@ ${data.references}`,
       
       toast.success('Application submitted successfully! We will review your application and contact you soon.');
       form.reset();
+      setIsDialogOpen(false);
     } catch (error) {
       console.error('Error submitting application:', error);
       toast.error('There was an error submitting your application. Please try again or contact us directly.');
@@ -164,9 +176,34 @@ ${data.references}`,
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
               Join Our <span className="text-primary-light">Care Team</span>
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed animate-fade-in">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed animate-fade-in mb-8">
               Be part of a mission-driven organization that values compassion, excellence, and making a real difference in people's lives.
             </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button className="btn-healthcare-secondary text-lg px-8 py-4 flex items-center gap-2">
+                    <FileText className="w-5 h-5" />
+                    Apply via Form
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl text-healthcare-teal">Job Application</DialogTitle>
+                  </DialogHeader>
+                  {/* Form content will be moved here */}
+                </DialogContent>
+              </Dialog>
+              
+              <Button 
+                className="btn-healthcare text-lg px-8 py-4 flex items-center gap-2"
+                onClick={() => window.location.href = 'mailto:service.premierhealthcarega@gmail.com?subject=Job Application&body=Hello, I would like to apply for a position at Premier Healthcare of Georgia. Please find my resume attached.'}
+              >
+                <Mail className="w-5 h-5" />
+                Apply via Email
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -232,15 +269,12 @@ ${data.references}`,
       <section className="section-padding relative">
         <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/5 to-healthcare-primary/5"></div>
         <div className="container-custom relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-healthcare-teal font-bold mb-4">Apply Today</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ready to start your rewarding career with Premier Healthcare? Fill out the application below and we'll be in touch soon.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle className="text-2xl text-healthcare-teal mb-6">Job Application</DialogTitle>
+              </DialogHeader>
+              
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                   {/* Personal Information */}
@@ -431,6 +465,68 @@ ${data.references}`,
                     </div>
                   </div>
 
+                  {/* Cover Letter & Resume */}
+                  <div>
+                    <h3 className="text-xl font-semibold text-healthcare-teal mb-6">Application Materials</h3>
+                    <div className="space-y-6">
+                      <FormField
+                        control={form.control}
+                        name="coverLetter"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Cover Letter *</FormLabel>
+                            <FormControl>
+                              <Textarea 
+                                placeholder="Please write a cover letter explaining your interest in this position and why you would be a good fit for our team..."
+                                className="min-h-[150px]"
+                                {...field} 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="resume"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Resume *</FormLabel>
+                            <FormControl>
+                              <div className="flex items-center space-x-2">
+                                <Input 
+                                  type="file" 
+                                  accept=".pdf,.doc,.docx"
+                                  onChange={(e) => {
+                                    const file = e.target.files?.[0];
+                                    if (file) {
+                                      field.onChange(file.name);
+                                    }
+                                  }}
+                                  className="hidden" 
+                                  id="resume-upload"
+                                />
+                                <label 
+                                  htmlFor="resume-upload" 
+                                  className="flex items-center justify-center px-4 py-2 bg-healthcare-accent border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50 transition-colors"
+                                >
+                                  <Upload className="w-4 h-4 mr-2" />
+                                  Choose File
+                                </label>
+                                <span className="text-sm text-gray-600">
+                                  {field.value || 'No file selected'}
+                                </span>
+                              </div>
+                            </FormControl>
+                            <p className="text-sm text-gray-500">Accepted formats: PDF, DOC, DOCX</p>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                  </div>
+
                   {/* Availability */}
                   <div>
                     <h3 className="text-xl font-semibold text-healthcare-teal mb-6">Availability *</h3>
@@ -596,8 +692,8 @@ ${data.references}`,
                   </div>
                 </form>
               </Form>
-            </div>
-          </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
 
