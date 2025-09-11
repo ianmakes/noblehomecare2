@@ -136,6 +136,16 @@ const About = () => {
       <section className="section-padding bg-healthcare-accent">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 to-healthcare-primary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+              <img 
+                src="/lovable-uploads/a2734e4d-72c1-4860-90ed-a2ff6a0a0772.png"
+                alt="Augustina Gibson, Founder of Premier Healthcare of Georgia"
+                className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto object-contain transform group-hover:scale-105 transition-all duration-500 border-2 border-white/50"
+              />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-healthcare-teal/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+            </div>
+            
             <div>
               <h2 className="text-healthcare-teal font-bold mb-6">Meet Our Founder</h2>
               <div className="space-y-6 text-gray-700 leading-relaxed">
@@ -158,16 +168,6 @@ const About = () => {
                   </p>
                 </div>
               </div>
-            </div>
-            
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 to-healthcare-primary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-              <img 
-                src="/lovable-uploads/a2734e4d-72c1-4860-90ed-a2ff6a0a0772.png"
-                alt="Augustina Gibson, Founder of Premier Healthcare of Georgia"
-                className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto object-contain transform group-hover:scale-105 transition-all duration-500 border-2 border-white/50"
-              />
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-healthcare-teal/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
             </div>
           </div>
         </div>
