@@ -53,11 +53,11 @@ const Navigation = () => {
         <div className="container-custom">
           <div className="flex justify-between items-center py-3 md:py-4">
             <Link to="/" onClick={handleNavClick} className="flex items-center space-x-2">
-              <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+              <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/premier-healthcare-logo.png" 
                   alt="Premier Healthcare Logo" 
-                  className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                  className="w-12 h-12 md:w-16 md:h-16 object-contain"
                 />
               </div>
               <div>
