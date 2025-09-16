@@ -16,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 88 42% 58%; /* Green primary #8fc069 */
+    --primary: 123 18% 51%; /* Green primary #6b996d */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 88 45% 65%; /* Lighter green */
+    --secondary: 123 25% 60%; /* Lighter green */
     --secondary-foreground: 0 0% 100%;
 
     --healthcare-pink: 333 71% 58%; /* Soft pink accent */
@@ -28,7 +28,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 88 45% 65%;
+    --accent: 123 25% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -36,14 +36,14 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 88 42% 58%;
+    --ring: 123 18% 51%;
 
     --radius: 0.75rem;
 
     /* Healthcare specific colors */
-    --healthcare-green: 88 42% 58%; /* #8fc069 */
-    --healthcare-green-light: 88 45% 65%;
-    --healthcare-green-dark: 88 40% 50%;
+    --healthcare-green: 123 18% 51%; /* #6b996d */
+    --healthcare-green-light: 123 25% 60%;
+    --healthcare-green-dark: 123 15% 40%;
     --healthcare-gray: 215 20% 65%;
     --healthcare-gray-light: 210 40% 96%;
   }
@@ -55,7 +55,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 88 45% 65%;
+    --primary: 123 25% 60%;
     --primary-foreground: 222.2 84% 4.9%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -67,7 +67,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 88 45% 65%;
+    --ring: 123 25% 60%;
   }
 }
 
