@@ -80,9 +80,9 @@ const Services = () => {
       <section className="healthcare-gradient text-white section-padding">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-teal-800">
+            <h1 className="text-4xl font-bold mb-6 text-white lg:text-5xl">
               Comprehensive Home Care<br />
-              <span className="text-cyan-900">Services</span>
+              <span className="text-white">Services</span>
             </h1>
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
               From 1-24 hours per day, we provide personalized care services that help you maintain 
