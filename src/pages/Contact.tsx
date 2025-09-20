@@ -45,9 +45,9 @@ const Contact = () => {
       <section className="healthcare-gradient text-white section-padding">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-cyan-900">
+            <h1 className="text-4xl font-bold mb-6 text-white lg:text-5xl">
               Contact Premier Healthcare<br />
-              <span className="text-cyan-900">of Georgia</span>
+              <span className="text-white">of Georgia</span>
             </h1>
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
               Ready to start your journey to better care? Our compassionate team is here to help 
