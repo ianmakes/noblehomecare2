@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Heart, Users, Clock, Shield, MapPin, Award, CheckCircle, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,14 +5,12 @@ import { Link } from 'react-router-dom';
 import ContactModal from '@/components/ContactModal';
 import Footer from '@/components/Footer';
 import HeroSlider from '@/components/HeroSlider';
-
 const Home = () => {
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   const [isCareNeedsModalOpen, setIsCareNeedsModalOpen] = useState(false);
-
   const services = [{
     icon: <Heart className="w-8 h-8 text-healthcare-primary" />,
-    title: "Personal Care", 
+    title: "Personal Care",
     description: "Bathing, grooming, toileting, and daily living assistance with dignity and respect."
   }, {
     icon: <Users className="w-8 h-8 text-healthcare-secondary" />,
@@ -28,15 +25,13 @@ const Home = () => {
     title: "Skilled Nursing",
     description: "Professional nursing care by licensed RNs and LPNs for medical conditions."
   }];
-
   const counties = ['Fayette', 'Fulton', 'Clayton', 'Cobb', 'Coweta', 'DeKalb', 'Carroll', 'Douglas', 'Gwinnett', 'Henry'];
-
   const careProcess = [{
     step: "1",
     title: "Care Needs Assessment",
     description: "Complete our quick questionnaire to help us understand your specific care requirements."
   }, {
-    step: "2", 
+    step: "2",
     title: "Free Consultation",
     description: "Our care team will contact you within 24 hours to discuss your needs and answer questions."
   }, {
@@ -48,21 +43,29 @@ const Home = () => {
     title: "Caregiver Matching",
     description: "We match you with qualified, compassionate caregivers who fit your personality and needs."
   }];
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section - Enhanced Background with Animations */}
       <section className="relative healthcare-gradient text-white py-12 md:py-16 lg:py-24 overflow-hidden">
         {/* Enhanced Background Pattern with Animations */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 via-transparent to-healthcare-pink/20"></div>
           <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/3 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl animate-pulse" style={{
+          animationDelay: '1s'
+        }}></div>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/3 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl animate-pulse" style={{
+          animationDelay: '2s'
+        }}></div>
           {/* Floating elements */}
-          <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-white/10 rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
-          <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-white/10 rounded-full animate-bounce" style={{animationDelay: '1.5s'}}></div>
-          <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-white/10 rounded-full animate-bounce" style={{animationDelay: '2.5s'}}></div>
+          <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-white/10 rounded-full animate-bounce" style={{
+          animationDelay: '0.5s'
+        }}></div>
+          <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-white/10 rounded-full animate-bounce" style={{
+          animationDelay: '1.5s'
+        }}></div>
+          <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-white/10 rounded-full animate-bounce" style={{
+          animationDelay: '2.5s'
+        }}></div>
         </div>
         
         <div className="container-custom relative z-10">
@@ -104,15 +107,15 @@ const Home = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="healthcare-card text-center animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+            {services.map((service, index) => <div key={index} className="healthcare-card text-center animate-fade-in" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
                 <div className="flex justify-center mb-4">
                   {service.icon}
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold mb-3 text-gray-800">{service.title}</h3>
                 <p className="text-sm md:text-base text-gray-600">{service.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -215,15 +218,15 @@ const Home = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {careProcess.map((process, index) => (
-              <div key={index} className="text-center animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-healthcare-secondary text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto mb-4 bg-lime-400">
+            {careProcess.map((process, index) => <div key={index} className="text-center animate-fade-in" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-healthcare-secondary text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto mb-4 bg-[#7eb080]">
                   {process.step}
                 </div>
                 <h3 className="text-base md:text-lg font-semibold mb-3 text-gray-800">{process.title}</h3>
                 <p className="text-sm md:text-base text-gray-600">{process.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           <div className="text-center mt-8 md:mt-12">
@@ -236,7 +239,9 @@ const Home = () => {
 
       {/* Service Areas - Enhanced with White Overlay */}
       <section className="py-12 md:py-16 lg:py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`}}>
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`
+      }}>
           <div className="absolute inset-0 bg-white/90 backdrop-blur-sm"></div>
         </div>
         
@@ -249,12 +254,12 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-            {counties.map((county, index) => (
-              <div key={index} className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl p-4 md:p-6 text-center animate-fade-in hover:bg-white/95 transition-all duration-300 shadow-sm" style={{animationDelay: `${index * 0.05}s`}}>
+            {counties.map((county, index) => <div key={index} className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl p-4 md:p-6 text-center animate-fade-in hover:bg-white/95 transition-all duration-300 shadow-sm" style={{
+            animationDelay: `${index * 0.05}s`
+          }}>
                 <MapPin className="w-6 h-6 md:w-8 md:h-8 text-healthcare-teal mx-auto mb-2 md:mb-3" />
                 <h4 className="font-semibold text-sm md:text-lg text-gray-800">{county} County</h4>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -294,7 +299,7 @@ const Home = () => {
               <Phone size={20} className="hidden md:block" />
               <span>Call Now: 470-210-7666</span>
             </Button>
-            <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-outline bg-white/10 border-white text-white hover:bg-white hover:text-healthcare-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
+            <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-outline border-white hover:text-healthcare-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 bg-white text-[#7eb080]">
               Schedule Free Consultation
             </Button>
           </div>
@@ -307,8 +312,6 @@ const Home = () => {
       <ContactModal isOpen={isCareNeedsModalOpen} onClose={() => setIsCareNeedsModalOpen(false)} type="care-needs" />
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
