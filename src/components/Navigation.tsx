@@ -53,7 +53,7 @@ const Navigation = () => {
 
         {/* Main navigation */}
         <div className="container-custom">
-          <div className="flex justify-between items-center py-3 md:py-4">
+          <div className="flex justify-between items-center">
             <Link to="/" onClick={handleNavClick} className="flex items-center space-x-3 md:space-x-4">
               <div className="flex items-center justify-center">
                 <img src="/lovable-uploads/premier-healthcare-logo.png" alt="Premier Healthcare Logo" className="w-20 h-20 md:w-24 md:h-24 object-contain" />
