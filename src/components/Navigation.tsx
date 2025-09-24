@@ -56,7 +56,7 @@ const Navigation = () => {
           <div className="flex justify-between items-center py-3 md:py-4">
             <Link to="/" onClick={handleNavClick} className="flex items-center space-x-3 md:space-x-4">
               <div className="flex items-center justify-center">
-                <img src="/lovable-uploads/premier-healthcare-logo.png" alt="Premier Healthcare Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
+                <img src="/lovable-uploads/premier-healthcare-logo.png" alt="Premier Healthcare Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
               </div>
               <div className="flex flex-col">
                 <h1 className="text-lg md:text-xl font-bold text-primary leading-tight">Premier Healthcare</h1>

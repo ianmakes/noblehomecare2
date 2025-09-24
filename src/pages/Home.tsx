@@ -107,15 +107,25 @@ const Home = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {services.map((service, index) => <div key={index} className="healthcare-card text-center animate-fade-in" style={{
-            animationDelay: `${index * 0.1}s`
-          }}>
-                <div className="flex justify-center mb-4">
-                  {service.icon}
+            {services.map((service, index) => {
+              const backgroundColors = [
+                "bg-gradient-to-br from-primary/10 to-primary/5",
+                "bg-gradient-to-br from-secondary/10 to-secondary/5", 
+                "bg-gradient-to-br from-primary/15 to-primary/8",
+                "bg-gradient-to-br from-secondary/15 to-secondary/8"
+              ];
+              return (
+                <div key={index} className={`healthcare-card text-center animate-fade-in ${backgroundColors[index]} border border-primary/10 hover:border-primary/20 transition-all`} style={{
+                  animationDelay: `${index * 0.1}s`
+                }}>
+                  <div className="flex justify-center mb-4">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold mb-3 text-gray-800">{service.title}</h3>
+                  <p className="text-sm md:text-base text-gray-600">{service.description}</p>
                 </div>
-                <h3 className="text-lg md:text-xl font-semibold mb-3 text-gray-800">{service.title}</h3>
-                <p className="text-sm md:text-base text-gray-600">{service.description}</p>
-              </div>)}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -125,7 +135,7 @@ const Home = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <img src="/lovable-uploads/da2b87a9-d374-4af8-aa31-a98453ea65fa.png" alt="Diverse healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
+              <img src="/lovable-uploads/healthcare-care-image.jpg" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
             </div>
             
             <div>

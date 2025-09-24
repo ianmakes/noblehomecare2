@@ -26,6 +26,13 @@ const jobApplicationSchema = z.object({
   position: z.string().min(1, 'Please select a position'),
   experience: z.string().min(1, 'Please select your experience level'),
   availability: z.array(z.string()).min(1, 'Please select at least one availability option'),
+  workAnywhereInGeorgia: z.string().min(1, 'Please select if you can work anywhere in Georgia'),
+  countiesCanWork: z.string().optional(),
+  willingToTravel: z.string().min(1, 'Please select if you are willing to travel'),
+  education: z.string().min(1, 'Please select your education level'),
+  gender: z.string().min(1, 'Please select your gender'),
+  ethnicity: z.string().min(1, 'Please select your ethnicity'),
+  languagesSpoken: z.string().min(1, 'Please list languages you speak'),
   certifications: z.string().optional(),
   coverLetter: z.string().min(50, 'Please provide a cover letter (minimum 50 characters)'),
   resume: z.string().min(1, 'Please upload your resume'),
@@ -56,6 +63,13 @@ const Jobs = () => {
       position: '',
       experience: '',
       availability: [],
+      workAnywhereInGeorgia: '',
+      countiesCanWork: '',
+      willingToTravel: '',
+      education: '',
+      gender: '',
+      ethnicity: '',
+      languagesSpoken: '',
       certifications: '',
       coverLetter: '',
       resume: '',
@@ -83,6 +97,16 @@ Address: ${data.address}, ${data.city}, ${data.state} ${data.zipCode}
 Position Applied For: ${data.position}
 Experience Level: ${data.experience}
 Availability: ${data.availability.join(', ')}
+
+WORK LOCATION & DEMOGRAPHICS:
+Can work anywhere in Georgia: ${data.workAnywhereInGeorgia}
+Counties can work in: ${data.countiesCanWork || 'N/A'}
+Willing to travel: ${data.willingToTravel}
+Education Level: ${data.education}
+Gender: ${data.gender}
+Ethnicity: ${data.ethnicity}
+Languages Spoken: ${data.languagesSpoken}
+
 Certifications: ${data.certifications || 'None specified'}
 
 Cover Letter:
@@ -119,7 +143,6 @@ ${data.references}`,
     'Companion & Sitter',
     'Registered Nurse (RN)',
     'Licensed Practical Nurse (LPN)',
-    'Home Health Aide (HHA)',
   ];
 
   const experienceLevels = [
@@ -138,6 +161,28 @@ ${data.references}`,
     'Evenings',
     'Overnight shifts',
     'On-call',
+  ];
+
+  const educationLevels = [
+    'High School Diploma/GED',
+    'Some College',
+    'Associate Degree',
+    'Bachelor\'s Degree',
+    'Master\'s Degree',
+    'Doctoral Degree',
+    'Professional Certification',
+    'Other',
+  ];
+
+  const ethnicityOptions = [
+    'American Indian or Alaska Native',
+    'Asian',
+    'Black or African American',
+    'Hispanic or Latino',
+    'Native Hawaiian or Other Pacific Islander',
+    'White',
+    'Two or More Races',
+    'Prefer not to answer',
   ];
 
   const benefits = [
@@ -462,6 +507,158 @@ ${data.references}`,
                           </FormItem>
                         )}
                       />
+                     </div>
+                  </div>
+
+                  {/* Work Location & Demographics */}
+                  <div>
+                    <h3 className="text-xl font-semibold text-healthcare-teal mb-6">Work Location & Personal Information</h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <FormField
+                        control={form.control}
+                        name="workAnywhereInGeorgia"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Can you work anywhere in the state of Georgia? *</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select an option" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="yes">Yes</SelectItem>
+                                <SelectItem value="no">No</SelectItem>
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="countiesCanWork"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>If not, what counties can you work in?</FormLabel>
+                            <FormControl>
+                              <Input placeholder="List counties you can work in" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="willingToTravel"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Are you willing to travel? *</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select an option" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="yes">Yes</SelectItem>
+                                <SelectItem value="no">No</SelectItem>
+                                <SelectItem value="limited">Limited travel</SelectItem>
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="education"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Education Level *</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select education level" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                {educationLevels.map((level) => (
+                                  <SelectItem key={level} value={level}>
+                                    {level}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="gender"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Gender *</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select gender" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="male">Male</SelectItem>
+                                <SelectItem value="female">Female</SelectItem>
+                                <SelectItem value="prefer-not-to-answer">Prefer not to answer</SelectItem>
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="ethnicity"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Ethnicity *</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select ethnicity" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                {ethnicityOptions.map((option) => (
+                                  <SelectItem key={option} value={option}>
+                                    {option}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="languagesSpoken"
+                        render={({ field }) => (
+                          <FormItem className="md:col-span-2">
+                            <FormLabel>Languages Spoken *</FormLabel>
+                            <FormControl>
+                              <Input placeholder="List all languages you speak fluently" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
                     </div>
                   </div>
 
@@ -678,6 +875,29 @@ ${data.references}`,
                           </FormItem>
                         )}
                       />
+                     </div>
+                  </div>
+
+                  {/* Legal Statements */}
+                  <div className="bg-healthcare-accent p-6 rounded-lg">
+                    <h3 className="text-lg font-semibold text-healthcare-teal mb-4">Important Information</h3>
+                    <div className="space-y-4 text-sm text-gray-700">
+                      <div>
+                        <h4 className="font-medium text-gray-800 mb-2">Equal Opportunity Employer</h4>
+                        <p>
+                          Premier Healthcare of Georgia, Inc. is an equal opportunity employer committed to workplace diversity. 
+                          We do not discriminate on the basis of race, color, religion, sex, sexual orientation, gender identity, 
+                          national origin, age, disability, veteran status, or any other protected characteristic as outlined by 
+                          federal, state, or local laws.
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-gray-800 mb-2">At-Will Employment</h4>
+                        <p>
+                          Employment with Premier Healthcare of Georgia, Inc. is at-will, meaning that either the employee or 
+                          the company may terminate employment at any time, with or without cause, and with or without notice.
+                        </p>
+                      </div>
                     </div>
                   </div>
 

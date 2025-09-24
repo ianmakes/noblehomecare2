@@ -59,6 +59,11 @@ const Footer = () => {
                   Contact Us
                 </Link>
               </li>
+              <li>
+                <Link to="/privacy-policy" onClick={handleLinkClick} className="text-gray-300 hover:text-healthcare-teal transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
             
             <div className="mt-6">
