@@ -278,7 +278,7 @@ const Home = () => {
           
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-center mb-8 md:mb-12">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2">14,656+</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">4,656+</div>
               <div className="text-sm md:text-base text-white/80">Happy Families Served</div>
             </div>
             <div className="hidden md:block w-px h-16 bg-white/30"></div>
