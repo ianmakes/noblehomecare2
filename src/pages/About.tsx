@@ -143,7 +143,7 @@ const About = () => {
       </section>
 
       {/* Our Commitment - White Background */}
-      <section className="section-padding bg-healthcare-accent">
+      <section className="section-padding bg-healthcare-accent py-0">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-healthcare-teal font-bold mb-4">Our Commitment</h2>
