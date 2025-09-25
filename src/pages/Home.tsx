@@ -108,24 +108,17 @@ const Home = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {services.map((service, index) => {
-              const backgroundColors = [
-                "bg-gradient-to-br from-primary/10 to-primary/5",
-                "bg-gradient-to-br from-secondary/10 to-secondary/5", 
-                "bg-gradient-to-br from-primary/15 to-primary/8",
-                "bg-gradient-to-br from-secondary/15 to-secondary/8"
-              ];
-              return (
-                <div key={index} className={`healthcare-card text-center animate-fade-in ${backgroundColors[index]} border border-primary/10 hover:border-primary/20 transition-all`} style={{
-                  animationDelay: `${index * 0.1}s`
-                }}>
+            const backgroundColors = ["bg-gradient-to-br from-primary/10 to-primary/5", "bg-gradient-to-br from-secondary/10 to-secondary/5", "bg-gradient-to-br from-primary/15 to-primary/8", "bg-gradient-to-br from-secondary/15 to-secondary/8"];
+            return <div key={index} className={`healthcare-card text-center animate-fade-in ${backgroundColors[index]} border border-primary/10 hover:border-primary/20 transition-all`} style={{
+              animationDelay: `${index * 0.1}s`
+            }}>
                   <div className="flex justify-center mb-4">
                     {service.icon}
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold mb-3 text-gray-800">{service.title}</h3>
                   <p className="text-sm md:text-base text-gray-600">{service.description}</p>
-                </div>
-              );
-            })}
+                </div>;
+          })}
           </div>
         </div>
       </section>
@@ -228,9 +221,9 @@ const Home = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {careProcess.map((process, index) => <div key={index} className="text-center animate-fade-in" style={{
+            {careProcess.map((process, index) => <div key={index} style={{
             animationDelay: `${index * 0.1}s`
-          }}>
+          }} className="text-center animate-fade-in bg-green-100 rounded">
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-healthcare-secondary text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto mb-4 bg-[#7eb080]">
                   {process.step}
                 </div>
