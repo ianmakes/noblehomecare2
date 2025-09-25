@@ -97,7 +97,7 @@ const Home = () => {
       </section>
 
       {/* Services Overview - White Background */}
-      <section className="py-12 md:py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-[40px]">
         <div className="container-custom">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-healthcare-teal font-bold mb-4">Our Core Services</h2>
@@ -123,7 +123,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us - Light Background */}
-      <section className="py-12 md:py-16 lg:py-24 bg-healthcare-accent">
+      <section className="py-12 md:py-16 bg-healthcare-accent lg:py-[40px]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
@@ -210,7 +210,7 @@ const Home = () => {
       </section>
 
       {/* Care Process - White Background */}
-      <section className="py-12 md:py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-[45px]">
         <div className="container-custom">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-healthcare-teal font-bold mb-4">Easy Steps To Get Private Nursing</h2>
@@ -244,7 +244,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-cover bg-center" style={{
         backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`
       }}>
-          <div className="absolute inset-0 bg-white/90 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-white/90 backdrop-blur-sm py-0"></div>
         </div>
         
         <div className="container-custom relative z-10">
