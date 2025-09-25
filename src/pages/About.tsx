@@ -154,7 +154,7 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {commitmentCards.map((card, index) => <div key={index} className="healthcare-card text-center">
+            {commitmentCards.map((card, index) => <div key={index} className="healthcare-card text-center bg-green-100">
                 {card.icon}
                 <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
                 <p className="text-gray-600">{card.description}</p>
@@ -216,9 +216,9 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => <div key={index} className="healthcare-card text-center animate-fade-in" style={{
+            {values.map((value, index) => <div key={index} style={{
             animationDelay: `${index * 0.1}s`
-          }}>
+          }} className="healthcare-card text-center animate-fade-in bg-green-100">
                 <div className="flex justify-center mb-4">
                   {value.icon}
                 </div>
