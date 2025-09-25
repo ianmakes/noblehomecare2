@@ -223,7 +223,7 @@ const Home = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {careProcess.map((process, index) => <div key={index} style={{
             animationDelay: `${index * 0.1}s`
-          }} className="text-center animate-fade-in bg-green-100 rounded">
+          }} className="text-center animate-fade-in bg-green-100 px-0 py-[20px] rounded-md">
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-healthcare-secondary text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto mb-4 bg-[#7eb080]">
                   {process.step}
                 </div>
