@@ -64,7 +64,7 @@ const Navigation = () => {
 
         {/* Main navigation */}
         <div className="container-custom">
-          <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
+          <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'py-1' : 'py-2'}`}>
             <Link to="/" onClick={handleNavClick} className="flex items-center space-x-3 md:space-x-4">
               <div className="flex items-center justify-center">
                 <img src="/lovable-uploads/premier-healthcare-logo.png" alt="Premier Healthcare Logo" className={`object-contain transition-all duration-300 ${isScrolled ? 'w-14 h-14 md:w-16 md:h-16' : 'w-20 h-20 md:w-24 md:h-24'}`} />

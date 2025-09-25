@@ -108,8 +108,7 @@ const Home = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {services.map((service, index) => {
-            const backgroundColors = ["bg-gradient-to-br from-primary/10 to-primary/5", "bg-gradient-to-br from-secondary/10 to-secondary/5", "bg-gradient-to-br from-primary/15 to-primary/8", "bg-gradient-to-br from-secondary/15 to-secondary/8"];
-            return <div key={index} className={`healthcare-card text-center animate-fade-in ${backgroundColors[index]} border border-primary/10 hover:border-primary/20 transition-all`} style={{
+            return <div key={index} className="healthcare-card text-center animate-fade-in bg-[hsl(var(--healthcare-card-bg))] border border-primary/10 hover:border-primary/20 transition-all" style={{
               animationDelay: `${index * 0.1}s`
             }}>
                   <div className="flex justify-center mb-4">

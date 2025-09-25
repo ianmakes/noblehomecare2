@@ -46,6 +46,7 @@
     --healthcare-green-dark: 123 15% 40%;
     --healthcare-gray: 215 20% 65%;
     --healthcare-gray-light: 210 40% 96%;
+    --healthcare-card-bg: 123 39% 92%; /* #DCFCE7 */
   }
 
   .dark {
