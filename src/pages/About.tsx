@@ -88,12 +88,9 @@ const About = () => {
                   goes beyond daily tasks—it's about dignity, trust, and creating comfort for both 
                   the client and their family."</em>
                 </p>
-                <p>
-                  Inspired by her journey, I founded Premier Healthcare of Georgia with the mission 
-                  to provide the same level of care, respect, and attentiveness to others that I 
-                  wanted for my own loved one. Every client we serve is treated like family, 
-                  because we know what it means to entrust someone with the care of those you love most.
-                </p>
+                <p>Inspired by her journey, I founded Premier Healthcare of Georgia with the mission to provide the same level of care, respect, and attentiveness to others that I wanted for my own loved one. Every client we serve is treated like family, because we know what it means to entrust someone with the care of those you love most.
+
+              </p>
                 <div className="bg-healthcare-secondary/10 p-6 rounded-lg border-l-4 border-healthcare-secondary bg-green-100">
                   <p className="font-medium text-healthcare-secondary italic">
                     "At Premier Healthcare of Georgia, our passion is personal—and our care is from the heart."
