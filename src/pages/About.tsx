@@ -79,7 +79,7 @@ const About = () => {
             </div>
             
             <div>
-              <h2 className="text-healthcare-teal font-bold mb-6">The Heart of Our Company</h2>
+              <h2 className="text-healthcare-teal mb-6 font-bold text-left">The Heart of Our Company</h2>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
                   The heart of our company was born out of family. <em>"When my grandmother needed care, 
