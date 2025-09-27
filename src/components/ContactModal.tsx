@@ -304,32 +304,32 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="primaryContactName" className="text-sm md:text-base">Primary Contact Name</Label>
+                <Label htmlFor="primaryContactName" className="text-xs">Primary Contact Name</Label>
                 <Input
                   id="primaryContactName"
                   value={formData.primaryContactName}
                   onChange={(e) => setFormData(prev => ({ ...prev, primaryContactName: e.target.value }))}
-                  className="h-10 md:h-11"
+                  className="h-9"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="primaryContactPhone" className="text-sm md:text-base">Primary Contact Phone</Label>
+                <Label htmlFor="primaryContactPhone" className="text-xs">Primary Contact Phone</Label>
                 <Input
                   id="primaryContactPhone"
                   type="tel"
                   value={formData.primaryContactPhone}
                   onChange={(e) => setFormData(prev => ({ ...prev, primaryContactPhone: e.target.value }))}
-                  className="h-10 md:h-11"
+                  className="h-9"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="primaryContactEmail" className="text-sm md:text-base">Primary Contact Email</Label>
+                <Label htmlFor="primaryContactEmail" className="text-xs">Primary Contact Email</Label>
                 <Input
                   id="primaryContactEmail"
                   type="email"
                   value={formData.primaryContactEmail}
                   onChange={(e) => setFormData(prev => ({ ...prev, primaryContactEmail: e.target.value }))}
-                  className="h-10 md:h-11"
+                  className="h-9"
                 />
               </div>
             </div>
