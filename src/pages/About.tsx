@@ -82,11 +82,11 @@ const About = () => {
               <h2 className="text-healthcare-teal font-bold mb-6">The Heart of Our Company</h2>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  The heart of our company was born out of family. When my grandmother needed care, 
+                  The heart of our company was born out of family. <em>"When my grandmother needed care, 
                   I saw firsthand how important it is to have compassionate, reliable, and personalized 
                   support at home. Entrusting someone to care for her showed me that true home care 
                   goes beyond daily tasks—it's about dignity, trust, and creating comfort for both 
-                  the client and their family.
+                  the client and their family."</em>
                 </p>
                 <p>
                   Inspired by her journey, I founded Premier Healthcare of Georgia with the mission 

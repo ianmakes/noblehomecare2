@@ -220,7 +220,7 @@ ${data.references}`
       </section>
 
       {/* Current Opportunities */}
-      <section className="section-padding bg-healthcare-accent">
+      <section className="py-12 bg-healthcare-accent">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-healthcare-teal font-bold mb-4">Current Opportunities</h2>
@@ -336,120 +336,13 @@ ${data.references}`
                             <FormMessage />
                           </FormItem>} />
 
-                      <FormField control={form.control} name="zipCode" render={({
+                       <FormField control={form.control} name="zipCode" render={({
                       field
                     }) => <FormItem>
                             <FormLabel>Zip Code *</FormLabel>
                             <FormControl>
                               <Input placeholder="Enter your zip code" {...field} />
                             </FormControl>
-                            <FormMessage />
-                          </FormItem>} />
-                    </div>
-                  </div>
-
-                  {/* Position Information */}
-                  <div>
-                    <h3 className="text-xl font-semibold text-healthcare-teal mb-6">Position Information</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <FormField control={form.control} name="position" render={({
-                      field
-                    }) => <FormItem>
-                            <FormLabel>Position Applying For *</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select a position" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                {positions.map(position => <SelectItem key={position} value={position}>
-                                    {position}
-                                  </SelectItem>)}
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>} />
-
-                      <FormField control={form.control} name="experience" render={({
-                      field
-                    }) => <FormItem>
-                            <FormLabel>Experience Level *</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select experience level" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                {experienceLevels.map(level => <SelectItem key={level} value={level}>
-                                    {level}
-                                  </SelectItem>)}
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>} />
-
-                      <FormField control={form.control} name="certifications" render={({
-                      field
-                    }) => <FormItem className="md:col-span-2">
-                            <FormLabel>Certifications & Licenses</FormLabel>
-                            <FormControl>
-                              <Input placeholder="List any relevant certifications or licenses" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>} />
-                     </div>
-                  </div>
-
-                  {/* Work Location & Demographics */}
-                  <div>
-                    <h3 className="text-xl font-semibold text-healthcare-teal mb-6">Work Location & Personal Information</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <FormField control={form.control} name="workAnywhereInGeorgia" render={({
-                      field
-                    }) => <FormItem>
-                            <FormLabel>Can you work anywhere in the state of Georgia? *</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select an option" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="yes">Yes</SelectItem>
-                                <SelectItem value="no">No</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>} />
-
-                      <FormField control={form.control} name="countiesCanWork" render={({
-                      field
-                    }) => <FormItem>
-                            <FormLabel>If not, what counties can you work in?</FormLabel>
-                            <FormControl>
-                              <Input placeholder="List counties you can work in" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>} />
-
-                      <FormField control={form.control} name="willingToTravel" render={({
-                      field
-                    }) => <FormItem>
-                            <FormLabel>Are you willing to travel? *</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select an option" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="yes">Yes</SelectItem>
-                                <SelectItem value="no">No</SelectItem>
-                                <SelectItem value="limited">Limited travel</SelectItem>
-                              </SelectContent>
-                            </Select>
                             <FormMessage />
                           </FormItem>} />
 
@@ -517,6 +410,113 @@ ${data.references}`
                             <FormControl>
                               <Input placeholder="List all languages you speak fluently" {...field} />
                             </FormControl>
+                            <FormMessage />
+                          </FormItem>} />
+                    </div>
+                  </div>
+
+                  {/* Position Information */}
+                  <div>
+                    <h3 className="text-xl font-semibold text-healthcare-teal mb-6">Position Information</h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <FormField control={form.control} name="position" render={({
+                      field
+                    }) => <FormItem>
+                            <FormLabel>Position Applying For *</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select a position" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                {positions.map(position => <SelectItem key={position} value={position}>
+                                    {position}
+                                  </SelectItem>)}
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>} />
+
+                      <FormField control={form.control} name="experience" render={({
+                      field
+                    }) => <FormItem>
+                            <FormLabel>Experience Level *</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select experience level" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                {experienceLevels.map(level => <SelectItem key={level} value={level}>
+                                    {level}
+                                  </SelectItem>)}
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>} />
+
+                      <FormField control={form.control} name="certifications" render={({
+                      field
+                    }) => <FormItem className="md:col-span-2">
+                            <FormLabel>Certifications & Licenses</FormLabel>
+                            <FormControl>
+                              <Input placeholder="List any relevant certifications or licenses" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>} />
+                     </div>
+                  </div>
+
+                  {/* Work Location */}
+                  <div>
+                    <h3 className="text-xl font-semibold text-healthcare-teal mb-6">Work Location</h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <FormField control={form.control} name="workAnywhereInGeorgia" render={({
+                      field
+                    }) => <FormItem>
+                            <FormLabel>Can you work anywhere in the state of Georgia? *</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select an option" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="yes">Yes</SelectItem>
+                                <SelectItem value="no">No</SelectItem>
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>} />
+
+                      <FormField control={form.control} name="countiesCanWork" render={({
+                      field
+                    }) => <FormItem>
+                            <FormLabel>If not, what counties can you work in?</FormLabel>
+                            <FormControl>
+                              <Input placeholder="List counties you can work in" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>} />
+
+                      <FormField control={form.control} name="willingToTravel" render={({
+                      field
+                    }) => <FormItem>
+                            <FormLabel>Are you willing to travel? *</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select an option" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="yes">Yes</SelectItem>
+                                <SelectItem value="no">No</SelectItem>
+                                <SelectItem value="limited">Limited travel</SelectItem>
+                              </SelectContent>
+                            </Select>
                             <FormMessage />
                           </FormItem>} />
                     </div>
