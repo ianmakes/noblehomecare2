@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
+import { Separator } from '@/components/ui/separator';
 import { Phone, Clock } from 'lucide-react';
 import { toast } from 'sonner';
 import { sendFormEmail } from '@/utils/emailService';
@@ -26,8 +27,40 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
     careType: [],
     urgency: '',
     message: '',
+    // Client Info fields
+    clientFullName: '',
+    clientDOB: '',
+    clientAge: '',
+    clientDiagnosis: '',
+    clientCity: '',
+    primaryContactName: '',
+    primaryContactPhone: '',
+    primaryContactEmail: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Calculate age from DOB
+  const calculateAge = (dob: string) => {
+    if (!dob) return '';
+    const today = new Date();
+    const birthDate = new Date(dob);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    
+    return age.toString();
+  };
+
+  // Update age when DOB changes
+  useEffect(() => {
+    if (formData.clientDOB) {
+      const calculatedAge = calculateAge(formData.clientDOB);
+      setFormData(prev => ({ ...prev, clientAge: calculatedAge }));
+    }
+  }, [formData.clientDOB]);
 
   const counties = [
     'Fayette', 'Fulton', 'Clayton', 'Cobb', 'Coweta', 
@@ -63,6 +96,14 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
         careType: [],
         urgency: '',
         message: '',
+        clientFullName: '',
+        clientDOB: '',
+        clientAge: '',
+        clientDiagnosis: '',
+        clientCity: '',
+        primaryContactName: '',
+        primaryContactPhone: '',
+        primaryContactEmail: '',
       });
       
       onClose();
@@ -194,6 +235,104 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
               rows={3}
               className="md:rows-4"
             />
+          </div>
+
+          {/* Separator */}
+          <div className="my-6">
+            <Separator className="bg-healthcare-teal/20" />
+            <div className="text-center -mt-3">
+              <span className="bg-background px-4 text-sm font-medium text-healthcare-teal">Client Information</span>
+            </div>
+          </div>
+
+          {/* Client Info Section */}
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="clientFullName" className="text-sm md:text-base">Client's Full Name</Label>
+                <Input
+                  id="clientFullName"
+                  value={formData.clientFullName}
+                  onChange={(e) => setFormData(prev => ({ ...prev, clientFullName: e.target.value }))}
+                  className="h-10 md:h-11"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="clientDOB" className="text-sm md:text-base">Date of Birth</Label>
+                <Input
+                  id="clientDOB"
+                  type="date"
+                  value={formData.clientDOB}
+                  onChange={(e) => setFormData(prev => ({ ...prev, clientDOB: e.target.value }))}
+                  className="h-10 md:h-11"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="clientAge" className="text-sm md:text-base">Age</Label>
+                <Input
+                  id="clientAge"
+                  value={formData.clientAge}
+                  disabled
+                  className="h-10 md:h-11 bg-muted"
+                  placeholder="Calculated from DOB"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="clientCity" className="text-sm md:text-base">City</Label>
+                <Input
+                  id="clientCity"
+                  value={formData.clientCity}
+                  onChange={(e) => setFormData(prev => ({ ...prev, clientCity: e.target.value }))}
+                  className="h-10 md:h-11"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="clientDiagnosis" className="text-sm md:text-base">Diagnosis</Label>
+              <Textarea
+                id="clientDiagnosis"
+                value={formData.clientDiagnosis}
+                onChange={(e) => setFormData(prev => ({ ...prev, clientDiagnosis: e.target.value }))}
+                placeholder="Please describe any relevant medical conditions or diagnoses..."
+                rows={2}
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="primaryContactName" className="text-sm md:text-base">Primary Contact Name</Label>
+                <Input
+                  id="primaryContactName"
+                  value={formData.primaryContactName}
+                  onChange={(e) => setFormData(prev => ({ ...prev, primaryContactName: e.target.value }))}
+                  className="h-10 md:h-11"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="primaryContactPhone" className="text-sm md:text-base">Primary Contact Phone</Label>
+                <Input
+                  id="primaryContactPhone"
+                  type="tel"
+                  value={formData.primaryContactPhone}
+                  onChange={(e) => setFormData(prev => ({ ...prev, primaryContactPhone: e.target.value }))}
+                  className="h-10 md:h-11"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="primaryContactEmail" className="text-sm md:text-base">Primary Contact Email</Label>
+                <Input
+                  id="primaryContactEmail"
+                  type="email"
+                  value={formData.primaryContactEmail}
+                  onChange={(e) => setFormData(prev => ({ ...prev, primaryContactEmail: e.target.value }))}
+                  className="h-10 md:h-11"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="flex flex-col gap-3 md:gap-4">
