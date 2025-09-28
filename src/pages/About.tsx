@@ -86,7 +86,7 @@ const About = () => {
                   I saw firsthand how important it is to have compassionate, reliable, and personalized 
                   support at home. Entrusting someone to care for her showed me that true home care 
                   goes beyond daily tasks—it's about dignity, trust, and creating comfort for both 
-                  the client and their family."</em>
+                  the client and their family." ~Founder</em>
                 </p>
                 <p>Inspired by her journey, I founded Premier Healthcare of Georgia with the mission to provide the same level of care, respect, and attentiveness to others that I wanted for my own loved one. Every client we serve is treated like family, because we know what it means to entrust someone with the care of those you love most.
 
