@@ -83,11 +83,7 @@ const Home = () => {
                 <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 transform hover:scale-105 transition-all duration-300">
                   Get Free Consultation
                 </Button>
-                <Link to="/services">
-                  <Button className="btn-healthcare-outline border-white hover:text-healthcare-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 bg-slate-50 text-lime-600 transform hover:scale-105 transition-all duration-300">
-                    Assess Care Needs
-                  </Button>
-                </Link>
+                
               </div>
             </div>
             
