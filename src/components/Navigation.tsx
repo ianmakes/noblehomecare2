@@ -42,7 +42,7 @@ const Navigation = () => {
   return <>
       <nav className="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300">
         {/* Top bar with contact info - Hidden on mobile and when scrolled */}
-        <div className={`healthcare-gradient hidden md:block transition-all duration-300 ${isScrolled ? 'max-h-0 overflow-hidden opacity-0' : 'max-h-20 opacity-100'}`}>
+        <div className={`healthcare-gradient hidden md:block transition-all duration-500 ease-in-out ${isScrolled ? 'max-h-0 overflow-hidden opacity-0' : 'max-h-20 opacity-100'}`}>
           <div className="container-custom">
             <div className="flex justify-between items-center py-2 text-white text-sm">
               <div className="flex items-center space-x-4">
