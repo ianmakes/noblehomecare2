@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <div className="flex items-center justify-center">
-                <img src="/lovable-uploads/premier-healthcare-logo.png" alt="Premier Healthcare Logo" className="w-10 h-10 object-contain" />
+                <img src="/lovable-uploads/premier-healthcare-logo.png" alt="Premier Healthcare Logo" className="w-20 h-20 md:w-24 md:h-24 object-contain" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">Premier Healthcare</h3>

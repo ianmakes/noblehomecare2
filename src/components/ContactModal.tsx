@@ -20,22 +20,21 @@ interface ContactModalProps {
 
 const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalProps) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    county: '',
-    careType: [],
-    urgency: '',
-    message: '',
-    // Client Info fields
+    date: new Date().toISOString().split('T')[0],
     clientFullName: '',
     clientDOB: '',
     clientAge: '',
-    clientDiagnosis: '',
-    clientCity: '',
+    phone: '',
+    email: '',
+    county: '',
+    city: '',
     primaryContactName: '',
     primaryContactPhone: '',
     primaryContactEmail: '',
+    diagnosis: '',
+    careType: [],
+    urgency: '',
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -76,7 +75,7 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.phone || !formData.county) {
+    if (!formData.clientFullName || !formData.phone || !formData.county) {
       toast.error('Please fill in all required fields.');
       return;
     }
@@ -84,26 +83,59 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
     setIsSubmitting(true);
     
     try {
-      await sendFormEmail(formData, type);
+      // Transform data for email service
+      const emailData = {
+        name: formData.clientFullName,
+        email: formData.email,
+        phone: formData.phone,
+        county: formData.county,
+        careType: formData.careType,
+        urgency: formData.urgency,
+        message: `CONSULTATION REQUEST:
+Date: ${formData.date}
+Client Full Name: ${formData.clientFullName}
+Date of Birth: ${formData.clientDOB}
+Age: ${formData.clientAge}
+Phone: ${formData.phone}
+Email: ${formData.email}
+County: ${formData.county}
+City: ${formData.city}
+
+PRIMARY CONTACT:
+Name: ${formData.primaryContactName}
+Phone: ${formData.primaryContactPhone}
+Email: ${formData.primaryContactEmail}
+
+MEDICAL INFORMATION:
+Diagnosis: ${formData.diagnosis}
+
+CARE SERVICES NEEDED: ${formData.careType.join(', ')}
+URGENCY: ${formData.urgency}
+
+ADDITIONAL INFORMATION:
+${formData.message}`,
+      };
+
+      await sendFormEmail(emailData, type);
       toast.success('Thank you! Our care team will contact you within 24 hours.');
       
       // Reset form
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        county: '',
-        careType: [],
-        urgency: '',
-        message: '',
+        date: new Date().toISOString().split('T')[0],
         clientFullName: '',
         clientDOB: '',
         clientAge: '',
-        clientDiagnosis: '',
-        clientCity: '',
+        phone: '',
+        email: '',
+        county: '',
+        city: '',
         primaryContactName: '',
         primaryContactPhone: '',
         primaryContactEmail: '',
+        diagnosis: '',
+        careType: [],
+        urgency: '',
+        message: '',
       });
       
       onClose();
@@ -142,119 +174,54 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-          {/* Client Info Section - Now First */}
-          <div className="my-6">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-semibold text-healthcare-teal">Client Information</h3>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="clientFullName" className="text-sm md:text-base">Client's Full Name</Label>
-                <Input
-                  id="clientFullName"
-                  value={formData.clientFullName}
-                  onChange={(e) => setFormData(prev => ({ ...prev, clientFullName: e.target.value }))}
-                  className="h-10 md:h-11"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="clientDOB" className="text-sm md:text-base">Date of Birth</Label>
-                <Input
-                  id="clientDOB"
-                  type="date"
-                  value={formData.clientDOB}
-                  onChange={(e) => setFormData(prev => ({ ...prev, clientDOB: e.target.value }))}
-                  className="h-10 md:h-11"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="clientAge" className="text-sm md:text-base">Age</Label>
-                <Input
-                  id="clientAge"
-                  value={formData.clientAge}
-                  disabled
-                  className="h-10 md:h-11 bg-muted"
-                  placeholder="Calculated from DOB"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="clientCity" className="text-sm md:text-base">City</Label>
-                <Input
-                  id="clientCity"
-                  value={formData.clientCity}
-                  onChange={(e) => setFormData(prev => ({ ...prev, clientCity: e.target.value }))}
-                  className="h-10 md:h-11"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="clientDiagnosis" className="text-sm md:text-base">Diagnosis</Label>
-              <Textarea
-                id="clientDiagnosis"
-                value={formData.clientDiagnosis}
-                onChange={(e) => setFormData(prev => ({ ...prev, clientDiagnosis: e.target.value }))}
-                placeholder="Please describe any relevant medical conditions or diagnoses..."
-                rows={2}
-              />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="primaryContactName" className="text-xs">Primary Contact Name</Label>
-                <Input
-                  id="primaryContactName"
-                  value={formData.primaryContactName}
-                  onChange={(e) => setFormData(prev => ({ ...prev, primaryContactName: e.target.value }))}
-                  className="h-9"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="primaryContactPhone" className="text-xs">Primary Contact Phone</Label>
-                <Input
-                  id="primaryContactPhone"
-                  type="tel"
-                  value={formData.primaryContactPhone}
-                  onChange={(e) => setFormData(prev => ({ ...prev, primaryContactPhone: e.target.value }))}
-                  className="h-9"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="primaryContactEmail" className="text-xs">Primary Contact Email</Label>
-                <Input
-                  id="primaryContactEmail"
-                  type="email"
-                  value={formData.primaryContactEmail}
-                  onChange={(e) => setFormData(prev => ({ ...prev, primaryContactEmail: e.target.value }))}
-                  className="h-9"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Separator */}
-          <div className="my-6">
-            <Separator className="bg-healthcare-teal/20" />
-          </div>
-
-          {/* Contact Person Information - Now Second */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name" className="text-sm md:text-base">Full Name *</Label>
+              <Label htmlFor="date" className="text-sm md:text-base">Date *</Label>
               <Input
-                id="name"
-                value={formData.name}
-                onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                id="date"
+                type="date"
+                value={formData.date}
+                onChange={(e) => setFormData(prev => ({ ...prev, date: e.target.value }))}
+                className="h-10 md:h-11"
                 required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="clientFullName" className="text-sm md:text-base">Client's Full Name *</Label>
+              <Input
+                id="clientFullName"
+                value={formData.clientFullName}
+                onChange={(e) => setFormData(prev => ({ ...prev, clientFullName: e.target.value }))}
+                className="h-10 md:h-11"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="clientDOB" className="text-sm md:text-base">Date of Birth</Label>
+              <Input
+                id="clientDOB"
+                type="date"
+                value={formData.clientDOB}
+                onChange={(e) => setFormData(prev => ({ ...prev, clientDOB: e.target.value }))}
                 className="h-10 md:h-11"
               />
             </div>
+            <div className="space-y-2">
+              <Label htmlFor="clientAge" className="text-sm md:text-base">Age</Label>
+              <Input
+                id="clientAge"
+                value={formData.clientAge}
+                disabled
+                className="h-10 md:h-11 bg-muted"
+                placeholder="Calculated from DOB"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="phone" className="text-sm md:text-base">Phone Number *</Label>
               <Input
@@ -266,9 +233,6 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
                 className="h-10 md:h-11"
               />
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-sm md:text-base">Email Address</Label>
               <Input
@@ -279,6 +243,9 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
                 className="h-10 md:h-11"
               />
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="county" className="text-sm md:text-base">County *</Label>
               <Select value={formData.county} onValueChange={(value) => setFormData(prev => ({ ...prev, county: value }))}>
@@ -294,6 +261,58 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
                 </SelectContent>
               </Select>
             </div>
+            <div className="space-y-2">
+              <Label htmlFor="city" className="text-sm md:text-base">City</Label>
+              <Input
+                id="city"
+                value={formData.city}
+                onChange={(e) => setFormData(prev => ({ ...prev, city: e.target.value }))}
+                className="h-10 md:h-11"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="primaryContactName" className="text-sm md:text-base">Primary Contact Name</Label>
+              <Input
+                id="primaryContactName"
+                value={formData.primaryContactName}
+                onChange={(e) => setFormData(prev => ({ ...prev, primaryContactName: e.target.value }))}
+                className="h-10 md:h-11"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="primaryContactPhone" className="text-sm md:text-base">Primary Contact Phone</Label>
+              <Input
+                id="primaryContactPhone"
+                type="tel"
+                value={formData.primaryContactPhone}
+                onChange={(e) => setFormData(prev => ({ ...prev, primaryContactPhone: e.target.value }))}
+                className="h-10 md:h-11"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="primaryContactEmail" className="text-sm md:text-base">Primary Contact Email</Label>
+              <Input
+                id="primaryContactEmail"
+                type="email"
+                value={formData.primaryContactEmail}
+                onChange={(e) => setFormData(prev => ({ ...prev, primaryContactEmail: e.target.value }))}
+                className="h-10 md:h-11"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="diagnosis" className="text-sm md:text-base">Diagnosis</Label>
+            <Textarea
+              id="diagnosis"
+              value={formData.diagnosis}
+              onChange={(e) => setFormData(prev => ({ ...prev, diagnosis: e.target.value }))}
+              placeholder="Please describe any relevant medical conditions or diagnoses..."
+              rows={2}
+            />
           </div>
 
           <div className="space-y-2">
