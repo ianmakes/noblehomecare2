@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail, Facebook, Instagram } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import ContactModal from './ContactModal';
 const Navigation = () => {
@@ -55,8 +55,28 @@ const Navigation = () => {
                   <span>service.premierhealthcarega@gmail.com</span>
                 </div>
               </div>
-              <div>
+              <div className="flex items-center space-x-4">
                 <span className="font-medium">Your Care. Your Comfort. Your Home.</span>
+                <div className="flex items-center space-x-2 ml-4">
+                  <a 
+                    href="https://www.facebook.com/people/Premier-Healthcare-of-Georgia-Inc/61581859673772/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:opacity-80 transition-opacity"
+                    aria-label="Visit our Facebook page"
+                  >
+                    <Facebook size={16} />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/premierhealthcarega/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:opacity-80 transition-opacity"
+                    aria-label="Visit our Instagram page"
+                  >
+                    <Instagram size={16} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

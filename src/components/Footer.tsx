@@ -104,17 +104,23 @@ const Footer = () => {
             <div className="mt-6">
               <h5 className="text-md font-medium mb-3">Follow Us</h5>
               <div className="flex space-x-3">
-                <a href="#" className="w-8 h-8 bg-gray-700 hover:bg-healthcare-teal rounded-full flex items-center justify-center transition-colors">
+                <a 
+                  href="https://www.facebook.com/people/Premier-Healthcare-of-Georgia-Inc/61581859673772/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-gray-700 hover:bg-healthcare-teal rounded-full flex items-center justify-center transition-colors"
+                  aria-label="Visit our Facebook page"
+                >
                   <Facebook className="w-4 h-4" />
                 </a>
-                <a href="#" className="w-8 h-8 bg-gray-700 hover:bg-healthcare-teal rounded-full flex items-center justify-center transition-colors">
-                  <Twitter className="w-4 h-4" />
-                </a>
-                <a href="#" className="w-8 h-8 bg-gray-700 hover:bg-healthcare-teal rounded-full flex items-center justify-center transition-colors">
+                <a 
+                  href="https://www.instagram.com/premierhealthcarega/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-gray-700 hover:bg-healthcare-teal rounded-full flex items-center justify-center transition-colors"
+                  aria-label="Visit our Instagram page"
+                >
                   <Instagram className="w-4 h-4" />
-                </a>
-                <a href="#" className="w-8 h-8 bg-gray-700 hover:bg-healthcare-teal rounded-full flex items-center justify-center transition-colors">
-                  <Linkedin className="w-4 h-4" />
                 </a>
               </div>
             </div>
