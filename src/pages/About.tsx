@@ -54,17 +54,16 @@ const About = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Our Story Begins With<br />
-                <span className="text-primary-light">Family</span>
+              <h1 className="text-4xl lg:text-6xl font-serif font-bold mb-6">
+                Our Story Begins With <span className="text-healthcare-gold italic">Family</span>
               </h1>
-              <p className="text-xl text-white/90 leading-relaxed">
+              <p className="text-xl text-white/90 leading-relaxed font-light">
                 Founded on the belief that everyone deserves compassionate, personalized care, 
-                Noble Homecare Agency was born from a deeply personal experience of caring for family.
+                Noble Homecare Agency was born from a deeply personal experience.
               </p>
             </div>
             <div className="animate-slide-in">
-              <img src="https://loremflickr.com/1200/800/senior,care?random=1" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-2xl w-full h-[400px] object-cover" />
+              <img src="https://loremflickr.com/1200/800/senior,care?random=1" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-2xl w-full h-[400px] object-cover border-4 border-white/20" />
             </div>
           </div>
         </div>
@@ -75,11 +74,14 @@ const About = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img src="https://loremflickr.com/1200/800/elderly,caregiver?random=2" alt="Caregiver assisting elderly woman showing compassionate care" className="rounded-2xl shadow-xl w-full h-[500px] object-cover" />
+              <img src="https://loremflickr.com/1200/800/elderly,caregiver?random=2" alt="Caregiver assisting elderly woman showing compassionate care" className="rounded-2xl shadow-xl w-full h-[500px] object-cover border-b-8 border-healthcare-gold/30" />
             </div>
             
             <div>
-              <h2 className="text-healthcare-teal mb-6 font-bold text-left">About Noble Homecare Agency</h2>
+              <h2 className="text-healthcare-green font-serif mb-4 font-bold text-left">About Noble Homecare Agency</h2>
+              <div className="banner-star-line !justify-start !my-4">
+                <span className="w-6 h-6 text-healthcare-gold">✦</span>
+              </div>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
                   Noble Homecare Agency is dedicated to providing high-quality, personalized in-home healthcare services designed to meet the unique needs of each client. We understand that receiving care in the comfort of one’s home promotes dignity, independence, and emotional well-being. Our goal is to support individuals and families by delivering compassionate, reliable, and professional care services that enhance quality of life.
@@ -87,8 +89,8 @@ const About = () => {
                 <p>
                   At Noble Homecare Agency, we go above and beyond to ensure that every client receives the attention and support they deserve. Our team consists of highly trained and carefully screened caregivers who are committed to making a positive difference in the lives of those we serve.
                 </p>
-                <div className="bg-healthcare-secondary/10 p-6 rounded-lg border-l-4 border-healthcare-secondary bg-green-100">
-                  <p className="font-medium text-healthcare-secondary italic">
+                <div className="bg-healthcare-green/5 p-6 rounded-lg border-l-4 border-healthcare-gold bg-green-50">
+                  <p className="font-serif font-medium text-healthcare-green italic text-lg">
                     "At Noble Homecare Agency, our passion is personal—and our care is from the heart."
                   </p>
                 </div>
@@ -98,18 +100,20 @@ const About = () => {
         </div>
       </section>
 
-      {/* About Our Founder - Light Background */}
-      <section className="section-padding bg-healthcare-accent">
+      {/* Our Mission - Light Background */}
+      <section className="section-padding bg-healthcare-accent/10">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 to-healthcare-primary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+              <div className="absolute inset-0 bg-healthcare-gold/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               <img src="https://loremflickr.com/1200/800/healthcare,nurse?random=3" alt="Compassionate Caregiver" className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto object-cover transform group-hover:scale-105 transition-all duration-500 border-2 border-white/50" />
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-healthcare-teal/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
             </div>
             
             <div>
-              <h2 className="text-healthcare-teal font-bold mb-6">Our Mission</h2>
+              <h2 className="text-healthcare-green font-serif font-bold mb-4">Our Mission</h2>
+              <div className="banner-star-line !justify-start !my-4">
+                <span className="w-6 h-6 text-healthcare-gold">✦</span>
+              </div>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
                   At Noble Homecare Agency LLC, our mission is to safely meet the needs of our clients by providing high quality individualized care all the way to being bed-bound. We thrive by supporting and caring for seniors that can't maintain daily living activities due to illness or disabilities.
@@ -117,9 +121,9 @@ const About = () => {
                 <p>
                   We specialize specifically with seniors that can no longer support themselves with toileting, feeding, and other daily activities. Our compassionate team ensures every individual receives respectful and personalized support in the comfort of their home.
                 </p>
-                <div className="bg-healthcare-primary/10 p-6 rounded-lg border-l-4 border-healthcare-primary bg-green-100">
-                  <p className="font-medium text-healthcare-primary">
-                    <strong>Vision:</strong> To provide personalized and compassionate home care services that honor dignity, independence, and emotional well-being for every client we serve.
+                <div className="bg-healthcare-green p-6 rounded-lg border-b-4 border-healthcare-gold shadow-lg">
+                  <p className="font-serif font-medium text-white text-lg">
+                    <span className="text-healthcare-gold font-bold">Vision:</span> To provide personalized and compassionate home care services that honor dignity, independence, and emotional well-being for every client we serve.
                   </p>
                 </div>
               </div>
@@ -129,14 +133,15 @@ const About = () => {
       </section>
 
       {/* Our Commitment - White Background */}
-      <section className="section-padding bg-healthcare-accent py-0">
+      <section className="section-padding py-16">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-healthcare-teal font-bold mb-4">Our Commitment</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Noble Homecare Agency ensures clients and patients that they will have our full attention with their in-home care. Our reputation has been built on the success and quality of our staff and their dedication to the art of caring services. Our staff continually strives to demonstrate that we are an industry leader in providing private duty. We adhere to the industry's most rigorous standards to assure the highest quality of care.
-              <br /><br />
-              To maintain our high standards, we carefully screen all our employees, including completion of full criminal background checks.
+            <h2 className="text-healthcare-green font-serif font-bold mb-4">Our Commitment</h2>
+            <div className="banner-star-line">
+              <span className="w-6 h-6 text-healthcare-gold">✦</span>
+            </div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Noble Homecare Agency ensures clients and patients that they will have our full attention with their in-home care. Our reputation has been built on the success and quality of our staff and their dedication to the art of caring services. 
             </p>
           </div>
           

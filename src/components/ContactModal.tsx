@@ -62,8 +62,8 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
   }, [formData.clientDOB]);
 
   const counties = [
-    'Fayette', 'Fulton', 'Clayton', 'Cobb', 'Coweta', 
-    'DeKalb', 'Carroll', 'Douglas', 'Gwinnett', 'Henry'
+    'Cobb', 'Paulding', 'Cherokee', 'Fulton', 'Douglas', 
+    'Gwinnett', 'Polk', 'Bartow'
   ];
 
   const careTypes = [
@@ -141,7 +141,7 @@ ${formData.message}`,
       onClose();
     } catch (error) {
       console.error('Failed to send email:', error);
-      toast.error('There was an issue sending your request. Please try calling us directly at 470-210-7666.');
+      toast.error('There was an issue sending your request. Please try calling us directly at 1-866-756-7374.');
     } finally {
       setIsSubmitting(false);
     }
@@ -158,18 +158,18 @@ ${formData.message}`,
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto border-t-8 border-healthcare-gold">
         <DialogHeader>
-          <DialogTitle className="text-xl md:text-2xl text-healthcare-teal">
+          <DialogTitle className="text-xl md:text-2xl text-healthcare-green font-serif font-bold">
             {type === 'consultation' ? 'Free Consultation Request' : 'Care Needs Assessment'}
           </DialogTitle>
         </DialogHeader>
 
-        <div className="bg-healthcare-teal-light/10 p-3 md:p-4 rounded-lg mb-4 md:mb-6">
-          <div className="flex items-center space-x-2 text-healthcare-teal">
+        <div className="bg-healthcare-green/5 p-3 md:p-4 rounded-lg mb-4 md:mb-6 border-l-4 border-healthcare-gold">
+          <div className="flex items-center space-x-2 text-healthcare-green">
             <Clock size={18} className="md:hidden" />
-            <Clock size={20} className="hidden md:block" />
-            <span className="font-medium text-sm md:text-base">Our care team will contact you within 24 hours</span>
+            <Clock size={20} className="hidden md:block text-healthcare-gold" />
+            <span className="font-serif font-medium text-sm md:text-base">Our care team will contact you within 24 hours</span>
           </div>
         </div>
 
@@ -369,11 +369,11 @@ ${formData.message}`,
             <Button 
               type="button" 
               variant="outline" 
-              onClick={() => window.open('tel:470-210-7666')}
-              className="flex items-center justify-center space-x-2 h-11 md:h-12 text-sm md:text-base"
+              onClick={() => window.open('tel:1-866-756-7374')}
+              className="flex items-center justify-center space-x-2 h-11 md:h-12 text-sm md:text-base border-healthcare-green text-healthcare-green hover:bg-healthcare-green hover:text-white transition-all"
             >
               <Phone size={16} />
-              <span>Call Now: 470-210-7666</span>
+              <span>Call Now: 1-866-756-7374</span>
             </Button>
           </div>
         </form>

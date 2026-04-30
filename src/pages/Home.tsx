@@ -71,18 +71,19 @@ const Home = () => {
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="animate-fade-in">
-              <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-                YOU ARE IN <br />
-                <span className="text-primary-light bg-gradient-to-r from-pink-200 to-teal-200 bg-clip-text text-transparent animate-pulse">GOOD HANDS</span>
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold mb-4 md:mb-6 leading-tight text-white">
+                We <span className="text-healthcare-gold">Care</span> For You!
               </h1>
-              <p className="text-lg md:text-xl mb-6 md:mb-8 text-white/90 leading-relaxed">
-                At Noble Homecare Agency LLC, our mission is to safely meet the needs of our clients by providing high quality individualized care all the way to being bed-bound. We thrive by supporting and caring for seniors that can't maintain daily living activities due to illness or disabilities. We specialize specifically with seniors that can no longer support themselves with toileting, feeding, and other daily activities.
+              <div className="banner-star-line !justify-start !my-4">
+                <span className="w-6 h-6 text-healthcare-gold">✦</span>
+              </div>
+              <p className="text-lg md:text-xl mb-6 md:mb-8 text-white/90 leading-relaxed max-w-xl">
+                At Noble Homecare Agency, we provide a wide range of home health care services to clients all throughout our area. Our staff goes above and beyond to make sure you get the best quality care possible.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 transform hover:scale-105 transition-all duration-300">
                   Get Free Consultation
                 </Button>
-                
               </div>
             </div>
             
@@ -93,26 +94,34 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Overview - White Background */}
-      <section className="py-12 md:py-16 lg:py-[40px]">
+      {/* Services Overview - Banner Inspired Design */}
+      <section className="py-12 md:py-16 lg:py-24 banner-wave">
         <div className="container-custom">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-healthcare-teal font-bold mb-4">Our Core Services</h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              We offer a wide range of home healthcare services designed to cover both non-medical and skilled nursing needs, ensuring every individual receives respectful and compassionate support.
+            <div className="inline-block bg-healthcare-green px-8 py-3 rounded-tr-3xl rounded-bl-3xl border-b-4 border-healthcare-gold mb-6 shadow-xl">
+              <h2 className="text-white font-serif uppercase tracking-wider text-xl md:text-2xl m-0">Our Services</h2>
+            </div>
+            <div className="banner-star-line">
+              <span className="w-6 h-6 text-healthcare-gold">✦</span>
+            </div>
+            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto font-medium">
+              We are committed to providing you with all the resources you need in order to get back on your feet.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {services.map((service, index) => {
-            return <div key={index} className="healthcare-card text-center animate-fade-in bg-[hsl(var(--healthcare-card-bg))] border border-primary/10 hover:border-primary/20 transition-all" style={{
+            return <div key={index} className="healthcare-card healthcare-card-gold-border text-center animate-fade-in group hover:-translate-y-2 transition-all duration-500" style={{
               animationDelay: `${index * 0.1}s`
             }}>
-                  <div className="flex justify-center mb-4">
-                    {service.icon}
+                  <div className="flex justify-center mb-6 relative">
+                    <div className="absolute inset-0 bg-healthcare-gold/10 rounded-full blur-xl group-hover:bg-healthcare-gold/20 transition-colors"></div>
+                    <div className="relative p-4 bg-white rounded-full shadow-inner border border-healthcare-gold/20">
+                      {service.icon}
+                    </div>
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold mb-3 text-gray-800">{service.title}</h3>
-                  <p className="text-sm md:text-base text-gray-600">{service.description}</p>
+                  <h3 className="text-lg md:text-xl font-serif font-bold mb-3 text-healthcare-green">{service.title}</h3>
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">{service.description}</p>
                 </div>;
           })}
           </div>
@@ -207,10 +216,13 @@ const Home = () => {
       </section>
 
       {/* Care Process - White Background */}
-      <section className="py-12 md:py-16 lg:py-[45px]">
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="container-custom">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-healthcare-teal font-bold mb-4">Easy Steps To Get Private Nursing</h2>
+            <h2 className="text-healthcare-green font-serif font-bold mb-4">Easy Steps To Get Started</h2>
+            <div className="banner-star-line">
+              <span className="w-6 h-6 text-healthcare-gold">✦</span>
+            </div>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               Getting started with Noble Homecare Agency is simple and straightforward.
             </p>
@@ -219,12 +231,12 @@ const Home = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {careProcess.map((process, index) => <div key={index} style={{
             animationDelay: `${index * 0.1}s`
-          }} className="text-center animate-fade-in bg-green-100 px-0 py-[20px] rounded-md">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-healthcare-secondary text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto mb-4 bg-[#7eb080]">
+          }} className="text-center animate-fade-in group">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-healthcare-green text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto mb-6 border-4 border-healthcare-gold/30 shadow-lg group-hover:scale-110 group-hover:border-healthcare-gold transition-all duration-300">
                   {process.step}
                 </div>
-                <h3 className="text-base md:text-lg font-semibold mb-3 text-gray-800">{process.title}</h3>
-                <p className="text-sm md:text-base text-gray-600">{process.description}</p>
+                <h3 className="text-lg md:text-xl font-serif font-bold mb-3 text-healthcare-green">{process.title}</h3>
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed px-4">{process.description}</p>
               </div>)}
           </div>
           

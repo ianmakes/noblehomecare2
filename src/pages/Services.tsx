@@ -50,11 +50,13 @@ const Services = () => {
       <section className="healthcare-gradient text-white min-h-[45vh] flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold mb-6 text-white lg:text-5xl">
-              Comprehensive Home Care<br />
-              <span className="text-white">Services</span>
+            <h1 className="text-4xl lg:text-6xl font-serif font-bold mb-6">
+              Comprehensive <span className="text-healthcare-gold">Care</span> Services
             </h1>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+            <div className="banner-star-line !my-4">
+              <span className="w-6 h-6 text-healthcare-gold">✦</span>
+            </div>
+            <p className="text-xl text-white/90 mb-8 leading-relaxed font-light">
               From 1-24 hours per day, we provide personalized care services that help you maintain 
               independence, dignity, and comfort in your own home.
             </p>
@@ -66,24 +68,27 @@ const Services = () => {
       </section>
 
       {/* Services Tabs - Enhanced Design */}
-      <section className="section-padding">
+      <section className="section-padding banner-wave">
         <div className="container-custom">
           <Tabs defaultValue="personal-care" className="w-full">
-            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 mb-12 h-auto gap-2 bg-healthcare-teal/10 p-2 rounded-xl">
-              <TabsTrigger value="personal-care" className="font-semibold text-sm sm:text-base py-3 px-4 rounded-lg data-[state=active]:bg-healthcare-teal data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300">
+            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 mb-12 h-auto gap-2 bg-healthcare-green/10 p-2 rounded-xl">
+              <TabsTrigger value="personal-care" className="font-serif font-semibold text-sm sm:text-base py-3 px-4 rounded-lg data-[state=active]:bg-healthcare-green data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300">
                 Personal Care
               </TabsTrigger>
-              <TabsTrigger value="specialized" className="font-semibold text-sm sm:text-base py-3 px-4 rounded-lg data-[state=active]:bg-healthcare-teal data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300">
+              <TabsTrigger value="specialized" className="font-serif font-semibold text-sm sm:text-base py-3 px-4 rounded-lg data-[state=active]:bg-healthcare-green data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300">
                 Specialized Care
               </TabsTrigger>
-              <TabsTrigger value="payment" className="font-semibold text-sm sm:text-base py-3 px-4 rounded-lg data-[state=active]:bg-healthcare-teal data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300">
+              <TabsTrigger value="payment" className="font-serif font-semibold text-sm sm:text-base py-3 px-4 rounded-lg data-[state=active]:bg-healthcare-green data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300">
                 Payment Options
               </TabsTrigger>
             </TabsList>
             
             <TabsContent value="personal-care">
               <div className="text-center mb-12">
-                <h2 className="text-healthcare-teal mb-4">Personal Care Services</h2>
+                <h2 className="text-healthcare-green font-serif font-bold mb-4">Personal Care Services</h2>
+                <div className="banner-star-line">
+                  <span className="w-6 h-6 text-healthcare-gold">✦</span>
+                </div>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Our personal care services are designed to help you maintain your daily routines 
                   and independence while ensuring your safety and comfort.
@@ -91,17 +96,17 @@ const Services = () => {
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {personalCareServices.map((service, index) => <div key={index} className="healthcare-card animate-fade-in" style={{
+                {personalCareServices.map((service, index) => <div key={index} className="healthcare-card healthcare-card-gold-border animate-fade-in" style={{
                 animationDelay: `${index * 0.1}s`
               }}>
                     <div className="flex items-center space-x-3 mb-4">
-                      {service.icon}
-                      <h3 className="text-xl font-semibold">{service.title}</h3>
+                      <div className="p-2 bg-healthcare-green/10 rounded-full">{service.icon}</div>
+                      <h3 className="text-xl font-serif font-bold text-healthcare-green">{service.title}</h3>
                     </div>
                     <p className="text-gray-600 mb-4">{service.description}</p>
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => <li key={idx} className="flex items-center space-x-2 text-sm text-gray-700">
-                          <div className="w-2 h-2 bg-healthcare-teal rounded-full"></div>
+                          <div className="w-2 h-2 bg-healthcare-gold rounded-full"></div>
                           <span>{feature}</span>
                         </li>)}
                     </ul>
@@ -111,34 +116,36 @@ const Services = () => {
             
             <TabsContent value="specialized">
               <div className="text-center mb-12">
-                <h2 className="text-healthcare-teal mb-4">Specialized Care Services</h2>
+                <h2 className="text-healthcare-green font-serif font-bold mb-4">Specialized Care Services</h2>
+                <div className="banner-star-line">
+                  <span className="w-6 h-6 text-healthcare-gold">✦</span>
+                </div>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Advanced care services provided by our skilled nursing staff and specialized caregivers 
-                  for complex medical needs and continuous care requirements.
+                  Advanced care services provided by our skilled nursing staff and specialized caregivers.
                 </p>
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                {specializedServices.map((service, index) => <div key={index} className="healthcare-card animate-fade-in" style={{
+                {specializedServices.map((service, index) => <div key={index} className="healthcare-card healthcare-card-gold-border animate-fade-in" style={{
                 animationDelay: `${index * 0.1}s`
               }}>
                     <div className="flex items-center space-x-3 mb-4">
-                      {service.icon}
-                      <h3 className="text-xl font-semibold">{service.title}</h3>
+                      <div className="p-2 bg-healthcare-green/10 rounded-full">{service.icon}</div>
+                      <h3 className="text-xl font-serif font-bold text-healthcare-green">{service.title}</h3>
                     </div>
                     <p className="text-gray-600 mb-4">{service.description}</p>
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => <li key={idx} className="flex items-center space-x-2 text-sm text-gray-700">
-                          <div className="w-2 h-2 bg-healthcare-pink rounded-full"></div>
+                          <div className="w-2 h-2 bg-healthcare-gold rounded-full"></div>
                           <span>{feature}</span>
                         </li>)}
                     </ul>
                   </div>)}
               </div>
               
-              <div className="bg-healthcare-teal-light/10 rounded-2xl p-8">
+              <div className="bg-healthcare-green/5 rounded-2xl p-8 border-2 border-healthcare-gold/20">
                 <div className="text-center">
-                  <h3 className="text-2xl font-semibold text-healthcare-teal mb-4">
+                  <h3 className="text-2xl font-serif font-bold text-healthcare-green mb-4">
                     Diagnosis-Specific Care
                   </h3>
                   <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
@@ -154,51 +161,37 @@ const Services = () => {
             
             <TabsContent value="payment">
               <div className="text-center mb-12">
-                <h2 className="text-healthcare-teal mb-4">Flexible Payment Options</h2>
-                <div className="inline-block bg-healthcare-pink text-white px-6 py-2 rounded-full font-bold mb-6 animate-pulse">
+                <h2 className="text-healthcare-green font-serif font-bold mb-4">Flexible Payment Options</h2>
+                <div className="inline-block bg-healthcare-gold text-white px-8 py-2 rounded-full font-bold mb-6 shadow-lg animate-pulse">
                   Monthly package rates available
                 </div>
+                <div className="banner-star-line">
+                  <span className="w-6 h-6 text-healthcare-gold">✦</span>
+                </div>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  We offer multiple payment options to make quality home care accessible and affordable 
-                  for families across Georgia.
+                  We offer multiple payment options to make quality home care accessible and affordable.
                 </p>
               </div>
               
               <div className="grid md:grid-cols-2 gap-8 mb-12">
-                {paymentOptions.map((option, index) => <div key={index} className="healthcare-card animate-fade-in relative" style={{
+                {paymentOptions.map((option, index) => <div key={index} className="healthcare-card healthcare-card-gold-border animate-fade-in relative" style={{
                 animationDelay: `${index * 0.1}s`
               }}>
-                    {option.comingSoon && <div className="absolute top-4 right-4 bg-healthcare-pink text-white px-3 py-1 rounded-full text-sm font-medium">
+                    {option.comingSoon && <div className="absolute top-4 right-4 bg-healthcare-gold text-white px-3 py-1 rounded-full text-sm font-medium">
                         Coming Soon
                       </div>}
                     <div className="flex items-center space-x-3 mb-4">
-                      {option.icon}
-                      <h3 className="text-xl font-semibold">{option.title}</h3>
+                      <div className="p-2 bg-healthcare-green/10 rounded-full">{option.icon}</div>
+                      <h3 className="text-xl font-serif font-bold text-healthcare-green">{option.title}</h3>
                     </div>
                     <p className="text-gray-600 mb-4">{option.description}</p>
                     <div className="space-y-2">
                       {option.methods.map((method, idx) => <div key={idx} className="flex items-center space-x-2 text-sm text-gray-700">
-                          <div className="w-2 h-2 bg-healthcare-teal rounded-full"></div>
+                          <div className="w-2 h-2 bg-healthcare-gold rounded-full"></div>
                           <span>{method}</span>
                         </div>)}
                     </div>
                   </div>)}
-              </div>
-              
-              <div className="bg-gradient-to-r from-healthcare-teal/10 to-healthcare-pink/10 rounded-2xl p-8">
-                <div className="text-center">
-                  <h3 className="text-2xl font-semibold text-healthcare-teal mb-4">
-                    Additional Funding Options
-                  </h3>
-                  <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
-                    We're constantly expanding our payment options and working with additional community 
-                    programs to help families access the care they need. Contact us to discuss other 
-                    potential funding sources.
-                  </p>
-                  <Button onClick={() => setIsModalOpen(true)} className="btn-healthcare">
-                    Explore Payment Options
-                  </Button>
-                </div>
               </div>
             </TabsContent>
           </Tabs>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,19 +17,20 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 162.5 79.7% 15.3%; /* Green primary #6b996d */
+    --primary: 162.5 79.7% 15.3%; /* #084634 Deep Green */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 123 25% 60%; /* Lighter green */
+    --secondary: 45 60% 50%; /* Gold #C5A028 */
     --secondary-foreground: 0 0% 100%;
 
-    --healthcare-pink: 333 71% 58%; /* Soft pink accent */
-    --healthcare-pink-foreground: 0 0% 100%;
+    --healthcare-gold: 45 60% 50%; 
+    --healthcare-gold-light: 45 60% 65%;
+    --healthcare-gold-dark: 45 60% 35%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 123 25% 60%;
+    --accent: 45 60% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -41,12 +43,12 @@
     --radius: 0.75rem;
 
     /* Healthcare specific colors */
-    --healthcare-green: 162.5 79.7% 15.3%; /* #6b996d */
-    --healthcare-green-light: 123 25% 60%;
-    --healthcare-green-dark: 123 15% 40%;
+    --healthcare-green: 162.5 79.7% 15.3%; /* #084634 */
+    --healthcare-green-light: 145 60% 30%; /* Lighter Forest Green */
+    --healthcare-green-dark: 162.5 80% 10%;
     --healthcare-gray: 215 20% 65%;
     --healthcare-gray-light: 210 40% 96%;
-    --healthcare-card-bg: 123 39% 92%; /* #DCFCE7 */
+    --healthcare-card-bg: 0 0% 100%;
   }
 
   .dark {
@@ -82,7 +84,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
+    @apply font-serif font-bold tracking-tight;
   }
 
   h1 {
@@ -100,23 +102,59 @@
 
 @layer components {
   .btn-healthcare {
-    @apply bg-healthcare-teal hover:bg-healthcare-teal-dark text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl text-sm md:text-base;
+    @apply bg-healthcare-green hover:bg-healthcare-green-dark text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl text-sm md:text-base border border-healthcare-gold/30;
   }
 
   .btn-healthcare-secondary {
-    @apply bg-healthcare-pink hover:bg-pink-600 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl text-sm md:text-base;
+    @apply bg-healthcare-gold hover:bg-healthcare-gold-dark text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl text-sm md:text-base;
   }
 
   .btn-healthcare-outline {
-    @apply border-2 border-healthcare-teal text-healthcare-teal hover:bg-healthcare-teal hover:text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 text-sm md:text-base;
+    @apply border-2 border-healthcare-green text-healthcare-green hover:bg-healthcare-green hover:text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 text-sm md:text-base;
   }
 
   .healthcare-gradient {
-    background: linear-gradient(135deg, hsl(var(--healthcare-green)) 0%, hsl(var(--healthcare-green-light)) 100%);
+    background: linear-gradient(135deg, hsl(var(--healthcare-green)) 0%, hsl(var(--healthcare-green-light)) 50%, hsl(var(--healthcare-green)) 100%);
+    position: relative;
+  }
+
+  .healthcare-gradient::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, hsl(var(--secondary)), transparent);
   }
 
   .healthcare-card {
     @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 border border-gray-100;
+  }
+
+  .healthcare-card-gold-border {
+    @apply border-2 border-healthcare-gold/40 shadow-xl;
+  }
+
+  .banner-star-line {
+    @apply flex items-center justify-center gap-4 my-8;
+  }
+
+  .banner-star-line::before, .banner-star-line::after {
+    content: '';
+    @apply h-[2px] flex-grow bg-healthcare-gold/40;
+    max-width: 100px;
+  }
+
+  .banner-star {
+    @apply text-healthcare-gold w-6 h-6;
+  }
+
+  .banner-wave {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23C5A028' fill-opacity='0.2' d='M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,165.3C672,139,768,117,864,128C960,139,1056,181,1152,197.3C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .section-padding {

@@ -49,16 +49,16 @@ const Navigation = () => {
                 <img src="/noble-logo.png" alt="Noble Homecare Agency Logo" className={`object-contain transition-all duration-300 ${isScrolled ? 'w-12 h-12 md:w-14 md:h-14' : 'w-16 h-16 md:w-20 md:h-20'}`} />
               </div>
               <div className="flex flex-col">
-                <h1 className={`font-bold leading-tight transition-all duration-300 ${isScrolled ? 'text-primary text-base md:text-lg' : 'text-white text-lg md:text-xl'}`}>Noble Homecare Agency</h1>
+                <h1 className={`font-serif font-bold leading-tight transition-all duration-300 ${isScrolled ? 'text-primary text-base md:text-lg' : 'text-white text-lg md:text-xl'}`}>Noble Homecare Agency</h1>
               </div>
             </Link>
 
             {/* Desktop navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {navItems.map(item => <Link key={item.name} to={item.path} onClick={handleNavClick} className={`font-medium transition-colors duration-200 ${isScrolled ? 'text-gray-700 hover:text-healthcare-teal' : 'text-white/90 hover:text-white'} ${isActive(item.path) ? (isScrolled ? 'text-healthcare-teal border-b-2 border-healthcare-teal pb-1' : 'text-white border-b-2 border-white pb-1') : ''}`}>
+              {navItems.map(item => <Link key={item.name} to={item.path} onClick={handleNavClick} className={`font-medium transition-colors duration-200 ${isScrolled ? 'text-gray-700 hover:text-healthcare-green' : 'text-white/90 hover:text-white'} ${isActive(item.path) ? (isScrolled ? 'text-healthcare-green border-b-2 border-healthcare-green pb-1' : 'text-white border-b-2 border-white pb-1') : ''}`}>
                   {item.name}
                 </Link>)}
-              <button onClick={() => setIsConsultationModalOpen(true)} className={`btn-healthcare transition-all duration-300 ${!isScrolled && 'bg-white text-healthcare-teal hover:bg-white/90'}`}>
+              <button onClick={() => setIsConsultationModalOpen(true)} className={`btn-healthcare transition-all duration-300 ${!isScrolled ? 'bg-healthcare-gold text-white hover:bg-healthcare-gold-dark' : 'bg-healthcare-green text-white hover:bg-healthcare-green-dark'}`}>
                 Get Care Today
               </button>
             </div>
