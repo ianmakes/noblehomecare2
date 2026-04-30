@@ -42,7 +42,7 @@ const Contact = () => {
   };
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="healthcare-gradient text-white section-padding">
+      <section className="healthcare-gradient text-white min-h-[45vh] flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl font-bold mb-6 text-white lg:text-5xl">

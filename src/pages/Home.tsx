@@ -45,7 +45,7 @@ const Home = () => {
   }];
   return <div className="min-h-screen">
       {/* Hero Section - Enhanced Background with Animations */}
-      <section className="relative healthcare-gradient text-white py-12 md:py-16 lg:py-24 overflow-hidden">
+      <section className="relative healthcare-gradient text-white min-h-[70vh] flex items-center pt-32 pb-16 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
         {/* Enhanced Background Pattern with Animations */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 via-transparent to-healthcare-pink/20"></div>

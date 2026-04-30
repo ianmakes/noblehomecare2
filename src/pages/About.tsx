@@ -50,7 +50,7 @@ const About = () => {
   }];
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="healthcare-gradient text-white section-padding">
+      <section className="healthcare-gradient text-white min-h-[45vh] flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
