@@ -44,12 +44,18 @@ const Navigation = () => {
         {/* Main navigation */}
         <div className="container-custom">
           <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-16' : 'h-20'}`}>
-            <Link to="/" onClick={handleNavClick} className="flex items-center space-x-3 md:space-x-4">
-              <div className="flex items-center justify-center">
-                <img src="/noble-logo.png" alt="Noble Homecare Agency Logo" className={`object-contain transition-all duration-300 ${isScrolled ? 'w-12 h-12 md:w-14 md:h-14' : 'w-16 h-16 md:w-20 md:h-20'}`} />
+            <Link to="/" onClick={handleNavClick} className="flex items-center space-x-3 md:space-x-4 group">
+              <div className={`relative flex items-center justify-center p-1.5 rounded-full transition-all duration-500 ${isScrolled ? 'bg-white shadow-lg border-2 border-healthcare-gold/30' : 'bg-white/90 shadow-2xl border-2 border-healthcare-gold'}`}>
+                <img src="/noble-logo.png" alt="Noble Homecare Agency Logo" className={`object-contain transition-all duration-500 ${isScrolled ? 'w-10 h-10 md:w-12 md:h-12' : 'w-14 h-14 md:w-16 md:h-16'}`} />
+                <div className="absolute inset-0 rounded-full border border-white/50 pointer-events-none"></div>
               </div>
               <div className="flex flex-col">
-                <h1 className={`font-serif font-bold leading-tight transition-all duration-300 ${isScrolled ? 'text-primary text-base md:text-lg' : 'text-white text-lg md:text-xl'}`}>Noble Homecare Agency</h1>
+                <h1 className={`font-serif font-bold leading-none transition-all duration-300 ${isScrolled ? 'text-healthcare-green text-base md:text-xl' : 'text-white text-lg md:text-2xl'}`}>
+                  Noble Homecare
+                </h1>
+                <span className={`text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 ${isScrolled ? 'text-healthcare-gold' : 'text-healthcare-gold shadow-sm'}`}>
+                  Agency of Georgia
+                </span>
               </div>
             </Link>
 
