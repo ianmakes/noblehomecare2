@@ -64,7 +64,7 @@ const About = () => {
               </p>
             </div>
             <div className="animate-slide-in">
-              <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ce122?q=80&w=1200&auto=format&fit=crop" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-2xl w-full h-[400px] object-cover" />
+              <img src="https://loremflickr.com/1200/800/senior,care?random=1" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-2xl w-full h-[400px] object-cover" />
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@ const About = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img src="https://images.unsplash.com/photo-1628177142898-93e46e6d625b?q=80&w=1200&auto=format&fit=crop" alt="Caregiver assisting elderly woman showing compassionate care" className="rounded-2xl shadow-xl w-full h-[500px] object-cover" />
+              <img src="https://loremflickr.com/1200/800/elderly,caregiver?random=2" alt="Caregiver assisting elderly woman showing compassionate care" className="rounded-2xl shadow-xl w-full h-[500px] object-cover" />
             </div>
             
             <div>
@@ -108,7 +108,7 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 to-healthcare-primary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-              <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1200&auto=format&fit=crop" alt="Compassionate Caregiver" className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto object-cover transform group-hover:scale-105 transition-all duration-500 border-2 border-white/50" />
+              <img src="https://loremflickr.com/1200/800/healthcare,nurse?random=3" alt="Compassionate Caregiver" className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto object-cover transform group-hover:scale-105 transition-all duration-500 border-2 border-white/50" />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-healthcare-teal/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
             </div>
             
@@ -190,7 +190,7 @@ const About = () => {
             </div>
             
             <div>
-              <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=1200&auto=format&fit=crop" alt="Diverse healthcare professional providing care with cultural sensitivity" className="rounded-2xl shadow-xl w-full h-[400px] object-cover" />
+              <img src="https://loremflickr.com/1200/800/family,elderly?random=4" alt="Diverse healthcare professional providing care with cultural sensitivity" className="rounded-2xl shadow-xl w-full h-[400px] object-cover" />
             </div>
           </div>
         </div>
@@ -223,7 +223,7 @@ const About = () => {
       {/* Our Care Team - Background Image with Overlay */}
       <section className="section-padding relative">
         <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop')`
+        backgroundImage: `url('https://loremflickr.com/1200/800/senior,health?random=5')`
       }}>
           <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
         </div>
@@ -238,7 +238,7 @@ const About = () => {
           
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <div>
-              <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200&auto=format&fit=crop" alt="Healthcare professional providing emotional support and care to patient" className="rounded-2xl shadow-xl w-full h-[400px] object-cover" />
+              <img src="https://loremflickr.com/1200/800/medical,caregiver?random=6" alt="Healthcare professional providing emotional support and care to patient" className="rounded-2xl shadow-xl w-full h-[400px] object-cover" />
             </div>
             
             <div className="space-y-6">

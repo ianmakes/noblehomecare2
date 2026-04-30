@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 123 18% 51%; /* Green primary #6b996d */
+    --primary: 162.5 79.7% 15.3%; /* Green primary #6b996d */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 123 25% 60%; /* Lighter green */
@@ -36,12 +36,12 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 123 18% 51%;
+    --ring: 162.5 79.7% 15.3%;
 
     --radius: 0.75rem;
 
     /* Healthcare specific colors */
-    --healthcare-green: 123 18% 51%; /* #6b996d */
+    --healthcare-green: 162.5 79.7% 15.3%; /* #6b996d */
     --healthcare-green-light: 123 25% 60%;
     --healthcare-green-dark: 123 15% 40%;
     --healthcare-gray: 215 20% 65%;

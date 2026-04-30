@@ -247,7 +247,7 @@ const Services = () => {
             </div>
             
             <div>
-              <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop" alt="Healthcare professional providing round-the-clock care" className="rounded-2xl shadow-xl w-full h-[500px] object-cover" />
+              <img src="https://loremflickr.com/1200/800/family,elderly?random=10" alt="Healthcare professional providing round-the-clock care" className="rounded-2xl shadow-xl w-full h-[500px] object-cover" />
             </div>
           </div>
         </div>

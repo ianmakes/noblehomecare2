@@ -124,7 +124,7 @@ const Home = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=1200&auto=format&fit=crop" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
+              <img src="https://loremflickr.com/1200/800/senior,care?random=7" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
             </div>
             
             <div>
@@ -200,7 +200,7 @@ const Home = () => {
             </div>
             
             <div>
-              <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200&auto=format&fit=crop" alt="Healthcare professional providing medication assistance to elderly patient" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
+              <img src="https://loremflickr.com/1200/800/elderly,caregiver?random=8" alt="Healthcare professional providing medication assistance to elderly patient" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
             </div>
           </div>
         </div>
@@ -239,7 +239,7 @@ const Home = () => {
       {/* Service Areas - Enhanced with White Overlay */}
       <section className="py-12 md:py-16 lg:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop')`
+        backgroundImage: `url('https://loremflickr.com/1200/800/healthcare,nurse?random=9')`
       }}>
           <div className="absolute inset-0 bg-white/90 backdrop-blur-sm py-0"></div>
         </div>
