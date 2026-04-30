@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <div className="flex items-center justify-center">
-                <img src="/lovable-uploads/heart-logo.png" alt="Noble Homecare Agency Heart Logo" className="w-12 h-12 md:w-12 md:h-24 object-contain" />
+                <img src="/noble-logo.png" alt="Noble Homecare Agency Logo" className="w-12 h-12 md:w-12 md:h-24 object-contain" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-healthcare-teal">Noble Homecare Agency</h3>
@@ -69,8 +69,8 @@ const Footer = () => {
             <div className="mt-6">
               <h5 className="text-md font-medium mb-3">Service Areas</h5>
               <p className="text-sm text-gray-400">
-                Fayette, Fulton, Clayton, Cobb, Coweta, DeKalb, Carroll, 
-                Douglas, Gwinnett, Henry Counties
+                Cobb, Paulding, Cherokee, Fulton, Douglas, Gwinnett, 
+                Polk, and Bartow County
               </p>
             </div>
           </div>
@@ -81,21 +81,21 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-healthcare-teal" />
-                <a href="tel:470-210-7666" className="text-gray-300 hover:text-white">
-                  470-210-7666
+                <a href="tel:1-866-756-7374" className="text-gray-300 hover:text-white">
+                  1-866-756-7374
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-healthcare-teal" />
-                <a href="mailto:service.premierhealthcarega@gmail.com" className="text-gray-300 hover:text-white text-sm break-all">
-                  service.premierhealthcarega@gmail.com
+                <a href="mailto:info@noblehomecareagency.com" className="text-gray-300 hover:text-white text-sm break-all">
+                  info@noblehomecareagency.com
                 </a>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-healthcare-teal mt-1" />
                 <div className="text-gray-300 text-sm">
-                  <p>Serving Metro Atlanta</p>
-                  <p>& Surrounding Counties</p>
+                  <p>7120 Weatherford Drive</p>
+                  <p>Powder Springs, GA 30127</p>
                 </div>
               </div>
             </div>

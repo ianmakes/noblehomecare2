@@ -9,49 +9,19 @@ const Services = () => {
   const personalCareServices = [{
     icon: <Heart className="w-8 h-8 text-healthcare-pink" />,
     title: "Personal Care",
-    description: "Bathing, grooming, toileting, dressing, and personal hygiene assistance with dignity and respect.",
-    features: ["Bathing & Showering", "Grooming & Dressing", "Toileting Assistance", "Oral Care", "Skin Care"]
+    description: "Providing essential personal care to ensure daily comfort.",
+    features: ["Personal Care", "Injection Administration", "Meal Preparation", "Mobility Assistance", "Medication Reminders", "Laundry", "Light Housekeeping", "Bedside Supervision", "Doctor Visits", "Bedbound & Incontinence Care"]
   }, {
     icon: <Users className="w-8 h-8 text-healthcare-teal" />,
     title: "Companionship",
     description: "Friendly conversation, emotional support, and social engagement activities to reduce isolation.",
-    features: ["Conversation & Socialization", "Reading Together", "Games & Activities", "Emotional Support", "Community Engagement"]
-  }, {
-    icon: <Utensils className="w-8 h-8 text-healthcare-pink" />,
-    title: "Meal Preparation",
-    description: "Nutritious meal planning, preparation, and assistance with eating according to dietary needs.",
-    features: ["Menu Planning", "Grocery Shopping", "Meal Cooking", "Special Diets", "Feeding Assistance"]
-  }, {
-    icon: <Home className="w-8 h-8 text-healthcare-teal" />,
-    title: "Light Housekeeping",
-    description: "Maintaining a clean, safe, and comfortable living environment for optimal health.",
-    features: ["Dusting & Vacuuming", "Laundry & Linens", "Kitchen Cleaning", "Organizing", "Trash Removal"]
-  }, {
-    icon: <Car className="w-8 h-8 text-healthcare-pink" />,
-    title: "Transportation",
-    description: "Safe, reliable transportation to medical appointments, errands, and social activities.",
-    features: ["Medical Appointments", "Grocery Shopping", "Pharmacy Visits", "Social Outings", "Errands"]
-  }, {
-    icon: <Pill className="w-8 h-8 text-healthcare-teal" />,
-    title: "Medication Supervision",
-    description: "Monitoring medication schedules and reminders to ensure proper medication management.",
-    features: ["Medication Reminders", "Pill Organization", "Schedule Monitoring", "Prescription Pickup", "Communication with Doctors"]
+    features: ["Companionship Services", "Bathing", "Running Errands and much more!"]
   }];
   const specializedServices = [{
     icon: <Stethoscope className="w-8 h-8 text-healthcare-teal" />,
-    title: "Skilled Nursing",
-    description: "Professional nursing care by licensed RNs and LPNs for medical conditions and treatments.",
-    features: ["Wound Care", "IV Therapy", "Medication Administration", "Vital Signs Monitoring", "Post-Surgical Care"]
-  }, {
-    icon: <Clock className="w-8 h-8 text-healthcare-pink" />,
-    title: "Around-The-Clock Care",
-    description: "24-hour comprehensive care services for clients requiring continuous support and monitoring.",
-    features: ["24/7 Supervision", "Night Care", "Emergency Response", "Continuous Monitoring", "Family Communication"]
-  }, {
-    icon: <Shield className="w-8 h-8 text-healthcare-teal" />,
-    title: "Ambulation & Transfer",
-    description: "Safe mobility assistance and transfer support to prevent falls and maintain independence.",
-    features: ["Walking Assistance", "Transfer Support", "Fall Prevention", "Mobility Exercises", "Equipment Usage"]
+    title: "Skilled Nursing Services",
+    description: "All services for skilled nursing according to physician orders.",
+    features: ["Medication Management", "Wound Care", "Chronic Disease Management", "Health Monitoring & Assessment"]
   }];
   const paymentOptions = [{
     icon: <DollarSign className="w-8 h-8 text-healthcare-teal" />,

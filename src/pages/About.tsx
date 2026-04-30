@@ -138,8 +138,9 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-healthcare-teal font-bold mb-4">Our Commitment</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We are dedicated to providing exceptional care that makes a real difference in the lives 
-              of our clients and their families.
+              Noble Homecare Agency ensures clients and patients that they will have our full attention with their in-home care. Our reputation has been built on the success and quality of our staff and their dedication to the art of caring services. Our staff continually strives to demonstrate that we are an industry leader in providing private duty. We adhere to the industry's most rigorous standards to assure the highest quality of care.
+              <br /><br />
+              To maintain our high standards, we carefully screen all our employees, including completion of full criminal background checks.
             </p>
           </div>
           

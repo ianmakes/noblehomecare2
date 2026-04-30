@@ -18,7 +18,7 @@ const Contact = () => {
     urgency: '',
     message: ''
   });
-  const counties = ['Fayette', 'Fulton', 'Clayton', 'Cobb', 'Coweta', 'DeKalb', 'Carroll', 'Douglas', 'Gwinnett', 'Henry'];
+  const counties = ['Cobb', 'Paulding', 'Cherokee', 'Fulton', 'Douglas', 'Gwinnett', 'Polk', 'Bartow'];
   const careTypes = ['Personal Care', 'Companionship', 'Meal Preparation', 'Light Housekeeping', 'Transportation', 'Medication Supervision', 'Skilled Nursing', 'Around-The-Clock Care'];
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,8 +65,8 @@ const Contact = () => {
               <Phone className="w-12 h-12 text-healthcare-teal mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">Call Us</h3>
               <p className="text-gray-600 mb-4">Speak with our care coordinators</p>
-              <a href="tel:470-210-7666" className="text-healthcare-teal font-semibold text-lg hover:text-healthcare-teal-dark transition-colors">
-                470-210-7666
+              <a href="tel:1-866-756-7374" className="text-healthcare-teal font-semibold text-lg hover:text-healthcare-teal-dark transition-colors">
+                1-866-756-7374
               </a>
             </div>
             
@@ -74,15 +74,15 @@ const Contact = () => {
               <Mail className="w-12 h-12 text-healthcare-pink mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">Email Us</h3>
               <p className="text-gray-600 mb-4">Send us your questions anytime</p>
-              <a href="mailto:service.premierhealthcarega@gmail.com" className="text-healthcare-teal font-semibold hover:text-healthcare-teal-dark transition-colors break-all">
-                service.premierhealthcarega@gmail.com
+              <a href="mailto:info@noblehomecareagency.com" className="text-healthcare-teal font-semibold hover:text-healthcare-teal-dark transition-colors break-all">
+                info@noblehomecareagency.com
               </a>
             </div>
             
             <div className="healthcare-card text-center">
               <MapPin className="w-12 h-12 text-healthcare-teal mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">Service Areas</h3>
-              <p className="text-gray-600 mb-4">Serving 10 counties across Georgia</p>
+              <p className="text-gray-600 mb-4">Serving multiple counties across Georgia</p>
               <p className="text-healthcare-teal font-semibold">
                 Metro Atlanta & Surrounding Areas
               </p>
@@ -248,9 +248,9 @@ const Contact = () => {
               <div className="bg-healthcare-teal text-white rounded-xl p-6">
                 <h4 className="font-semibold text-lg mb-3">Need Immediate Help?</h4>
                 <p className="mb-4">Call us now to speak with a care coordinator</p>
-                <Button onClick={() => window.open('tel:470-210-7666')} className="btn-healthcare-secondary w-full">
+                <Button onClick={() => window.open('tel:1-866-756-7374')} className="btn-healthcare-secondary w-full">
                   <Phone className="mr-2" size={16} />
-                  Call 470-210-7666
+                  Call 1-866-756-7374
                 </Button>
               </div>
             </div>
