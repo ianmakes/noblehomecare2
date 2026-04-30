@@ -14,10 +14,10 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <div className="flex items-center justify-center">
-                <img src="/lovable-uploads/heart-logo.png" alt="Premier Healthcare Heart Logo" className="w-12 h-12 md:w-12 md:h-24 object-contain" />
+                <img src="/lovable-uploads/heart-logo.png" alt="Noble Homecare Agency Heart Logo" className="w-12 h-12 md:w-12 md:h-24 object-contain" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-healthcare-teal">Premier Healthcare</h3>
+                <h3 className="text-xl font-bold text-healthcare-teal">Noble Homecare Agency</h3>
                 <p className="text-sm text-gray-300">of Georgia</p>
               </div>
             </div>
@@ -105,7 +105,7 @@ const Footer = () => {
               <h5 className="text-md font-medium mb-3">Follow Us</h5>
               <div className="flex space-x-3">
                 <a 
-                  href="https://www.facebook.com/people/Premier-Healthcare-of-Georgia-Inc/61581859673772/" 
+                  href="https://www.facebook.com/people/Noble-Homecare-Agency/61581859673772/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-8 h-8 bg-gray-700 hover:bg-healthcare-teal rounded-full flex items-center justify-center transition-colors"
@@ -129,7 +129,7 @@ const Footer = () => {
 
         {/* Bottom Border */}
         <div className="mt-8 pt-6 border-t border-gray-700 text-center">
-          <p className="text-sm text-gray-400">© 2025 Premier Healthcare of Georgia, Inc. All rights reserved. | Licensed & Insured | Powered by Elevate.time™️</p>
+          <p className="text-sm text-gray-400">© 2025 Noble Homecare Agency All rights reserved. | Licensed & Insured | Powered by Elevate.time™️</p>
         </div>
       </div>
     </footer>;

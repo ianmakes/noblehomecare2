@@ -595,7 +595,7 @@ ${data.references}`
                             <FormItem>
                               <FormLabel>Cover Letter *</FormLabel>
                               <FormControl>
-                                <Textarea {...field} placeholder="Tell us why you want to work with Premier Healthcare of Georgia..." rows={4} />
+                                <Textarea {...field} placeholder="Tell us why you want to work with Noble Homecare Agency..." rows={4} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -713,7 +713,7 @@ ${data.references}`
                 </DialogContent>
               </Dialog>
               
-              <Button className="btn-healthcare text-lg px-8 py-4 flex items-center gap-2" onClick={() => window.location.href = 'mailto:service.premierhealthcarega@gmail.com?subject=Job Application&body=Hello, I would like to apply for a position at Premier Healthcare of Georgia. Please find my resume attached.'}>
+              <Button className="btn-healthcare text-lg px-8 py-4 flex items-center gap-2" onClick={() => window.location.href = 'mailto:service.premierhealthcarega@gmail.com?subject=Job Application&body=Hello, I would like to apply for a position at Noble Homecare Agency. Please find my resume attached.'}>
                 <Mail className="w-5 h-5" />
                 Apply via Email
               </Button>
@@ -727,7 +727,7 @@ ${data.references}`
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-healthcare-dark mb-4">
-              Why Work With <span className="text-healthcare-teal">Premier Healthcare</span>
+              Why Work With <span className="text-healthcare-teal">Noble Homecare Agency</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Join a team that truly values your contribution and provides the support you need to excel in your career.
@@ -793,7 +793,7 @@ ${data.references}`
             Ready to Start Your Healthcare Career?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join Premier Healthcare of Georgia and become part of a team that's dedicated to providing exceptional care and making a real difference in people's lives.
+            Join Noble Homecare Agency and become part of a team that's dedicated to providing exceptional care and making a real difference in people's lives.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button onClick={() => setIsDialogOpen(true)} className="btn-healthcare-secondary text-lg px-8 py-4">

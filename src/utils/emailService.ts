@@ -33,10 +33,10 @@ export const sendFormEmail = async (formData: FormData, formType: 'consultation'
     
     // Fallback to mailto as backup
     const subject = formType === 'consultation' 
-      ? 'New Free Consultation Request - Premier Healthcare of Georgia'
+      ? 'New Free Consultation Request - Noble Homecare Agency'
       : formType === 'care-needs'
-      ? 'New Care Needs Assessment - Premier Healthcare of Georgia'
-      : 'New Job Application - Premier Healthcare of Georgia';
+      ? 'New Care Needs Assessment - Noble Homecare Agency'
+      : 'New Job Application - Noble Homecare Agency';
 
     const body = `Contact Information:
 - Name: ${formData.name}

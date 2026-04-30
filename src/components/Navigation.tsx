@@ -59,7 +59,7 @@ const Navigation = () => {
                 <span className="font-medium">Your Care. Your Comfort. Your Home.</span>
                 <div className="flex items-center space-x-2 ml-4">
                   <a 
-                    href="https://www.facebook.com/people/Premier-Healthcare-of-Georgia-Inc/61581859673772/" 
+                    href="https://www.facebook.com/people/Noble-Homecare-Agency/61581859673772/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="hover:opacity-80 transition-opacity"
@@ -87,10 +87,10 @@ const Navigation = () => {
           <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'py-1' : 'py-2'}`}>
             <Link to="/" onClick={handleNavClick} className="flex items-center space-x-3 md:space-x-4">
               <div className="flex items-center justify-center">
-                <img src="/lovable-uploads/premier-healthcare-logo.png" alt="Premier Healthcare Logo" className={`object-contain transition-all duration-300 ${isScrolled ? 'w-14 h-14 md:w-16 md:h-16' : 'w-20 h-20 md:w-24 md:h-24'}`} />
+                <img src="/lovable-uploads/premier-healthcare-logo.png" alt="Noble Homecare Agency Logo" className={`object-contain transition-all duration-300 ${isScrolled ? 'w-14 h-14 md:w-16 md:h-16' : 'w-20 h-20 md:w-24 md:h-24'}`} />
               </div>
               <div className="flex flex-col">
-                <h1 className={`font-bold text-primary leading-tight transition-all duration-300 ${isScrolled ? 'text-base md:text-lg' : 'text-lg md:text-xl'}`}>Premier Healthcare</h1>
+                <h1 className={`font-bold text-primary leading-tight transition-all duration-300 ${isScrolled ? 'text-base md:text-lg' : 'text-lg md:text-xl'}`}>Noble Homecare Agency</h1>
                 <p className={`text-muted-foreground leading-tight -mt-1 transition-all duration-300 ${isScrolled ? 'text-xs' : 'text-xs md:text-sm'}`}>of Georgia, Inc.</p>
               </div>
             </Link>

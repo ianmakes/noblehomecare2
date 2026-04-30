@@ -103,7 +103,7 @@ const PrivacyPolicy = () => {
                   </p>
                   <div className="bg-healthcare-accent p-6 rounded-lg">
                     <p className="text-gray-700 mb-2">
-                      <strong>Premier Healthcare of Georgia, Inc.</strong>
+                      <strong>Noble Homecare Agency</strong>
                     </p>
                     <p className="text-gray-700 mb-2">
                       Phone: <a href="tel:470-210-7666" className="text-healthcare-teal hover:underline">470-210-7666</a>

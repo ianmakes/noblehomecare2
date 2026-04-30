@@ -76,8 +76,7 @@ const Home = () => {
                 <span className="text-primary-light bg-gradient-to-r from-pink-200 to-teal-200 bg-clip-text text-transparent animate-pulse">Loving With Care</span>
               </h1>
               <p className="text-lg md:text-xl mb-6 md:mb-8 text-white/90 leading-relaxed">
-                At Premier Healthcare of Georgia, we provide compassionate, personalized home care services 
-                that help you maintain independence and dignity in the comfort of your own home.
+                Noble Homecare Agency is dedicated to providing high-quality, personalized in-home healthcare services designed to meet the unique needs of each client. We understand that receiving care in the comfort of one’s home promotes dignity, independence, and emotional well-being.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 transform hover:scale-105 transition-all duration-300">
@@ -100,7 +99,7 @@ const Home = () => {
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-healthcare-teal font-bold mb-4">Our Core Services</h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              We provide the care you enjoy, the peace of mind your family deserves.
+              We offer a wide range of home healthcare services designed to cover both non-medical and skilled nursing needs, ensuring every individual receives respectful and compassionate support.
             </p>
           </div>
           
@@ -125,12 +124,12 @@ const Home = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <img src="/lovable-uploads/healthcare-care-image.jpg" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
+              <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=1200&auto=format&fit=crop" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
             </div>
             
             <div>
               <h2 className="text-healthcare-teal font-bold mb-4 md:mb-6">
-                We believe the heart of healthcare is service to others
+                Our reputation is built on trust and professionalism
               </h2>
               <div className="space-y-4 md:space-y-6">
                 <div className="flex items-start space-x-4">
@@ -201,7 +200,7 @@ const Home = () => {
             </div>
             
             <div>
-              <img src="/lovable-uploads/8c0494eb-78a4-4c3a-9b01-dcbf91d3b46e.png" alt="Healthcare professional providing medication assistance to elderly patient" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
+              <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200&auto=format&fit=crop" alt="Healthcare professional providing medication assistance to elderly patient" className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover" />
             </div>
           </div>
         </div>
@@ -213,7 +212,7 @@ const Home = () => {
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-healthcare-teal font-bold mb-4">Easy Steps To Get Private Nursing</h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Getting started with Premier Healthcare of Georgia is simple and straightforward.
+              Getting started with Noble Homecare Agency is simple and straightforward.
             </p>
           </div>
           
@@ -240,7 +239,7 @@ const Home = () => {
       {/* Service Areas - Enhanced with White Overlay */}
       <section className="py-12 md:py-16 lg:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`
+        backgroundImage: `url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop')`
       }}>
           <div className="absolute inset-0 bg-white/90 backdrop-blur-sm py-0"></div>
         </div>
@@ -249,7 +248,7 @@ const Home = () => {
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-healthcare-teal font-bold mb-4">Areas We Serve</h2>
             <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-              Premier Healthcare of Georgia proudly serves families across metro Atlanta and surrounding counties.
+              Noble Homecare Agency proudly serves individuals and families with high-quality, individualized care.
             </p>
           </div>
           
@@ -272,8 +271,7 @@ const Home = () => {
             <span className="text-primary-light">we care better</span>
           </h2>
           <p className="text-lg md:text-xl text-white/90 mb-6 md:mb-8 max-w-3xl mx-auto">
-            Our passion is personal, and our care is from the heart. Let us help you maintain your independence 
-            while giving your family peace of mind.
+            At Noble Homecare Agency, we truly believe that you are in good hands. Our commitment is not just to provide care, but to improve lives by supporting independence, restoring confidence, and ensuring comfort for every individual we serve.
           </p>
           
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-center mb-8 md:mb-12">

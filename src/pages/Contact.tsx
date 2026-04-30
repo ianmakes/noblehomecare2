@@ -46,7 +46,7 @@ const Contact = () => {
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl font-bold mb-6 text-white lg:text-5xl">
-              Contact Premier Healthcare<br />
+              Contact Noble Homecare Agency<br />
               <span className="text-white">of Georgia</span>
             </h1>
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
@@ -194,7 +194,7 @@ const Contact = () => {
             {/* Info Panel */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold text-healthcare-teal mb-6">Why Choose Premier Healthcare?</h3>
+                <h3 className="text-2xl font-semibold text-healthcare-teal mb-6">Why Choose Noble Homecare Agency?</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
@@ -264,7 +264,7 @@ const Contact = () => {
           <div className="text-center mb-12">
             <h2 className="text-healthcare-teal mb-4">Counties We Serve</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Premier Healthcare of Georgia proudly serves families across these Georgia counties:
+              Noble Homecare Agency proudly serves families across these Georgia counties:
             </p>
           </div>
           

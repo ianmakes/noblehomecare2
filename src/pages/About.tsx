@@ -60,11 +60,11 @@ const About = () => {
               </h1>
               <p className="text-xl text-white/90 leading-relaxed">
                 Founded on the belief that everyone deserves compassionate, personalized care, 
-                Premier Healthcare of Georgia was born from a deeply personal experience of caring for family.
+                Noble Homecare Agency was born from a deeply personal experience of caring for family.
               </p>
             </div>
             <div className="animate-slide-in">
-              <img src="/lovable-uploads/15bc09e2-4d42-4ece-8306-58522dcd86bb.png" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-2xl w-full h-[400px] object-cover" />
+              <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ce122?q=80&w=1200&auto=format&fit=crop" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-2xl w-full h-[400px] object-cover" />
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@ const About = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img src="/lovable-uploads/7686592a-70f2-4b59-9fae-75d514f90cfc.png" alt="Caregiver assisting elderly woman showing compassionate care" className="rounded-2xl shadow-xl w-full h-[500px] object-cover" />
+              <img src="https://images.unsplash.com/photo-1628177142898-93e46e6d625b?q=80&w=1200&auto=format&fit=crop" alt="Caregiver assisting elderly woman showing compassionate care" className="rounded-2xl shadow-xl w-full h-[500px] object-cover" />
             </div>
             
             <div>
@@ -88,12 +88,12 @@ const About = () => {
                   goes beyond daily tasks—it's about dignity, trust, and creating comfort for both 
                   the client and their family." ~Founder</em>
                 </p>
-                <p>Inspired by her journey, I founded Premier Healthcare of Georgia with the mission to provide the same level of care, respect, and attentiveness to others that I wanted for my own loved one. Every client we serve is treated like family, because we know what it means to entrust someone with the care of those you love most.
+                <p>Inspired by her journey, I founded Noble Homecare Agency with the mission to provide the same level of care, respect, and attentiveness to others that I wanted for my own loved one. Every client we serve is treated like family, because we know what it means to entrust someone with the care of those you love most.
 
               </p>
                 <div className="bg-healthcare-secondary/10 p-6 rounded-lg border-l-4 border-healthcare-secondary bg-green-100">
                   <p className="font-medium text-healthcare-secondary italic">
-                    "At Premier Healthcare of Georgia, our passion is personal—and our care is from the heart."
+                    "At Noble Homecare Agency, our passion is personal—and our care is from the heart."
                   </p>
                 </div>
               </div>
@@ -108,29 +108,22 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 to-healthcare-primary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-              <img src="/lovable-uploads/a2734e4d-72c1-4860-90ed-a2ff6a0a0772.png" alt="Augustina Gibson, Founder of Premier Healthcare of Georgia" className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto object-contain transform group-hover:scale-105 transition-all duration-500 border-2 border-white/50" />
+              <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1200&auto=format&fit=crop" alt="Compassionate Caregiver" className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto object-cover transform group-hover:scale-105 transition-all duration-500 border-2 border-white/50" />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-healthcare-teal/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
             </div>
             
             <div>
-              <h2 className="text-healthcare-teal font-bold mb-6">Meet Our Founder</h2>
+              <h2 className="text-healthcare-teal font-bold mb-6">Our Mission</h2>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  Augustina Gibson is originally from Ghana and brings a global perspective and compassion to her work in healthcare. 
-                  With a Bachelor of Science in Nursing, she has built a diversified career serving individuals with intellectual 
-                  and developmental disabilities (IDD).
+                  Our mission is to safely meet the needs of our clients by providing high-quality, individualized care tailored to their specific conditions and lifestyles. We are especially passionate about supporting seniors and individuals who may struggle with daily living activities due to illness, disability, or age-related challenges. 
                 </p>
                 <p>
-                  For more than 15 years, she directed a day program where she demonstrated her commitment to instilling hope, 
-                  dignity, and healing in underserved communities. Building on this foundation, she established Premier Healthcare 
-                  of Georgia to continue her mission of providing personalized and compassionate home care services.
-                </p>
-                <p>
-                  In her spare time, Augustina enjoys spending time with her husband and children.
+                  From minimal assistance to full-time care for bed-bound clients, we ensure every individual receives respectful and compassionate support.
                 </p>
                 <div className="bg-healthcare-primary/10 p-6 rounded-lg border-l-4 border-healthcare-primary bg-green-100">
                   <p className="font-medium text-healthcare-primary">
-                    <strong>Mission:</strong> To provide personalized and compassionate home care services that honor dignity and inspire hope in every client we serve.
+                    <strong>Vision:</strong> To provide personalized and compassionate home care services that honor dignity and inspire hope in every client we serve.
                   </p>
                 </div>
               </div>
@@ -196,7 +189,7 @@ const About = () => {
             </div>
             
             <div>
-              <img src="/lovable-uploads/cdf8a634-5e38-4f78-bafd-6f8f97f82efd.png" alt="Diverse healthcare professional providing care with cultural sensitivity" className="rounded-2xl shadow-xl w-full h-[400px] object-cover" />
+              <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=1200&auto=format&fit=crop" alt="Diverse healthcare professional providing care with cultural sensitivity" className="rounded-2xl shadow-xl w-full h-[400px] object-cover" />
             </div>
           </div>
         </div>
@@ -229,7 +222,7 @@ const About = () => {
       {/* Our Care Team - Background Image with Overlay */}
       <section className="section-padding relative">
         <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url('/lovable-uploads/50bc45b7-941d-4c39-a1be-1d5da46ba07e.png')`
+        backgroundImage: `url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop')`
       }}>
           <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
         </div>
@@ -244,7 +237,7 @@ const About = () => {
           
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <div>
-              <img src="/lovable-uploads/09449ac1-8944-4327-8545-881177fb32e1.png" alt="Healthcare professional providing emotional support and care to patient" className="rounded-2xl shadow-xl w-full h-[400px] object-cover" />
+              <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200&auto=format&fit=crop" alt="Healthcare professional providing emotional support and care to patient" className="rounded-2xl shadow-xl w-full h-[400px] object-cover" />
             </div>
             
             <div className="space-y-6">
