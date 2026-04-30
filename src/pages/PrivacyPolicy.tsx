@@ -4,7 +4,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="healthcare-gradient text-white py-16">
+      <section className="healthcare-gradient text-white min-h-[45vh] flex items-center pt-32 pb-16 overflow-hidden">
         <div className="container-custom">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">Privacy Policy</h1>
@@ -106,10 +106,10 @@ const PrivacyPolicy = () => {
                       <strong>Noble Homecare Agency</strong>
                     </p>
                     <p className="text-gray-700 mb-2">
-                      Phone: <a href="tel:470-210-7666" className="text-healthcare-teal hover:underline">470-210-7666</a>
+                      Phone: <a href="tel:1-866-756-7374" className="text-healthcare-teal hover:underline">1-866-756-7374</a>
                     </p>
                     <p className="text-gray-700">
-                      Email: <a href="mailto:service.premierhealthcarega@gmail.com" className="text-healthcare-teal hover:underline">service.premierhealthcarega@gmail.com</a>
+                      Email: <a href="mailto:info@noblehomecareagency.com" className="text-healthcare-teal hover:underline">info@noblehomecareagency.com</a>
                     </p>
                   </div>
                 </div>

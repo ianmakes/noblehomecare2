@@ -79,18 +79,14 @@ const About = () => {
             </div>
             
             <div>
-              <h2 className="text-healthcare-teal mb-6 font-bold text-left">The Heart of Our Company</h2>
+              <h2 className="text-healthcare-teal mb-6 font-bold text-left">About Noble Homecare Agency</h2>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  The heart of our company was born out of family. <em>"When my grandmother needed care, 
-                  I saw firsthand how important it is to have compassionate, reliable, and personalized 
-                  support at home. Entrusting someone to care for her showed me that true home care 
-                  goes beyond daily tasks—it's about dignity, trust, and creating comfort for both 
-                  the client and their family." ~Founder</em>
+                  Noble Homecare Agency is dedicated to providing high-quality, personalized in-home healthcare services designed to meet the unique needs of each client. We understand that receiving care in the comfort of one’s home promotes dignity, independence, and emotional well-being. Our goal is to support individuals and families by delivering compassionate, reliable, and professional care services that enhance quality of life.
                 </p>
-                <p>Inspired by her journey, I founded Noble Homecare Agency with the mission to provide the same level of care, respect, and attentiveness to others that I wanted for my own loved one. Every client we serve is treated like family, because we know what it means to entrust someone with the care of those you love most.
-
-              </p>
+                <p>
+                  At Noble Homecare Agency, we go above and beyond to ensure that every client receives the attention and support they deserve. Our team consists of highly trained and carefully screened caregivers who are committed to making a positive difference in the lives of those we serve.
+                </p>
                 <div className="bg-healthcare-secondary/10 p-6 rounded-lg border-l-4 border-healthcare-secondary bg-green-100">
                   <p className="font-medium text-healthcare-secondary italic">
                     "At Noble Homecare Agency, our passion is personal—and our care is from the heart."
@@ -116,14 +112,14 @@ const About = () => {
               <h2 className="text-healthcare-teal font-bold mb-6">Our Mission</h2>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  Our mission is to safely meet the needs of our clients by providing high-quality, individualized care tailored to their specific conditions and lifestyles. We are especially passionate about supporting seniors and individuals who may struggle with daily living activities due to illness, disability, or age-related challenges. 
+                  At Noble Homecare Agency LLC, our mission is to safely meet the needs of our clients by providing high quality individualized care all the way to being bed-bound. We thrive by supporting and caring for seniors that can't maintain daily living activities due to illness or disabilities.
                 </p>
                 <p>
-                  From minimal assistance to full-time care for bed-bound clients, we ensure every individual receives respectful and compassionate support.
+                  We specialize specifically with seniors that can no longer support themselves with toileting, feeding, and other daily activities. Our compassionate team ensures every individual receives respectful and personalized support in the comfort of their home.
                 </p>
                 <div className="bg-healthcare-primary/10 p-6 rounded-lg border-l-4 border-healthcare-primary bg-green-100">
                   <p className="font-medium text-healthcare-primary">
-                    <strong>Vision:</strong> To provide personalized and compassionate home care services that honor dignity and inspire hope in every client we serve.
+                    <strong>Vision:</strong> To provide personalized and compassionate home care services that honor dignity, independence, and emotional well-being for every client we serve.
                   </p>
                 </div>
               </div>

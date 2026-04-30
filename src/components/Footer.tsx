@@ -114,7 +114,7 @@ const Footer = () => {
                   <Facebook className="w-4 h-4" />
                 </a>
                 <a 
-                  href="https://www.instagram.com/premierhealthcarega/" 
+                  href="#" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-8 h-8 bg-gray-700 hover:bg-healthcare-teal rounded-full flex items-center justify-center transition-colors"
@@ -129,7 +129,7 @@ const Footer = () => {
 
         {/* Bottom Border */}
         <div className="mt-8 pt-6 border-t border-gray-700 text-center">
-          <p className="text-sm text-gray-400">© 2025 Noble Homecare Agency All rights reserved. | Licensed & Insured | Powered by Elevate.time™️</p>
+          <p className="text-sm text-gray-400">© 2025 Noble Homecare Agency All rights reserved. | Licensed & Insured</p>
         </div>
       </div>
     </footer>;

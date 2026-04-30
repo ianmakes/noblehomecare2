@@ -76,7 +76,7 @@ const Home = () => {
                 <span className="text-primary-light bg-gradient-to-r from-pink-200 to-teal-200 bg-clip-text text-transparent animate-pulse">GOOD HANDS</span>
               </h1>
               <p className="text-lg md:text-xl mb-6 md:mb-8 text-white/90 leading-relaxed">
-                At Noble Homecare Agency LLC, our mission is to safely meet the needs of our clients by providing high quality individualized care all the way to being bed-bound. We thrive by supporting and caring for seniors that can't maintain daily living activities due to illness or disabilities.
+                At Noble Homecare Agency LLC, our mission is to safely meet the needs of our clients by providing high quality individualized care all the way to being bed-bound. We thrive by supporting and caring for seniors that can't maintain daily living activities due to illness or disabilities. We specialize specifically with seniors that can no longer support themselves with toileting, feeding, and other daily activities.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 transform hover:scale-105 transition-all duration-300">

@@ -9,13 +9,13 @@ const Services = () => {
   const personalCareServices = [{
     icon: <Heart className="w-8 h-8 text-healthcare-pink" />,
     title: "Personal Care",
-    description: "Providing essential personal care to ensure daily comfort.",
+    description: "Providing essential personal care to ensure daily comfort and safety.",
     features: ["Personal Care", "Injection Administration", "Meal Preparation", "Mobility Assistance", "Medication Reminders", "Laundry", "Light Housekeeping", "Bedside Supervision", "Doctor Visits", "Bedbound & Incontinence Care"]
   }, {
     icon: <Users className="w-8 h-8 text-healthcare-teal" />,
     title: "Companionship",
-    description: "Friendly conversation, emotional support, and social engagement activities to reduce isolation.",
-    features: ["Companionship Services", "Bathing", "Running Errands and much more!"]
+    description: "Friendly conversation, emotional support, and assistance with daily errands.",
+    features: ["Companionship Services", "Bathing", "Running Errands and much more!", "Social Engagement"]
   }];
   const specializedServices = [{
     icon: <Stethoscope className="w-8 h-8 text-healthcare-teal" />,
@@ -155,6 +155,9 @@ const Services = () => {
             <TabsContent value="payment">
               <div className="text-center mb-12">
                 <h2 className="text-healthcare-teal mb-4">Flexible Payment Options</h2>
+                <div className="inline-block bg-healthcare-pink text-white px-6 py-2 rounded-full font-bold mb-6 animate-pulse">
+                  Monthly package rates available
+                </div>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   We offer multiple payment options to make quality home care accessible and affordable 
                   for families across Georgia.

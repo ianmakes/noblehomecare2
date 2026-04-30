@@ -713,7 +713,7 @@ ${data.references}`
                 </DialogContent>
               </Dialog>
               
-              <Button className="btn-healthcare text-lg px-8 py-4 flex items-center gap-2" onClick={() => window.location.href = 'mailto:service.premierhealthcarega@gmail.com?subject=Job Application&body=Hello, I would like to apply for a position at Noble Homecare Agency. Please find my resume attached.'}>
+              <Button className="btn-healthcare text-lg px-8 py-4 flex items-center gap-2" onClick={() => window.location.href = 'mailto:info@noblehomecareagency.com?subject=Job Application&body=Hello, I would like to apply for a position at Noble Homecare Agency. Please find my resume attached.'}>
                 <Mail className="w-5 h-5" />
                 Apply via Email
               </Button>
