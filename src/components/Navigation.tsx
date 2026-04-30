@@ -40,54 +40,13 @@ const Navigation = () => {
     window.scrollTo(0, 0);
   };
   return <>
-      <nav className="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300">
-        {/* Top bar with contact info - Hidden on mobile and when scrolled */}
-        <div className={`healthcare-gradient hidden md:block transition-all duration-500 ease-in-out ${isScrolled ? 'max-h-0 overflow-hidden opacity-0' : 'max-h-20 opacity-100'}`}>
-          <div className="container-custom">
-            <div className="flex justify-between items-center py-2 text-white text-sm">
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-1">
-                  <Phone size={14} />
-                  <span>1-866-756-7374</span>
-                </div>
-                <div className="flex items-center space-x-1">
-                  <Mail size={14} />
-                  <span>info@noblehomecareagency.com</span>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <span className="font-medium">Your Care. Your Comfort. Your Home.</span>
-                <div className="flex items-center space-x-2 ml-4">
-                  <a 
-                    href="https://www.facebook.com/people/Noble-Homecare-Agency/61581859673772/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:opacity-80 transition-opacity"
-                    aria-label="Visit our Facebook page"
-                  >
-                    <Facebook size={16} />
-                  </a>
-                  <a 
-                    href="https://www.instagram.com/premierhealthcarega/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:opacity-80 transition-opacity"
-                    aria-label="Visit our Instagram page"
-                  >
-                    <Instagram size={16} />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+      <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-300 rounded-2xl bg-white/95 backdrop-blur-sm shadow-xl border border-white/20 ${isScrolled ? 'py-0 bg-white/100' : 'py-1'}`}>
         {/* Main navigation */}
         <div className="container-custom">
-          <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'py-1' : 'py-2'}`}>
+          <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-16' : 'h-20'}`}>
             <Link to="/" onClick={handleNavClick} className="flex items-center space-x-3 md:space-x-4">
               <div className="flex items-center justify-center">
-                <img src="/noble-logo.png" alt="Noble Homecare Agency Logo" className={`object-contain transition-all duration-300 ${isScrolled ? 'w-14 h-14 md:w-16 md:h-16' : 'w-20 h-20 md:w-24 md:h-24'}`} />
+                <img src="/noble-logo.png" alt="Noble Homecare Agency Logo" className={`object-contain transition-all duration-300 ${isScrolled ? 'w-12 h-12 md:w-14 md:h-14' : 'w-16 h-16 md:w-20 md:h-20'}`} />
               </div>
               <div className="flex flex-col">
                 <h1 className={`font-bold text-primary leading-tight transition-all duration-300 ${isScrolled ? 'text-base md:text-lg' : 'text-lg md:text-xl'}`}>Noble Homecare Agency</h1>
