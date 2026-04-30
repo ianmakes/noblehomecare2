@@ -45,8 +45,12 @@ const Navigation = () => {
         <div className="container-custom">
           <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-16' : 'h-20'}`}>
             <Link to="/" onClick={handleNavClick} className="flex items-center space-x-3 md:space-x-4 group">
-              <div className={`relative flex items-center justify-center p-1.5 rounded-full transition-all duration-500 ${isScrolled ? 'bg-white shadow-lg border-2 border-healthcare-gold/30' : 'bg-white/90 shadow-2xl border-2 border-healthcare-gold'}`}>
-                <img src="/noble-logo.png" alt="Noble Homecare Agency Logo" className={`object-contain transition-all duration-500 ${isScrolled ? 'w-10 h-10 md:w-12 md:h-12' : 'w-14 h-14 md:w-16 md:h-16'}`} />
+              <div className={`relative flex items-center justify-center p-1.5 rounded-full transition-all duration-500 ${isScrolled ? 'bg-white shadow-lg border-2 border-healthcare-gold/30' : 'bg-white/10 shadow-2xl border-2 border-healthcare-gold'}`}>
+                <img 
+                  src="/noble-logo.png" 
+                  alt="Noble Homecare Agency Logo" 
+                  className={`object-contain transition-all duration-500 ${isScrolled ? 'w-10 h-10 md:w-12 md:h-12' : 'w-14 h-14 md:w-16 md:h-16 brightness-0 invert'}`} 
+                />
                 <div className="absolute inset-0 rounded-full border border-white/50 pointer-events-none"></div>
               </div>
               <div className="flex flex-col">
