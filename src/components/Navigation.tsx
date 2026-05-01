@@ -44,7 +44,7 @@ const Navigation = () => {
         {/* Main navigation */}
         <div className="container-custom">
           <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-16' : 'h-20'}`}>
-            <Link to="/" onClick={handleNavClick} className="flex items-center space-x-3 md:space-x-4 group">
+            <a href="/" className="flex items-center space-x-3 md:space-x-4 group">
               <div className={`relative flex items-center justify-center p-1.5 transition-all duration-500 ${isScrolled ? 'bg-transparent shadow-none border-none' : 'bg-white/10 shadow-2xl border-2 border-healthcare-gold rounded-full'}`}>
                 <img 
                   src="/noble-logo.png" 
@@ -61,7 +61,7 @@ const Navigation = () => {
                   Agency of Georgia
                 </span>
               </div>
-            </Link>
+            </a>
 
             {/* Desktop navigation */}
             <div className="hidden md:flex items-center space-x-8">
