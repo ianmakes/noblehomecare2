@@ -146,7 +146,7 @@ const Home = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group animate-fade-in" style={{
+              <Link key={index} to="/services" className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group animate-fade-in block" style={{
                 animationDelay: `${index * 0.1}s`
               }}>
                 <div className="w-12 h-12 md:w-14 md:h-14 bg-healthcare-green/5 rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:bg-healthcare-green group-hover:text-white transition-all duration-500 border border-healthcare-green/10">
@@ -154,10 +154,10 @@ const Home = () => {
                 </div>
                 <h3 className="text-xl font-serif font-bold mb-4 text-healthcare-green group-hover:text-healthcare-gold transition-colors">{service.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base">{service.description}</p>
-                <div className="mt-6 pt-6 border-t border-gray-50 flex items-center text-healthcare-gold font-bold text-sm cursor-pointer group-hover:translate-x-2 transition-transform">
+                <div className="mt-6 pt-6 border-t border-gray-50 flex items-center text-healthcare-gold font-bold text-sm group-hover:translate-x-2 transition-transform">
                   Learn More <CheckCircle size={14} className="ml-2" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
