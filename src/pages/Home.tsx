@@ -90,7 +90,7 @@ const Home = () => {
                     ))}
                   </div>
                   <div className="text-sm">
-                    <div className="font-bold text-healthcare-gold">Joined by 500+</div>
+                    <div className="font-bold text-healthcare-gold">Trusted by 500+</div>
                     <div className="text-white/70">Families in Georgia</div>
                   </div>
                 </div>
