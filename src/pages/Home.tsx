@@ -299,9 +299,6 @@ const Home = () => {
           </div>
           
           <div className="relative">
-            {/* Connection Line */}
-            <div className="absolute top-1/2 left-0 w-full h-[2px] bg-healthcare-gold/20 -translate-y-1/2 hidden lg:block"></div>
-            
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
               {careProcess.map((process, index) => (
                 <div key={index} className="text-center group animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
