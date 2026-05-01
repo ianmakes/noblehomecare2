@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
 const About = () => {
   const values = [{
-    icon: <Heart className="w-12 h-12 text-healthcare-primary" />,
+    icon: <Heart className="w-12 h-12 text-healthcare-green" />,
     title: "Compassionate Care",
     description: "Every client is treated like family, with dignity, respect, and genuine care."
   }, {
-    icon: <Shield className="w-12 h-12 text-healthcare-secondary" />,
+    icon: <Shield className="w-12 h-12 text-healthcare-gold" />,
     title: "Trust & Safety",
     description: "Rigorous background checks, licensing, and insurance for complete peace of mind."
   }, {
-    icon: <Users className="w-12 h-12 text-healthcare-primary" />,
+    icon: <Users className="w-12 h-12 text-healthcare-green" />,
     title: "Family-Centered",
     description: "We understand the importance of family involvement in the care process."
   }, {
-    icon: <Award className="w-12 h-12 text-healthcare-secondary" />,
+    icon: <Award className="w-12 h-12 text-healthcare-gold" />,
     title: "Excellence",
     description: "Committed to providing the highest quality of care and service standards."
   }];
@@ -110,7 +110,7 @@ const About = () => {
             </div>
             
             <div>
-              <h2 className="text-healthcare-green font-serif font-bold mb-4">Our Mission</h2>
+              <h2 className="text-healthcare-green font-serif font-bold text-3xl md:text-4xl mb-4">Our Mission</h2>
               <div className="banner-star-line !justify-start !my-4">
                 <span className="w-6 h-6 text-healthcare-gold">✦</span>
               </div>
@@ -136,7 +136,7 @@ const About = () => {
       <section className="section-padding py-16">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-healthcare-green font-serif font-bold mb-4">Our Commitment</h2>
+            <h2 className="text-healthcare-green font-serif font-bold text-3xl md:text-4xl mb-4">Our Commitment</h2>
             <div className="banner-star-line">
               <span className="w-6 h-6 text-healthcare-gold">✦</span>
             </div>
@@ -146,9 +146,9 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {commitmentCards.map((card, index) => <div key={index} className="healthcare-card text-center bg-green-100">
+            {commitmentCards.map((card, index) => <div key={index} className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all">
                 {card.icon}
-                <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
+                <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">{card.title}</h3>
                 <p className="text-gray-600">{card.description}</p>
               </div>)}
           </div>
@@ -156,12 +156,11 @@ const About = () => {
       </section>
 
       {/* Diverse Care Services Section - Background with Overlay */}
-      <section className="section-padding relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/5 to-healthcare-pink/5"></div>
+      <section className="section-padding relative bg-healthcare-green/5">
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-healthcare-teal font-bold mb-6">Culturally Sensitive Care</h2>
+              <h2 className="text-healthcare-green font-serif font-bold text-3xl md:text-4xl mb-6">Culturally Sensitive Care</h2>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
                   We understand that quality healthcare goes beyond medical expertise—it requires 
@@ -174,14 +173,14 @@ const About = () => {
                   a more comfortable and trusting environment for both clients and their families.
                 </p>
                 <div className="flex items-start space-x-4">
-                  <Heart className="w-6 h-6 text-healthcare-primary mt-1 flex-shrink-0" />
+                  <Heart className="w-6 h-6 text-healthcare-gold mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-lg mb-2">Multilingual Support</h4>
                     <p className="text-gray-600">Our team includes caregivers who speak multiple languages to ensure clear communication.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <Users className="w-6 h-6 text-healthcare-primary mt-1 flex-shrink-0" />
+                  <Users className="w-6 h-6 text-healthcare-gold mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-lg mb-2">Cultural Awareness Training</h4>
                     <p className="text-gray-600">All our staff receive training in cultural competency and sensitivity.</p>
@@ -201,7 +200,10 @@ const About = () => {
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-healthcare-teal font-bold mb-4">Our Core Values</h2>
+            <h2 className="text-healthcare-green font-serif font-bold text-3xl md:text-4xl mb-4">Our Core Values</h2>
+            <div className="banner-star-line">
+              <span className="w-6 h-6 text-healthcare-gold">✦</span>
+            </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               These values guide everything we do and every decision we make in serving our clients and their families.
             </p>
@@ -210,11 +212,11 @@ const About = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => <div key={index} style={{
             animationDelay: `${index * 0.1}s`
-          }} className="healthcare-card text-center animate-fade-in bg-green-100">
+          }} className="healthcare-card text-center animate-fade-in bg-white shadow-md border-t-4 border-healthcare-gold">
                 <div className="flex justify-center mb-4">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
+                <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
               </div>)}
           </div>
@@ -226,12 +228,15 @@ const About = () => {
         <div className="absolute inset-0 bg-cover bg-center" style={{
         backgroundImage: `url('https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/8_v0vgig.jpg')`
       }}>
-          <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-healthcare-green/90 backdrop-blur-[2px]"></div>
         </div>
         <div className="container-custom relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-healthcare-teal font-bold mb-4">Our Professional Care Team</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-16 text-white">
+            <h2 className="font-serif font-bold text-3xl md:text-4xl mb-4">Our Professional Care Team</h2>
+            <div className="banner-star-line">
+              <span className="w-6 h-6 text-healthcare-gold">✦</span>
+            </div>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Our diverse team of healthcare professionals brings expertise, compassion, and dedication 
               to every client we serve.
             </p>
@@ -243,19 +248,19 @@ const About = () => {
             </div>
             
             <div className="space-y-6">
-              {teamMembers.map((member, index) => <div key={index} className="flex items-start space-x-4">
-                  <div className="w-3 h-3 bg-healthcare-secondary rounded-full mt-2 flex-shrink-0"></div>
+              {teamMembers.map((member, index) => <div key={index} className="flex items-start space-x-4 bg-white/10 p-4 rounded-xl backdrop-blur-md">
+                  <div className="w-3 h-3 bg-healthcare-gold rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2 text-healthcare-secondary">{member.role}</h4>
-                    <p className="text-gray-600">{member.description}</p>
+                    <h4 className="font-serif font-bold text-lg mb-2 text-healthcare-gold">{member.role}</h4>
+                    <p className="text-white/90">{member.description}</p>
                   </div>
                 </div>)}
             </div>
           </div>
           
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+          <div className="bg-white rounded-2xl p-8 shadow-2xl border-t-8 border-healthcare-gold">
             <div className="text-center">
-              <h3 className="text-2xl font-semibold text-healthcare-secondary mb-4">
+              <h3 className="text-2xl md:text-3xl font-serif font-bold text-healthcare-green mb-4">
                 Rigorous Screening & Training
               </h3>
               <p className="text-gray-600 mb-6 max-w-3xl mx-auto">

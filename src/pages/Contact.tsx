@@ -42,14 +42,17 @@ const Contact = () => {
   };
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="healthcare-gradient text-white min-h-[45vh] flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+      <section className="healthcare-gradient text-white min-h-[40vh] md:min-h-[45vh] flex items-center pt-32 pb-8 md:pt-48 md:pb-24 overflow-hidden">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold mb-6 text-white lg:text-5xl">
+            <h1 className="text-4xl lg:text-6xl font-serif font-bold mb-6">
               Contact Noble Homecare Agency<br />
-              <span className="text-white">of Georgia</span>
+              <span className="text-healthcare-gold">of Georgia</span>
             </h1>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+            <div className="banner-star-line !my-4">
+              <span className="w-6 h-6 text-healthcare-gold">✦</span>
+            </div>
+            <p className="text-xl text-white/90 mb-8 leading-relaxed font-light">
               Ready to start your journey to better care? Our compassionate team is here to help 
               you every step of the way. Contact us today for your free consultation.
             </p>
@@ -61,29 +64,29 @@ const Contact = () => {
       <section className="section-padding">
         <div className="container-custom">
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            <div className="healthcare-card text-center">
-              <Phone className="w-12 h-12 text-healthcare-teal mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Call Us</h3>
-              <p className="text-gray-600 mb-4">Speak with our care coordinators</p>
-              <a href="tel:1-866-756-7374" className="text-healthcare-teal font-semibold text-lg hover:text-healthcare-teal-dark transition-colors">
+            <div className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all">
+              <Phone className="w-12 h-12 text-healthcare-green mx-auto mb-4" />
+              <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">Call Us</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">Speak with our care coordinators</p>
+              <a href="tel:1-866-756-7374" className="text-healthcare-green font-bold text-xl hover:text-healthcare-gold transition-colors">
                 1-866-756-7374
               </a>
             </div>
             
-            <div className="healthcare-card text-center">
-              <Mail className="w-12 h-12 text-healthcare-pink mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Email Us</h3>
-              <p className="text-gray-600 mb-4">Send us your questions anytime</p>
-              <a href="mailto:info@noblehomecareagency.com" className="text-healthcare-teal font-semibold hover:text-healthcare-teal-dark transition-colors break-all">
-                info@noblehomecareagency.com
+            <div className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all">
+              <Mail className="w-12 h-12 text-healthcare-gold mx-auto mb-4" />
+              <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">Email Us</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">Send us your questions anytime</p>
+              <a href="mailto:online.ianmakes@gmail.com" className="text-healthcare-green font-bold hover:text-healthcare-gold transition-colors break-all">
+                online.ianmakes@gmail.com
               </a>
             </div>
             
-            <div className="healthcare-card text-center">
-              <MapPin className="w-12 h-12 text-healthcare-teal mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Service Areas</h3>
-              <p className="text-gray-600 mb-4">Serving multiple counties across Georgia</p>
-              <p className="text-healthcare-teal font-semibold">
+            <div className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all">
+              <MapPin className="w-12 h-12 text-healthcare-green mx-auto mb-4" />
+              <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">Service Areas</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">Serving multiple counties across Georgia</p>
+              <p className="text-healthcare-green font-bold text-lg">
                 Metro Atlanta & Surrounding Areas
               </p>
             </div>
@@ -92,16 +95,16 @@ const Contact = () => {
       </section>
 
       {/* Main Contact Form */}
-      <section className="section-padding bg-healthcare-gray-light">
+      <section className="section-padding bg-healthcare-green/5">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Form */}
             <div>
-              <h2 className="text-healthcare-teal mb-6">Get Your Free Consultation</h2>
-              <div className="bg-healthcare-teal-light/10 p-4 rounded-lg mb-6">
-                <div className="flex items-center space-x-2 text-healthcare-teal">
-                  <Clock size={20} />
-                  <span className="font-medium">Our care team will contact you within 24 hours</span>
+              <h2 className="text-healthcare-green font-serif font-bold text-3xl md:text-4xl mb-6">Get Your Free Consultation</h2>
+              <div className="bg-healthcare-green/10 p-4 rounded-lg mb-6 border-l-4 border-healthcare-gold">
+                <div className="flex items-center space-x-2 text-healthcare-green">
+                  <Clock size={20} className="text-healthcare-gold" />
+                  <span className="font-serif font-medium">Our care team will contact you within 24 hours</span>
                 </div>
               </div>
               
@@ -185,7 +188,7 @@ const Contact = () => {
                 }))} placeholder="Describe your specific care needs, concerns, or questions. The more details you provide, the better we can help you." rows={4} />
                 </div>
 
-                <Button type="submit" className="btn-healthcare w-full text-lg py-3">
+                <Button type="submit" className="btn-healthcare w-full text-lg py-4 shadow-lg">
                   Submit Request - Get Free Consultation
                 </Button>
               </form>
@@ -194,62 +197,63 @@ const Contact = () => {
             {/* Info Panel */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold text-healthcare-teal mb-6">Why Choose Noble Homecare Agency?</h3>
+                <h3 className="text-2xl font-serif font-bold text-healthcare-green mb-6">Why Choose Noble Homecare Agency?</h3>
                 
                 <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <Heart className="w-8 h-8 text-healthcare-pink mt-1 flex-shrink-0" />
+                  <div className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm border-l-4 border-healthcare-gold">
+                    <Heart className="w-8 h-8 text-healthcare-green mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-lg mb-2">Family-Centered Care</h4>
-                      <p className="text-gray-600">Every client is treated like family, with the same care and attention we'd want for our own loved ones.</p>
+                      <h4 className="font-serif font-bold text-lg mb-2 text-healthcare-green">Family-Centered Care</h4>
+                      <p className="text-gray-600 leading-relaxed">Every client is treated like family, with the same care and attention we'd want for our own loved ones.</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4">
-                    <Users className="w-8 h-8 text-healthcare-teal mt-1 flex-shrink-0" />
+                  <div className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm border-l-4 border-healthcare-gold">
+                    <Users className="w-8 h-8 text-healthcare-gold mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-lg mb-2">Qualified Care Team</h4>
-                      <p className="text-gray-600">Licensed CNAs, PCAs, companions, and skilled nursing staff with comprehensive background checks.</p>
+                      <h4 className="font-serif font-bold text-lg mb-2 text-healthcare-green">Qualified Care Team</h4>
+                      <p className="text-gray-600 leading-relaxed">Licensed CNAs, PCAs, companions, and skilled nursing staff with comprehensive background checks.</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4">
-                    <Award className="w-8 h-8 text-healthcare-pink mt-1 flex-shrink-0" />
+                  <div className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm border-l-4 border-healthcare-gold">
+                    <Award className="w-8 h-8 text-healthcare-green mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-lg mb-2">Personalized Care Plans</h4>
-                      <p className="text-gray-600">Custom care plans tailored to your unique needs, preferences, and medical requirements.</p>
+                      <h4 className="font-serif font-bold text-lg mb-2 text-healthcare-green">Personalized Care Plans</h4>
+                      <p className="text-gray-600 leading-relaxed">Custom care plans tailored to your unique needs, preferences, and medical requirements.</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg">
-                <h4 className="font-semibold text-lg mb-4 text-healthcare-teal">What Happens Next?</h4>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-healthcare-teal text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
-                    <span className="text-gray-700">We'll call you within 24 hours</span>
+              <div className="bg-white rounded-2xl p-8 shadow-xl border-t-8 border-healthcare-gold">
+                <h4 className="font-serif font-bold text-xl mb-6 text-healthcare-green">What Happens Next?</h4>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-8 h-8 bg-healthcare-green text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md">1</div>
+                    <span className="text-gray-700 font-medium">We'll call you within 24 hours</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-healthcare-teal text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
-                    <span className="text-gray-700">Free in-home consultation & assessment</span>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-8 h-8 bg-healthcare-gold text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md">2</div>
+                    <span className="text-gray-700 font-medium">Free in-home consultation & assessment</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-healthcare-teal text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
-                    <span className="text-gray-700">Custom care plan creation</span>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-8 h-8 bg-healthcare-green text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md">3</div>
+                    <span className="text-gray-700 font-medium">Custom care plan creation</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-healthcare-teal text-white rounded-full flex items-center justify-center text-sm font-bold">4</div>
-                    <span className="text-gray-700">Caregiver matching & care begins</span>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-8 h-8 bg-healthcare-gold text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md">4</div>
+                    <span className="text-gray-700 font-medium">Caregiver matching & care begins</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-healthcare-teal text-white rounded-xl p-6">
-                <h4 className="font-semibold text-lg mb-3">Need Immediate Help?</h4>
-                <p className="mb-4">Call us now to speak with a care coordinator</p>
-                <Button onClick={() => window.open('tel:1-866-756-7374')} className="btn-healthcare-secondary w-full">
-                  <Phone className="mr-2" size={16} />
+              <div className="bg-healthcare-green text-white rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
+                <h4 className="font-serif font-bold text-xl mb-3 relative z-10">Need Immediate Help?</h4>
+                <p className="mb-6 relative z-10 text-white/90">Call us now to speak with a care coordinator</p>
+                <Button onClick={() => window.open('tel:1-866-756-7374')} className="btn-healthcare-secondary w-full py-6 text-lg shadow-lg relative z-10">
+                  <Phone className="mr-2" size={20} />
                   Call 1-866-756-7374
                 </Button>
               </div>
@@ -262,16 +266,19 @@ const Contact = () => {
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-healthcare-teal mb-4">Counties We Serve</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-healthcare-green font-serif font-bold text-3xl md:text-4xl mb-4">Counties We Serve</h2>
+            <div className="banner-star-line">
+              <span className="w-6 h-6 text-healthcare-gold">✦</span>
+            </div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Noble Homecare Agency proudly serves families across these Georgia counties:
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {counties.map((county, index) => <div key={index} className="healthcare-card text-center">
-                <MapPin className="w-6 h-6 text-healthcare-teal mx-auto mb-2" />
-                <h4 className="font-semibold text-gray-800">{county}</h4>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+            {counties.map((county, index) => <div key={index} className="bg-white p-4 rounded-xl shadow-sm border border-healthcare-green/10 text-center hover:shadow-md hover:border-healthcare-gold transition-all">
+                <MapPin className="w-6 h-6 text-healthcare-gold mx-auto mb-2" />
+                <h4 className="font-bold text-healthcare-green text-sm">{county}</h4>
               </div>)}
           </div>
         </div>

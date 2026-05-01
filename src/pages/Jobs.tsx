@@ -161,22 +161,22 @@ ${data.references}`
 
   const benefits = [
     {
-      icon: <Heart className="w-8 h-8 text-healthcare-primary" />,
+      icon: <Heart className="w-8 h-8 text-healthcare-green" />,
       title: "Meaningful Work",
       description: "Make a real difference in people's lives every day"
     },
     {
-      icon: <Users className="w-8 h-8 text-healthcare-secondary" />,
+      icon: <Users className="w-8 h-8 text-healthcare-gold" />,
       title: "Supportive Team",
       description: "Join a caring team that values your contribution"
     },
     {
-      icon: <Shield className="w-8 h-8 text-healthcare-teal" />,
+      icon: <Shield className="w-8 h-8 text-healthcare-green" />,
       title: "Comprehensive Benefits",
       description: "Health insurance, paid time off, and more"
     },
     {
-      icon: <Award className="w-8 h-8 text-healthcare-primary" />,
+      icon: <Award className="w-8 h-8 text-healthcare-gold" />,
       title: "Professional Growth",
       description: "Ongoing training and career advancement opportunities"
     }
@@ -192,8 +192,8 @@ ${data.references}`
             <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-6">
               <Briefcase className="w-8 h-8 text-white" />
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
-              Join Our <span className="text-primary-light">Care Team</span>
+            <h1 className="text-4xl lg:text-6xl font-serif font-bold mb-6 animate-fade-in">
+              Join Our <span className="text-healthcare-gold">Care Team</span>
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed animate-fade-in mb-8">
               Be part of a mission-driven organization that values compassion, excellence, and making a real difference in people's lives.
@@ -216,7 +216,7 @@ ${data.references}`
                       <input type="hidden" name="form-name" value="jobs" />
                       {/* Personal Information Section */}
                       <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-healthcare-teal border-b border-healthcare-teal/20 pb-2">Personal Information</h3>
+                        <h3 className="text-lg font-serif font-bold text-healthcare-green border-b border-healthcare-green/20 pb-2">Personal Information</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <FormField
                             control={form.control}
@@ -740,12 +740,12 @@ ${data.references}`
         </div>
       </section>
 
-      {/* Why Work With Us Section */}
-      <section className="section-padding bg-gray-50">
+      {/* Why Work With Us Section - Light Mint Background */}
+      <section className="section-padding bg-healthcare-green/5">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-healthcare-dark mb-4">
-              Why Work With <span className="text-healthcare-teal">Noble Homecare Agency</span>
+            <h2 className="text-3xl lg:text-4xl font-serif font-bold text-healthcare-green mb-4">
+              Why Work With <span className="text-healthcare-gold">Noble Homecare Agency</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Join a team that truly values your contribution and provides the support you need to excel in your career.
@@ -754,24 +754,24 @@ ${data.references}`
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div key={index} className="text-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all border-b-4 border-healthcare-gold">
                 <div className="flex justify-center mb-4">
                   {benefit.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-healthcare-dark mb-3">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">{benefit.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Available Positions Section */}
+      {/* Available Positions Section - White Background */}
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-healthcare-dark mb-4">
-              Available <span className="text-healthcare-teal">Positions</span>
+            <h2 className="text-3xl lg:text-4xl font-serif font-bold text-healthcare-green mb-4">
+              Available <span className="text-healthcare-gold">Positions</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               We're always looking for compassionate healthcare professionals to join our growing team.
@@ -780,10 +780,10 @@ ${data.references}`
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {positions.map((position, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-healthcare-teal">
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all border-l-8 border-healthcare-gold">
                 <div className="flex items-center mb-4">
-                  <Briefcase className="w-6 h-6 text-healthcare-teal mr-3" />
-                  <h3 className="text-xl font-semibold text-healthcare-dark">{position}</h3>
+                  <Briefcase className="w-6 h-6 text-healthcare-green mr-3" />
+                  <h3 className="text-xl font-serif font-bold text-healthcare-green">{position}</h3>
                 </div>
                 <div className="space-y-2 text-gray-600 mb-4">
                   <div className="flex items-center">
@@ -807,7 +807,7 @@ ${data.references}`
       {/* Call to Action Section */}
       <section className="healthcare-gradient text-white section-padding">
         <div className="container-custom text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+          <h2 className="text-3xl lg:text-5xl font-serif font-bold mb-6">
             Ready to Start Your Healthcare Career?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
