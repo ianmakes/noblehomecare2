@@ -46,8 +46,7 @@ const Contact = () => {
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-serif font-bold mb-6">
-              Contact Noble Homecare Agency<br />
-              <span className="text-healthcare-gold">of Georgia</span>
+              Contact Noble <span className="text-healthcare-gold">Homecare</span>
             </h1>
             <div className="banner-star-line !my-4">
               <span className="w-6 h-6 text-healthcare-gold">✦</span>
