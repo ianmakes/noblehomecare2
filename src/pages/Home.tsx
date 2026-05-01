@@ -45,7 +45,7 @@ const Home = () => {
   }];
   return <div className="min-h-screen">
       {/* Hero Section - Professional & Branded */}
-      <section className="relative healthcare-gradient text-white min-h-[85vh] flex items-center pt-32 pb-16 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
+      <section className="relative healthcare-gradient text-white min-h-[60vh] md:min-h-[85vh] flex items-center pt-24 pb-8 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
         {/* Subtle Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-white/5 rounded-full blur-[120px]"></div>
@@ -63,8 +63,8 @@ const Home = () => {
                 <span className="text-xs md:text-sm font-medium uppercase tracking-wider">Trusted In-Home Healthcare</span>
               </div>
               
-              <div className="space-y-4">
-                <h1 className="text-5xl md:text-6xl lg:text-8xl font-serif font-bold leading-[1.1] text-white">
+              <div className="space-y-2 md:space-y-4">
+                <h1 className="text-4xl md:text-6xl lg:text-8xl font-serif font-bold leading-[1.1] text-white">
                   We <span className="text-healthcare-gold italic">Care</span> <br />
                   For You!
                 </h1>
@@ -77,8 +77,8 @@ const Home = () => {
                 At <span className="font-semibold text-white">Noble Homecare Agency</span>, we provide professional medical and personal care services designed to promote dignity, independence, and comfort in your own home.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-secondary text-lg px-10 py-6 rounded-xl transform hover:-translate-y-1 transition-all duration-300 shadow-2xl">
+              <div className="flex flex-col sm:flex-row gap-4 pt-2 md:pt-4">
+                <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-secondary text-lg px-8 py-4 md:px-10 md:py-6 rounded-xl transform hover:-translate-y-1 transition-all duration-300 shadow-2xl">
                   Get Free Consultation
                 </Button>
                 <div className="flex items-center space-x-3 px-2">
@@ -127,12 +127,12 @@ const Home = () => {
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-healthcare-gold/5 rounded-full blur-3xl"></div>
         
         <div className="container-custom relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-4 md:gap-6">
             <div className="max-w-2xl">
-              <div className="inline-block bg-healthcare-green/10 text-healthcare-green px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider mb-4 border border-healthcare-green/20">
+              <div className="inline-block bg-healthcare-green/10 text-healthcare-green px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 md:mb-4 border border-healthcare-green/20">
                 Premium Care
               </div>
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-healthcare-green mb-4">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-healthcare-green mb-2 md:mb-4">
                 Our Specialized <span className="text-healthcare-gold">Services</span>
               </h2>
               <div className="banner-star-line !justify-start !my-2">
@@ -144,12 +144,12 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group animate-fade-in" style={{
+              <div key={index} className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group animate-fade-in" style={{
                 animationDelay: `${index * 0.1}s`
               }}>
-                <div className="w-14 h-14 bg-healthcare-green/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-healthcare-green group-hover:text-white transition-all duration-500 border border-healthcare-green/10">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-healthcare-green/5 rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:bg-healthcare-green group-hover:text-white transition-all duration-500 border border-healthcare-green/10">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-serif font-bold mb-4 text-healthcare-green group-hover:text-healthcare-gold transition-colors">{service.title}</h3>
@@ -169,16 +169,16 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative animate-slide-in">
               <div className="absolute -inset-4 bg-healthcare-gold/5 rounded-3xl -rotate-2"></div>
-              <img src="https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/6_aphqqg.jpg" alt="Compassionate Care" className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover border-8 border-white" />
-              <div className="absolute -bottom-10 -right-10 bg-healthcare-green text-white p-8 rounded-2xl shadow-2xl hidden md:block border-b-8 border-healthcare-gold">
-                <div className="text-4xl font-bold mb-1">10+</div>
-                <div className="text-sm font-medium text-white/80 uppercase tracking-widest">Years of Excellence</div>
+              <img src="https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/6_aphqqg.jpg" alt="Compassionate Care" className="relative rounded-2xl shadow-2xl w-full h-[300px] md:h-[500px] object-cover border-4 md:border-8 border-white" />
+              <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 bg-healthcare-green text-white p-4 md:p-8 rounded-2xl shadow-2xl hidden sm:block border-b-4 md:border-b-8 border-healthcare-gold">
+                <div className="text-2xl md:text-4xl font-bold mb-1">10+</div>
+                <div className="text-[10px] md:text-sm font-medium text-white/80 uppercase tracking-widest">Years of Excellence</div>
               </div>
             </div>
             
-            <div className="space-y-8">
+            <div className="space-y-4 md:space-y-8">
               <div>
-                <h2 className="text-4xl md:text-5xl font-serif font-bold text-healthcare-green mb-6 leading-tight">
+                <h2 className="text-3xl md:text-5xl font-serif font-bold text-healthcare-green mb-4 md:mb-6 leading-tight">
                   Your Trusted Partner <br />
                   <span className="text-healthcare-gold italic">in Professional Care</span>
                 </h2>
@@ -288,35 +288,34 @@ const Home = () => {
       {/* Care Process - Connected Steps Design */}
       <section className="section-padding bg-white relative overflow-hidden">
         <div className="container-custom relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-healthcare-green mb-6">Easy Steps To Get Started</h2>
+          <div className="text-center mb-10 md:mb-20">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-healthcare-green mb-4 md:mb-6">Easy Steps To Get Started</h2>
             <div className="banner-star-line">
               <span className="w-6 h-6 text-healthcare-gold">✦</span>
             </div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light">
               Getting started with <span className="text-healthcare-green font-semibold">Noble Homecare Agency</span> is simple and straightforward.
             </p>
           </div>
           
           <div className="relative">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 relative z-10">
               {careProcess.map((process, index) => (
                 <div key={index} className="text-center group animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="relative mb-8 inline-block">
-                    <div className="w-20 h-20 bg-white border-2 border-healthcare-gold text-healthcare-green rounded-full flex items-center justify-center text-3xl font-serif font-bold mx-auto shadow-xl group-hover:bg-healthcare-green group-hover:text-white group-hover:scale-110 transition-all duration-500">
+                  <div className="relative mb-4 md:mb-8 inline-block">
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-white border-2 border-healthcare-gold text-healthcare-green rounded-full flex items-center justify-center text-2xl md:text-3xl font-serif font-bold mx-auto shadow-xl group-hover:bg-healthcare-green group-hover:text-white group-hover:scale-110 transition-all duration-500">
                       {process.step}
                     </div>
-                    <div className="absolute -inset-2 bg-healthcare-gold/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
-                  <h3 className="text-2xl font-serif font-bold mb-4 text-healthcare-green group-hover:text-healthcare-gold transition-colors">{process.title}</h3>
-                  <p className="text-gray-600 leading-relaxed font-light">{process.description}</p>
+                  <h3 className="text-xl md:text-2xl font-serif font-bold mb-2 md:mb-4 text-healthcare-green group-hover:text-healthcare-gold transition-colors">{process.title}</h3>
+                  <p className="text-gray-600 leading-relaxed font-light text-sm md:text-base">{process.description}</p>
                 </div>
               ))}
             </div>
           </div>
           
-          <div className="text-center mt-20">
-            <Button onClick={() => setIsCareNeedsModalOpen(true)} className="btn-healthcare text-xl px-12 py-8 rounded-2xl shadow-2xl hover:shadow-healthcare-green/20">
+          <div className="text-center mt-12 md:mt-20">
+            <Button onClick={() => setIsCareNeedsModalOpen(true)} className="btn-healthcare text-lg md:text-xl px-10 py-6 md:px-12 md:py-8 rounded-2xl shadow-2xl hover:shadow-healthcare-green/20">
               Start Your Care Assessment
             </Button>
           </div>
@@ -356,48 +355,44 @@ const Home = () => {
       </section>
 
       {/* Final CTA - High Impact & Warm */}
-      <section className="section-padding bg-white relative">
-        <div className="container-custom">
-          <div className="bg-healthcare-green rounded-[3rem] p-8 md:p-16 lg:p-20 relative overflow-hidden shadow-[0_40px_80px_-15px_rgba(8,70,52,0.4)]">
-            {/* Background Decorations */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-healthcare-gold/10 rounded-full blur-[80px] -translate-x-1/3 translate-y-1/3"></div>
-            
-            <div className="relative z-10 flex flex-col items-center text-center">
-              <div className="w-20 h-20 bg-healthcare-gold rounded-full flex items-center justify-center text-white mb-8 shadow-2xl animate-bounce-slow">
-                <Heart size={40} />
-              </div>
-              
-              <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-8 leading-tight">
-                You get better because<br />
-                <span className="text-healthcare-gold italic">we care better</span>
-              </h2>
-              
-              <p className="text-xl text-white/80 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-                Experience the difference of professional, compassionate care that treats you like family. Our staff goes above and beyond to ensure you have the resources needed to recover and thrive.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-12 mb-16">
-                <div className="text-center">
-                  <div className="text-4xl md:text-6xl font-bold text-white mb-2">98.5%</div>
-                  <div className="text-healthcare-gold font-bold uppercase tracking-widest text-sm">Satisfaction</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl md:text-6xl font-bold text-white mb-2">24/7</div>
-                  <div className="text-healthcare-gold font-bold uppercase tracking-widest text-sm">Available</div>
-                </div>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
-                <Button onClick={() => window.open('tel:1-866-756-7374')} className="btn-healthcare-secondary text-xl px-12 py-8 rounded-2xl hover:scale-105 transition-transform flex items-center justify-center space-x-3">
-                  <Phone size={24} />
-                  <span>Call 1-866-756-7374</span>
-                </Button>
-                <Button onClick={() => setIsConsultationModalOpen(true)} className="bg-white text-healthcare-green hover:bg-gray-50 text-xl px-12 py-8 rounded-2xl font-bold transition-all shadow-xl hover:shadow-2xl">
-                  Free Consultation
-                </Button>
-              </div>
+      <section className="section-padding bg-healthcare-green relative overflow-hidden">
+        {/* Background Decorations */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-healthcare-gold/10 rounded-full blur-[80px] -translate-x-1/3 translate-y-1/3"></div>
+        
+        <div className="container-custom relative z-10 flex flex-col items-center text-center">
+          <div className="w-12 h-12 md:w-20 md:h-20 bg-healthcare-gold rounded-full flex items-center justify-center text-white mb-6 md:mb-8 shadow-2xl animate-bounce-slow">
+            <Heart size={32} className="md:w-10 md:h-10" />
+          </div>
+          
+          <h2 className="text-3xl md:text-6xl font-serif font-bold text-white mb-6 md:mb-8 leading-tight">
+            You get better because<br />
+            <span className="text-healthcare-gold italic">we care better</span>
+          </h2>
+          
+          <p className="text-base md:text-xl text-white/80 mb-8 md:mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+            Experience the difference of professional, compassionate care that treats you like family. Our staff goes above and beyond to ensure you have the resources needed to recover and thrive.
+          </p>
+          
+          <div className="grid grid-cols-2 gap-6 md:gap-12 mb-8 md:mb-16">
+            <div className="text-center">
+              <div className="text-3xl md:text-6xl font-bold text-white mb-1 md:mb-2">98.5%</div>
+              <div className="text-healthcare-gold font-bold uppercase tracking-widest text-[10px] md:text-sm">Satisfaction</div>
             </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-6xl font-bold text-white mb-1 md:mb-2">24/7</div>
+              <div className="text-healthcare-gold font-bold uppercase tracking-widest text-[10px] md:text-sm">Available</div>
+            </div>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full sm:w-auto">
+            <Button onClick={() => window.open('tel:1-866-756-7374')} className="btn-healthcare-secondary text-lg md:text-xl px-8 py-5 md:px-12 md:py-8 rounded-xl md:rounded-2xl hover:scale-105 transition-transform flex items-center justify-center space-x-3">
+              <Phone size={20} className="md:w-6 md:h-6" />
+              <span>Call 1-866-756-7374</span>
+            </Button>
+            <Button onClick={() => setIsConsultationModalOpen(true)} className="bg-white text-healthcare-green hover:bg-gray-50 text-lg md:text-xl px-8 py-5 md:px-12 md:py-8 rounded-xl md:rounded-2xl font-bold transition-all shadow-xl hover:shadow-2xl">
+              Free Consultation
+            </Button>
           </div>
         </div>
       </section>

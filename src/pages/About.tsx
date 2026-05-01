@@ -50,11 +50,11 @@ const About = () => {
   }];
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="healthcare-gradient text-white min-h-[45vh] flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+      <section className="healthcare-gradient text-white min-h-[40vh] md:min-h-[45vh] flex items-center pt-24 pb-8 md:pt-40 md:pb-24 overflow-hidden">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <h1 className="text-4xl lg:text-6xl font-serif font-bold mb-6">
+              <h1 className="text-3xl md:text-4xl lg:text-6xl font-serif font-bold mb-4 md:mb-6">
                 Our Story Begins With <span className="text-healthcare-gold italic">Family</span>
               </h1>
               <p className="text-xl text-white/90 leading-relaxed font-light">
@@ -276,7 +276,7 @@ const About = () => {
       {/* Contact CTA */}
       <section className="healthcare-gradient text-white section-padding">
         <div className="container-custom text-center">
-          <h2 className="font-bold mb-6">Ready to Experience Compassionate Care?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">Ready to Experience Compassionate Care?</h2>
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Let us show you how our family-centered approach to healthcare can make a difference 
             in your life or the life of your loved one.
