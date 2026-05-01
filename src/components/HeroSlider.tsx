@@ -3,27 +3,27 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [{
-    image: "/lovable-uploads/3600bcd1-540d-44f8-a44b-51a1dbe8d8af.png",
+    image: "https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594305/4_yww66y.jpg",
     caption: "Transportation Services",
     description: "Safe and reliable transportation assistance for appointments and errands"
   }, {
-    image: "/lovable-uploads/1e91caf8-562b-44e0-b88a-de8b391a9afe.png",
+    image: "https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594305/9_ajxv3j.jpg",
     caption: "Skilled Nursing",
     description: "Professional medical care in your home"
   }, {
-    image: "/lovable-uploads/ea030fec-429e-4901-a84b-b3e41ab539b4.png",
+    image: "https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594305/10_nawmhr.jpg",
     caption: "Companionship",
     description: "Emotional support and social engagement"
   }, {
-    image: "/lovable-uploads/6fa0a03b-e067-490d-a537-9e1a7e82a019.png",
+    image: "https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/8_v0vgig.jpg",
     caption: "Nutritional Support",
     description: "Meal preparation and nutritional guidance for healthy living"
   }, {
-    image: "/lovable-uploads/da2b87a9-d374-4af8-aa31-a98453ea65fa.png",
+    image: "https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/7_kliopj.jpg",
     caption: "Personal Care",
     description: "Bathing, grooming, toileting, and daily living assistance with dignity and respect"
   }, {
-    image: "/lovable-uploads/8c0494eb-78a4-4c3a-9b01-dcbf91d3b46e.png",
+    image: "https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/1_umffyt.jpg",
     caption: "Around-The-Clock Care",
     description: "24-hour comprehensive care services tailored to your specific needs"
   }];

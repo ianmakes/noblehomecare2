@@ -63,7 +63,7 @@ const About = () => {
               </p>
             </div>
             <div className="animate-slide-in">
-              <img src="https://loremflickr.com/1200/800/senior,care?random=1" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-2xl w-full h-[400px] object-cover border-4 border-white/20" />
+              <img src="https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/3_bv06il.jpg" alt="Healthcare professional providing compassionate care to elderly patient" className="rounded-2xl shadow-2xl w-full h-[400px] object-cover border-4 border-white/20" />
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ const About = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img src="https://loremflickr.com/1200/800/elderly,caregiver?random=2" alt="Caregiver assisting elderly woman showing compassionate care" className="rounded-2xl shadow-xl w-full h-[500px] object-cover border-b-8 border-healthcare-gold/30" />
+              <img src="https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594305/4_yww66y.jpg" alt="Caregiver assisting elderly woman showing compassionate care" className="rounded-2xl shadow-xl w-full h-[500px] object-cover border-b-8 border-healthcare-gold/30" />
             </div>
             
             <div>
@@ -106,7 +106,7 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative group">
               <div className="absolute inset-0 bg-healthcare-gold/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <img src="https://loremflickr.com/1200/800/healthcare,nurse?random=3" alt="Compassionate Caregiver" className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto object-cover transform group-hover:scale-105 transition-all duration-500 border-2 border-white/50" />
+              <img src="https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594305/9_ajxv3j.jpg" alt="Compassionate Caregiver" className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto object-cover transform group-hover:scale-105 transition-all duration-500 border-2 border-white/50" />
             </div>
             
             <div>
@@ -191,7 +191,7 @@ const About = () => {
             </div>
             
             <div>
-              <img src="https://loremflickr.com/1200/800/family,elderly?random=4" alt="Diverse healthcare professional providing care with cultural sensitivity" className="rounded-2xl shadow-xl w-full h-[400px] object-cover" />
+              <img src="https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594305/10_nawmhr.jpg" alt="Diverse healthcare professional providing care with cultural sensitivity" className="rounded-2xl shadow-xl w-full h-[400px] object-cover" />
             </div>
           </div>
         </div>
@@ -224,7 +224,7 @@ const About = () => {
       {/* Our Care Team - Background Image with Overlay */}
       <section className="section-padding relative">
         <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url('https://loremflickr.com/1200/800/senior,health?random=5')`
+        backgroundImage: `url('https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/8_v0vgig.jpg')`
       }}>
           <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
         </div>
@@ -239,7 +239,7 @@ const About = () => {
           
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <div>
-              <img src="https://loremflickr.com/1200/800/medical,caregiver?random=6" alt="Healthcare professional providing emotional support and care to patient" className="rounded-2xl shadow-xl w-full h-[400px] object-cover" />
+              <img src="https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/7_kliopj.jpg" alt="Healthcare professional providing emotional support and care to patient" className="rounded-2xl shadow-xl w-full h-[400px] object-cover" />
             </div>
             
             <div className="space-y-6">
