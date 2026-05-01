@@ -45,7 +45,7 @@ const Home = () => {
   }];
   return <div className="min-h-screen">
       {/* Hero Section - Professional & Branded */}
-      <section className="relative healthcare-gradient text-white min-h-[60vh] md:min-h-[85vh] flex items-center pt-24 pb-8 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
+      <section className="relative healthcare-gradient text-white min-h-[60vh] md:min-h-[85vh] flex items-center pt-32 pb-8 md:pt-48 md:pb-24 lg:pt-56 lg:pb-32 overflow-hidden">
         {/* Subtle Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-white/5 rounded-full blur-[120px]"></div>
