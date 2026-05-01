@@ -4,28 +4,28 @@ const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [{
     image: "https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594305/4_yww66y.jpg",
-    caption: "Transportation Services",
-    description: "Safe and reliable transportation assistance for appointments and errands"
+    caption: "Personal Care",
+    description: "Assistance with bathing, grooming, and daily living with dignity"
   }, {
     image: "https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594305/9_ajxv3j.jpg",
     caption: "Skilled Nursing",
-    description: "Professional medical care in your home"
+    description: "Medication management, wound care, and health assessments"
   }, {
     image: "https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594305/10_nawmhr.jpg",
     caption: "Companionship",
-    description: "Emotional support and social engagement"
+    description: "Emotional support, conversation, and social engagement"
   }, {
     image: "https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/8_v0vgig.jpg",
-    caption: "Nutritional Support",
-    description: "Meal preparation and nutritional guidance for healthy living"
+    caption: "Meal Preparation",
+    description: "Nutritious meal planning and preparation in your home"
   }, {
     image: "https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/7_kliopj.jpg",
-    caption: "Personal Care",
-    description: "Bathing, grooming, toileting, and daily living assistance with dignity and respect"
+    caption: "Medication Reminders",
+    description: "Ensuring safety and adherence to physician-ordered medications"
   }, {
     image: "https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/1_umffyt.jpg",
-    caption: "Around-The-Clock Care",
-    description: "24-hour comprehensive care services tailored to your specific needs"
+    caption: "Doctor Visits",
+    description: "Assistance and transportation for medical appointments"
   }];
   useEffect(() => {
     const timer = setInterval(() => {
