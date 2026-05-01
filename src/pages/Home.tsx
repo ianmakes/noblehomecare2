@@ -44,51 +44,78 @@ const Home = () => {
     description: "We match you with qualified, compassionate caregivers who fit your personality and needs."
   }];
   return <div className="min-h-screen">
-      {/* Hero Section - Enhanced Background with Animations */}
-      <section className="relative healthcare-gradient text-white min-h-[70vh] flex items-center pt-32 pb-16 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
-        {/* Enhanced Background Pattern with Animations */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 via-transparent to-healthcare-pink/20"></div>
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl animate-pulse" style={{
-          animationDelay: '1s'
-        }}></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/3 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl animate-pulse" style={{
-          animationDelay: '2s'
-        }}></div>
-          {/* Floating elements */}
-          <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-white/10 rounded-full animate-bounce" style={{
-          animationDelay: '0.5s'
-        }}></div>
-          <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-white/10 rounded-full animate-bounce" style={{
-          animationDelay: '1.5s'
-        }}></div>
-          <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-white/10 rounded-full animate-bounce" style={{
-          animationDelay: '2.5s'
-        }}></div>
+      {/* Hero Section - Professional & Branded */}
+      <section className="relative healthcare-gradient text-white min-h-[85vh] flex items-center pt-32 pb-16 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
+        {/* Subtle Decorative Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-white/5 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-healthcare-gold/10 rounded-full blur-[100px]"></div>
+          
+          {/* Subtle Grid Pattern */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
         </div>
         
         <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="animate-fade-in">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold mb-4 md:mb-6 leading-tight text-white">
-                We <span className="text-healthcare-gold">Care</span> For You!
-              </h1>
-              <div className="banner-star-line !justify-start !my-4">
-                <span className="w-6 h-6 text-healthcare-gold">✦</span>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="animate-fade-in space-y-8">
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+                <Shield size={16} className="text-healthcare-gold" />
+                <span className="text-xs md:text-sm font-medium uppercase tracking-wider">Trusted In-Home Healthcare</span>
               </div>
-              <p className="text-lg md:text-xl mb-6 md:mb-8 text-white/90 leading-relaxed max-w-xl">
-                At Noble Homecare Agency, we provide a wide range of home health care services to clients all throughout our area. Our staff goes above and beyond to make sure you get the best quality care possible.
+              
+              <div className="space-y-4">
+                <h1 className="text-5xl md:text-6xl lg:text-8xl font-serif font-bold leading-[1.1] text-white">
+                  We <span className="text-healthcare-gold italic">Care</span> <br />
+                  For You!
+                </h1>
+                <div className="banner-star-line !justify-start !my-2">
+                  <span className="w-6 h-6 text-healthcare-gold">✦</span>
+                </div>
+              </div>
+              
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-xl font-light">
+                At <span className="font-semibold text-white">Noble Homecare Agency</span>, we provide professional medical and personal care services designed to promote dignity, independence, and comfort in your own home.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-secondary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 transform hover:scale-105 transition-all duration-300">
+              
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare-secondary text-lg px-10 py-6 rounded-xl transform hover:-translate-y-1 transition-all duration-300 shadow-2xl">
                   Get Free Consultation
                 </Button>
+                <div className="flex items-center space-x-3 px-2">
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="w-10 h-10 rounded-full border-2 border-healthcare-green bg-healthcare-gray-light overflow-hidden shadow-lg">
+                        <img src={`https://res.cloudinary.com/dl3ee8etw/image/upload/v1777594304/${i === 1 ? '6_aphqqg' : i === 2 ? '5_ayx328' : '1_umffyt'}.jpg`} alt="Caregiver" className="w-full h-full object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-sm">
+                    <div className="font-bold text-healthcare-gold">Joined by 500+</div>
+                    <div className="text-white/70">Families in Georgia</div>
+                  </div>
+                </div>
               </div>
             </div>
             
-            <div className="animate-slide-in">
-              <HeroSlider />
+            <div className="animate-slide-in relative">
+              {/* Premium Frame for Slider */}
+              <div className="absolute -inset-4 bg-healthcare-gold/20 blur-2xl rounded-[2.5rem] animate-pulse"></div>
+              <div className="relative border-4 border-white/10 rounded-[2.2rem] p-2 bg-white/5 backdrop-blur-sm shadow-2xl">
+                <HeroSlider />
+              </div>
+              
+              {/* Floating Stat Card */}
+              <div className="absolute -bottom-6 -left-6 md:-left-12 bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 animate-bounce-slow hidden md:block">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-healthcare-green rounded-xl flex items-center justify-center text-white">
+                    <Award size={24} />
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-500 font-medium">Satisfaction</div>
+                    <div className="text-xl font-bold text-healthcare-green">98.5% Rate</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
