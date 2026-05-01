@@ -24,55 +24,72 @@
 </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Professional Pre-loader -->
+      <div style="height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif;">
+        <div style="position: relative; width: 80px; height: 80px;">
+          <div style="position: absolute; inset: 0; border: 4px solid #084634; border-radius: 50%; opacity: 0.2;"></div>
+          <div style="position: absolute; inset: 0; border: 4px solid transparent; border-top-color: #C5A028; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        </div>
+        <div style="margin-top: 24px; color: #084634; font-weight: 600; letter-spacing: 0.05em; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;">
+          NOBLE HOMECARE
+        </div>
+        <style>
+          @keyframes spin { to { transform: rotate(360deg); } }
+          @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+        </style>
+      </div>
+    </div>
 
-    {/* Hidden forms for Netlify bot detection */}
-    <form name="contact" data-netlify="true" hidden>
-      <input type="text" name="date" />
-      <input type="text" name="clientFullName" />
-      <input type="text" name="clientDOB" />
-      <input type="text" name="clientAge" />
-      <input type="text" name="phone" />
-      <input type="email" name="email" />
-      <input type="text" name="county" />
-      <input type="text" name="city" />
-      <input type="text" name="primaryContactName" />
-      <input type="text" name="primaryContactPhone" />
-      <input type="email" name="primaryContactEmail" />
-      <textarea name="diagnosis"></textarea>
-      <input type="text" name="careType" />
-      <input type="text" name="urgency" />
-      <textarea name="message"></textarea>
-    </form>
+    <!-- Hidden forms for Netlify bot detection -->
+    <div style="display: none;" aria-hidden="true">
+      <form name="contact" data-netlify="true">
+        <input type="text" name="date" />
+        <input type="text" name="clientFullName" />
+        <input type="text" name="clientDOB" />
+        <input type="text" name="clientAge" />
+        <input type="text" name="phone" />
+        <input type="email" name="email" />
+        <input type="text" name="county" />
+        <input type="text" name="city" />
+        <input type="text" name="primaryContactName" />
+        <input type="text" name="primaryContactPhone" />
+        <input type="email" name="primaryContactEmail" />
+        <textarea name="diagnosis"></textarea>
+        <input type="text" name="careType" />
+        <input type="text" name="urgency" />
+        <textarea name="message"></textarea>
+      </form>
 
-    <form name="jobs" data-netlify="true" hidden>
-      <input type="text" name="firstName" />
-      <input type="text" name="lastName" />
-      <input type="email" name="email" />
-      <input type="tel" name="phone" />
-      <input type="text" name="address" />
-      <input type="text" name="city" />
-      <input type="text" name="state" />
-      <input type="text" name="zipCode" />
-      <input type="text" name="position" />
-      <input type="text" name="experience" />
-      <input type="text" name="availability" />
-      <input type="text" name="workAnywhereInGeorgia" />
-      <input type="text" name="countiesCanWork" />
-      <input type="text" name="willingToTravel" />
-      <input type="text" name="education" />
-      <input type="text" name="gender" />
-      <input type="text" name="ethnicity" />
-      <input type="text" name="languagesSpoken" />
-      <textarea name="certifications"></textarea>
-      <textarea name="coverLetter"></textarea>
-      <textarea name="resume"></textarea>
-      <textarea name="previousExperience"></textarea>
-      <textarea name="whyInterested"></textarea>
-      <textarea name="references"></textarea>
-      <input type="checkbox" name="backgroundCheck" />
-      <input type="checkbox" name="drugTest" />
-    </form>
+      <form name="jobs" data-netlify="true">
+        <input type="text" name="firstName" />
+        <input type="text" name="lastName" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <input type="text" name="address" />
+        <input type="text" name="city" />
+        <input type="text" name="state" />
+        <input type="text" name="zipCode" />
+        <input type="text" name="position" />
+        <input type="text" name="experience" />
+        <input type="text" name="availability" />
+        <input type="text" name="workAnywhereInGeorgia" />
+        <input type="text" name="countiesCanWork" />
+        <input type="text" name="willingToTravel" />
+        <input type="text" name="education" />
+        <input type="text" name="gender" />
+        <input type="text" name="ethnicity" />
+        <input type="text" name="languagesSpoken" />
+        <textarea name="certifications"></textarea>
+        <textarea name="coverLetter"></textarea>
+        <textarea name="resume"></textarea>
+        <textarea name="previousExperience"></textarea>
+        <textarea name="whyInterested"></textarea>
+        <textarea name="references"></textarea>
+        <input type="checkbox" name="backgroundCheck" />
+        <input type="checkbox" name="drugTest" />
+      </form>
+    </div>
 
     <script type="module" src="/src/main.tsx"></script>
   </body>
