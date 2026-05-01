@@ -30,8 +30,8 @@ const handler = async (req: Request): Promise<Response> => {
     const formData: FormData = await req.json();
     
     const subject = formData.formType === 'consultation' 
-      ? 'New Free Consultation Request - Premier Healthcare of Georgia'
-      : 'New Care Needs Assessment - Premier Healthcare of Georgia';
+      ? 'New Free Consultation Request - Noble Homecare Agency'
+      : 'New Care Needs Assessment - Noble Homecare Agency';
 
     const htmlTemplate = `
       <!DOCTYPE html>
@@ -101,11 +101,11 @@ const handler = async (req: Request): Promise<Response> => {
     console.log('Sending email with data:', formData);
 
     const emailResponse = await resend.emails.send({
-      from: "Premier Healthcare of Georgia <no-reply@resend.dev>",
-      to: ["service.premierhealthcarega@gmail.com"],
+      from: "Noble Homecare Agency <no-reply@resend.dev>",
+      to: ["online.ianmakes@gmail.com"],
       subject: subject,
       html: htmlTemplate,
-      reply_to: formData.email || "service.premierhealthcarega@gmail.com",
+      reply_to: formData.email || "online.ianmakes@gmail.com",
     });
 
     console.log("Email sent successfully:", emailResponse);

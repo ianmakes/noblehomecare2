@@ -84,6 +84,23 @@ const Jobs = () => {
   const onSubmit = async (data: JobApplicationForm) => {
     setIsSubmitting(true);
     try {
+      // Netlify Form Submission
+      const netlifyData = new URLSearchParams();
+      netlifyData.append("form-name", "jobs");
+      Object.entries(data).forEach(([key, value]) => {
+        if (Array.isArray(value)) {
+          netlifyData.append(key, value.join(', '));
+        } else {
+          netlifyData.append(key, value.toString());
+        }
+      });
+
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: netlifyData.toString(),
+      });
+
       // Transform data for email service
       const emailData = {
         name: `${data.firstName} ${data.lastName}`,
@@ -195,7 +212,8 @@ ${data.references}`
                     <DialogTitle className="text-2xl text-healthcare-teal">Job Application</DialogTitle>
                   </DialogHeader>
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" name="jobs" data-netlify="true">
+                      <input type="hidden" name="form-name" value="jobs" />
                       {/* Personal Information Section */}
                       <div className="space-y-4">
                         <h3 className="text-lg font-semibold text-healthcare-teal border-b border-healthcare-teal/20 pb-2">Personal Information</h3>

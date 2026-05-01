@@ -83,6 +83,23 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
     setIsSubmitting(true);
     
     try {
+      // Netlify Form Submission
+      const netlifyData = new URLSearchParams();
+      netlifyData.append("form-name", "contact");
+      Object.entries(formData).forEach(([key, value]) => {
+        if (Array.isArray(value)) {
+          netlifyData.append(key, value.join(', '));
+        } else {
+          netlifyData.append(key, value);
+        }
+      });
+
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: netlifyData.toString(),
+      });
+
       // Transform data for email service
       const emailData = {
         name: formData.clientFullName,
@@ -173,7 +190,8 @@ ${formData.message}`,
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6" name="contact" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="date" className="text-sm md:text-base">Date *</Label>

@@ -25,6 +25,55 @@
 
   <body>
     <div id="root"></div>
+
+    {/* Hidden forms for Netlify bot detection */}
+    <form name="contact" data-netlify="true" hidden>
+      <input type="text" name="date" />
+      <input type="text" name="clientFullName" />
+      <input type="text" name="clientDOB" />
+      <input type="text" name="clientAge" />
+      <input type="text" name="phone" />
+      <input type="email" name="email" />
+      <input type="text" name="county" />
+      <input type="text" name="city" />
+      <input type="text" name="primaryContactName" />
+      <input type="text" name="primaryContactPhone" />
+      <input type="email" name="primaryContactEmail" />
+      <textarea name="diagnosis"></textarea>
+      <input type="text" name="careType" />
+      <input type="text" name="urgency" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <form name="jobs" data-netlify="true" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="address" />
+      <input type="text" name="city" />
+      <input type="text" name="state" />
+      <input type="text" name="zipCode" />
+      <input type="text" name="position" />
+      <input type="text" name="experience" />
+      <input type="text" name="availability" />
+      <input type="text" name="workAnywhereInGeorgia" />
+      <input type="text" name="countiesCanWork" />
+      <input type="text" name="willingToTravel" />
+      <input type="text" name="education" />
+      <input type="text" name="gender" />
+      <input type="text" name="ethnicity" />
+      <input type="text" name="languagesSpoken" />
+      <textarea name="certifications"></textarea>
+      <textarea name="coverLetter"></textarea>
+      <textarea name="resume"></textarea>
+      <textarea name="previousExperience"></textarea>
+      <textarea name="whyInterested"></textarea>
+      <textarea name="references"></textarea>
+      <input type="checkbox" name="backgroundCheck" />
+      <input type="checkbox" name="drugTest" />
+    </form>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

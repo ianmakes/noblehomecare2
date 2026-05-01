@@ -54,7 +54,7 @@ ${formData.message ? `Additional Information:\n${formData.message}` : ''}
 This ${formType === 'consultation' ? 'consultation request' : formType === 'care-needs' ? 'care assessment' : 'job application'} was submitted through noblehomecareagency.com
 Please respond within 24 hours as promised to the ${formType === 'job-application' ? 'applicant' : 'client'}.`;
 
-    const mailtoLink = `mailto:info@noblehomecareagency.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:online.ianmakes@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoLink);
     
     throw error;
