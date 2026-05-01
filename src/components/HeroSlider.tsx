@@ -39,7 +39,7 @@ const HeroSlider = () => {
   const prevSlide = () => {
     setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
   };
-  return <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+  return <div className="relative w-full h-[450px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
       {/* Slides */}
       {slides.map((slide, index) => <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
           <img src={slide.image} alt={slide.caption} className="w-full h-full object-cover" />
