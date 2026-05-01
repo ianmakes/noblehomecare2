@@ -71,15 +71,12 @@ const Services = () => {
       <section className="section-padding banner-wave">
         <div className="container-custom">
           <Tabs defaultValue="personal-care" className="w-full">
-            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 mb-12 h-auto gap-2 bg-healthcare-green/10 p-2 rounded-xl">
+            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 mb-12 h-auto gap-2 bg-healthcare-green/10 p-2 rounded-xl">
               <TabsTrigger value="personal-care" className="font-serif font-semibold text-sm sm:text-base py-3 px-4 rounded-lg data-[state=active]:bg-healthcare-green data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300">
                 Personal Care
               </TabsTrigger>
               <TabsTrigger value="specialized" className="font-serif font-semibold text-sm sm:text-base py-3 px-4 rounded-lg data-[state=active]:bg-healthcare-green data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300">
                 Specialized Care
-              </TabsTrigger>
-              <TabsTrigger value="payment" className="font-serif font-semibold text-sm sm:text-base py-3 px-4 rounded-lg data-[state=active]:bg-healthcare-green data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300">
-                Payment Options
               </TabsTrigger>
             </TabsList>
             
@@ -156,42 +153,6 @@ const Services = () => {
                     Discuss Your Medical Needs
                   </Button>
                 </div>
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="payment">
-              <div className="text-center mb-12">
-                <h2 className="text-healthcare-green font-serif font-bold mb-4">Flexible Payment Options</h2>
-                <div className="inline-block bg-healthcare-gold text-white px-8 py-2 rounded-full font-bold mb-6 shadow-lg animate-pulse">
-                  Monthly package rates available
-                </div>
-                <div className="banner-star-line">
-                  <span className="w-6 h-6 text-healthcare-gold">✦</span>
-                </div>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  We offer multiple payment options to make quality home care accessible and affordable.
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-8 mb-12">
-                {paymentOptions.map((option, index) => <div key={index} className="healthcare-card healthcare-card-gold-border animate-fade-in relative" style={{
-                animationDelay: `${index * 0.1}s`
-              }}>
-                    {option.comingSoon && <div className="absolute top-4 right-4 bg-healthcare-gold text-white px-3 py-1 rounded-full text-sm font-medium">
-                        Coming Soon
-                      </div>}
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className="p-2 bg-healthcare-green/10 rounded-full">{option.icon}</div>
-                      <h3 className="text-xl font-serif font-bold text-healthcare-green">{option.title}</h3>
-                    </div>
-                    <p className="text-gray-600 mb-4">{option.description}</p>
-                    <div className="space-y-2">
-                      {option.methods.map((method, idx) => <div key={idx} className="flex items-center space-x-2 text-sm text-gray-700">
-                          <div className="w-2 h-2 bg-healthcare-gold rounded-full"></div>
-                          <span>{method}</span>
-                        </div>)}
-                    </div>
-                  </div>)}
               </div>
             </TabsContent>
           </Tabs>
