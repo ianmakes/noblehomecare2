@@ -207,7 +207,7 @@ ${data.references}`
                     Apply via Form
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                <DialogContent className="sm:max-w-[1000px] max-h-[95vh] overflow-y-auto border-t-8 border-healthcare-gold shadow-2xl">
                   <DialogHeader>
                     <DialogTitle className="text-2xl text-healthcare-teal">Job Application</DialogTitle>
                   </DialogHeader>
@@ -217,15 +217,15 @@ ${data.references}`
                       {/* Personal Information Section */}
                       <div className="space-y-4">
                         <h3 className="text-lg font-serif font-bold text-healthcare-green border-b border-healthcare-green/20 pb-2">Personal Information</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                           <FormField
                             control={form.control}
                             name="firstName"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel>First Name *</FormLabel>
+                                <FormLabel className="text-healthcare-green font-semibold">First Name *</FormLabel>
                                 <FormControl>
-                                  <Input {...field} />
+                                  <Input {...field} className="border-healthcare-green/20 focus:border-healthcare-gold" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -236,9 +236,9 @@ ${data.references}`
                             name="lastName"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel>Last Name *</FormLabel>
+                                <FormLabel className="text-healthcare-green font-semibold">Last Name *</FormLabel>
                                 <FormControl>
-                                  <Input {...field} />
+                                  <Input {...field} className="border-healthcare-green/20 focus:border-healthcare-gold" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -249,9 +249,9 @@ ${data.references}`
                             name="email"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel>Email Address *</FormLabel>
+                                <FormLabel className="text-healthcare-green font-semibold">Email Address *</FormLabel>
                                 <FormControl>
-                                  <Input type="email" {...field} />
+                                  <Input type="email" {...field} className="border-healthcare-green/20 focus:border-healthcare-gold" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -262,9 +262,9 @@ ${data.references}`
                             name="phone"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel>Phone Number *</FormLabel>
+                                <FormLabel className="text-healthcare-green font-semibold">Phone Number *</FormLabel>
                                 <FormControl>
-                                  <Input type="tel" {...field} />
+                                  <Input type="tel" {...field} className="border-healthcare-green/20 focus:border-healthcare-gold" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -275,76 +275,78 @@ ${data.references}`
 
                       {/* Address Information Section */}
                       <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-healthcare-teal border-b border-healthcare-teal/20 pb-2">Address Information</h3>
-                        <FormField
-                          control={form.control}
-                          name="address"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Street Address *</FormLabel>
-                              <FormControl>
-                                <Input {...field} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <h3 className="text-lg font-serif font-bold text-healthcare-green border-b border-healthcare-green/20 pb-2">Address Information</h3>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                           <FormField
                             control={form.control}
-                            name="city"
+                            name="address"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel>City *</FormLabel>
+                                <FormLabel className="text-healthcare-green font-semibold">Street Address *</FormLabel>
                                 <FormControl>
-                                  <Input {...field} />
+                                  <Input {...field} className="border-healthcare-green/20 focus:border-healthcare-gold" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
                             )}
                           />
-                          <FormField
-                            control={form.control}
-                            name="state"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>State *</FormLabel>
-                                <FormControl>
-                                  <Input {...field} />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                          <FormField
-                            control={form.control}
-                            name="zipCode"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Zip Code *</FormLabel>
-                                <FormControl>
-                                  <Input {...field} />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <FormField
+                              control={form.control}
+                              name="city"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel className="text-healthcare-green font-semibold">City *</FormLabel>
+                                  <FormControl>
+                                    <Input {...field} className="border-healthcare-green/20 focus:border-healthcare-gold" />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            <FormField
+                              control={form.control}
+                              name="state"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel className="text-healthcare-green font-semibold">State *</FormLabel>
+                                  <FormControl>
+                                    <Input {...field} className="border-healthcare-green/20 focus:border-healthcare-gold" />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            <FormField
+                              control={form.control}
+                              name="zipCode"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel className="text-healthcare-green font-semibold">Zip Code *</FormLabel>
+                                  <FormControl>
+                                    <Input {...field} className="border-healthcare-green/20 focus:border-healthcare-gold" />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
                         </div>
                       </div>
 
                       {/* Position and Experience Section */}
                       <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-healthcare-teal border-b border-healthcare-teal/20 pb-2">Position & Experience</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <h3 className="text-lg font-serif font-bold text-healthcare-green border-b border-healthcare-green/20 pb-2">Position & Experience</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                           <FormField
                             control={form.control}
                             name="position"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel>Position Applied For *</FormLabel>
+                                <FormLabel className="text-healthcare-green font-semibold">Position Applied For *</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                   <FormControl>
-                                    <SelectTrigger>
+                                    <SelectTrigger className="border-healthcare-green/20 focus:border-healthcare-gold">
                                       <SelectValue placeholder="Select position" />
                                     </SelectTrigger>
                                   </FormControl>
@@ -365,10 +367,10 @@ ${data.references}`
                             name="experience"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel>Experience Level *</FormLabel>
+                                <FormLabel className="text-healthcare-green font-semibold">Experience Level *</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                   <FormControl>
-                                    <SelectTrigger>
+                                    <SelectTrigger className="border-healthcare-green/20 focus:border-healthcare-gold">
                                       <SelectValue placeholder="Select experience level" />
                                     </SelectTrigger>
                                   </FormControl>
@@ -389,96 +391,100 @@ ${data.references}`
 
                       {/* Work Location & Availability Section */}
                       <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-healthcare-teal border-b border-healthcare-teal/20 pb-2">Work Location & Availability</h3>
-                        <FormField
-                          control={form.control}
-                          name="availability"
-                          render={() => (
-                            <FormItem>
-                              <FormLabel>Availability *</FormLabel>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                {availabilityOptions.map((option) => (
-                                  <FormField
-                                    key={option}
-                                    control={form.control}
-                                    name="availability"
-                                    render={({ field }) => {
-                                      return (
-                                        <FormItem
-                                          key={option}
-                                          className="flex flex-row items-start space-x-3 space-y-0"
-                                        >
-                                          <FormControl>
-                                            <Checkbox
-                                              checked={field.value?.includes(option)}
-                                              onCheckedChange={(checked) => {
-                                                return checked
-                                                  ? field.onChange([...field.value, option])
-                                                  : field.onChange(
-                                                      field.value?.filter(
-                                                        (value) => value !== option
+                        <h3 className="text-lg font-serif font-bold text-healthcare-green border-b border-healthcare-green/20 pb-2">Availability & Location</h3>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                          <FormField
+                            control={form.control}
+                            name="availability"
+                            render={() => (
+                              <FormItem>
+                                <FormLabel className="text-healthcare-green font-semibold">Availability *</FormLabel>
+                                <div className="grid grid-cols-2 gap-2">
+                                  {availabilityOptions.map((option) => (
+                                    <FormField
+                                      key={option}
+                                      control={form.control}
+                                      name="availability"
+                                      render={({ field }) => {
+                                        return (
+                                          <FormItem
+                                            key={option}
+                                            className="flex flex-row items-start space-x-3 space-y-0"
+                                          >
+                                            <FormControl>
+                                              <Checkbox
+                                                checked={field.value?.includes(option)}
+                                                onCheckedChange={(checked) => {
+                                                  return checked
+                                                    ? field.onChange([...field.value, option])
+                                                    : field.onChange(
+                                                        field.value?.filter(
+                                                          (value) => value !== option
+                                                        )
                                                       )
-                                                    )
-                                              }}
-                                            />
-                                          </FormControl>
-                                          <FormLabel className="text-sm font-normal">
-                                            {option}
-                                          </FormLabel>
-                                        </FormItem>
-                                      )
-                                    }}
-                                  />
-                                ))}
-                              </div>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                                                }}
+                                              />
+                                            </FormControl>
+                                            <FormLabel className="text-[10px] md:text-xs font-normal cursor-pointer">
+                                              {option}
+                                            </FormLabel>
+                                          </FormItem>
+                                        )
+                                      }}
+                                    />
+                                  ))}
+                                </div>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          <FormField
-                            control={form.control}
-                            name="workAnywhereInGeorgia"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Can you work anywhere in Georgia? *</FormLabel>
-                                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                  <FormControl>
-                                    <SelectTrigger>
-                                      <SelectValue placeholder="Select" />
-                                    </SelectTrigger>
-                                  </FormControl>
-                                  <SelectContent>
-                                    <SelectItem value="yes">Yes</SelectItem>
-                                    <SelectItem value="no">No</SelectItem>
-                                  </SelectContent>
-                                </Select>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                          <FormField
-                            control={form.control}
-                            name="willingToTravel"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Willing to travel? *</FormLabel>
-                                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                  <FormControl>
-                                    <SelectTrigger>
-                                      <SelectValue placeholder="Select" />
-                                    </SelectTrigger>
-                                  </FormControl>
-                                  <SelectContent>
-                                    <SelectItem value="yes">Yes</SelectItem>
-                                    <SelectItem value="no">No</SelectItem>
-                                  </SelectContent>
-                                </Select>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
+                          <div className="space-y-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              <FormField
+                                control={form.control}
+                                name="workAnywhereInGeorgia"
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel className="text-healthcare-green font-semibold">Work anywhere in GA? *</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                      <FormControl>
+                                        <SelectTrigger className="border-healthcare-green/20 focus:border-healthcare-gold">
+                                          <SelectValue placeholder="Select" />
+                                        </SelectTrigger>
+                                      </FormControl>
+                                      <SelectContent>
+                                        <SelectItem value="yes">Yes</SelectItem>
+                                        <SelectItem value="no">No</SelectItem>
+                                      </SelectContent>
+                                    </Select>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                              <FormField
+                                control={form.control}
+                                name="willingToTravel"
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel className="text-healthcare-green font-semibold">Willing to travel? *</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                      <FormControl>
+                                        <SelectTrigger className="border-healthcare-green/20 focus:border-healthcare-gold">
+                                          <SelectValue placeholder="Select" />
+                                        </SelectTrigger>
+                                      </FormControl>
+                                      <SelectContent>
+                                        <SelectItem value="yes">Yes</SelectItem>
+                                        <SelectItem value="no">No</SelectItem>
+                                      </SelectContent>
+                                    </Select>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                            </div>
+                          </div>
                         </div>
 
                         <FormField
@@ -486,9 +492,9 @@ ${data.references}`
                           name="countiesCanWork"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>Which counties can you work in?</FormLabel>
+                              <FormLabel className="text-healthcare-green font-semibold">Which counties can you work in?</FormLabel>
                               <FormControl>
-                                <Input {...field} placeholder="List counties you can work in" />
+                                <Input {...field} placeholder="List counties you can work in" className="border-healthcare-green/20 focus:border-healthcare-gold" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
