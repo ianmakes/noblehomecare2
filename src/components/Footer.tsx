@@ -1,4 +1,4 @@
-import { Heart, Phone, Mail, MapPin } from 'lucide-react';
+import { Heart, Phone, Mail, MapPin, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
 const Footer = () => {
   const handleLinkClick = () => {
@@ -88,6 +88,21 @@ const Footer = () => {
             </div>
 
 
+            {/* Social Media Links */}
+            <div className="mt-6">
+              <h5 className="text-md font-medium mb-3">Follow Us</h5>
+              <div className="flex space-x-3">
+                <a 
+                  href="https://www.facebook.com/noblehomecarellc/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-healthcare-green hover:bg-healthcare-gold rounded-full flex items-center justify-center transition-colors"
+                  aria-label="Visit our Facebook page"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
