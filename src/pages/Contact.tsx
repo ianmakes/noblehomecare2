@@ -20,19 +20,41 @@ const Contact = () => {
   });
   const counties = ['Cobb', 'Paulding', 'Cherokee', 'Fulton', 'Douglas', 'Gwinnett', 'Polk', 'Bartow'];
   const careTypes = ['Personal Care', 'Companionship', 'Meal Preparation', 'Light Housekeeping', 'Transportation', 'Medication Supervision', 'Skilled Nursing', 'Around-The-Clock Care'];
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Thank you! Our care team will contact you within 24 hours.');
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      county: '',
-      careType: [],
-      urgency: '',
-      message: ''
-    });
+    try {
+      // Netlify Form Submission
+      const netlifyData = new URLSearchParams();
+      netlifyData.append("form-name", "contact-page");
+      Object.entries(formData).forEach(([key, value]) => {
+        if (Array.isArray(value)) {
+          netlifyData.append(key, value.join(', '));
+        } else {
+          netlifyData.append(key, value.toString());
+        }
+      });
+
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: netlifyData.toString(),
+      });
+
+      toast.success('Thank you! Our care team will contact you within 24 hours.');
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        county: '',
+        careType: [],
+        urgency: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('There was an error submitting your request. Please try again or contact us directly.');
+    }
   };
   const handleCareTypeChange = (careType: string, checked: boolean) => {
     setFormData(prev => ({
@@ -76,8 +98,8 @@ const Contact = () => {
               <Mail className="w-12 h-12 text-healthcare-gold mx-auto mb-4" />
               <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">Email Us</h3>
               <p className="text-gray-600 mb-4 leading-relaxed">Send us your questions anytime</p>
-              <a href="mailto:online.ianmakes@gmail.com" className="text-healthcare-green font-bold hover:text-healthcare-gold transition-colors break-all">
-                online.ianmakes@gmail.com
+              <a href="mailto:info@noblehomecarellc.com" className="text-healthcare-green font-bold hover:text-healthcare-gold transition-colors break-all">
+                info@noblehomecarellc.com
               </a>
             </div>
             
@@ -107,7 +129,8 @@ const Contact = () => {
                 </div>
               </div>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" name="contact-page" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact-page" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name *</Label>

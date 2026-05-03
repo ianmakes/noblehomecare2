@@ -74,8 +74,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-healthcare-gold" />
-                <a href="mailto:info@noblehomecareagency.com" className="text-gray-300 hover:text-white text-sm break-all">
-                  info@noblehomecareagency.com
+                <a href="mailto:info@noblehomecarellc.com" className="text-gray-300 hover:text-white text-sm break-all">
+                  info@noblehomecarellc.com
                 </a>
               </div>
               <div className="flex items-start space-x-3">
