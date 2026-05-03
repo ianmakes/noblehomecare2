@@ -99,8 +99,8 @@ const Home = () => {
             
             <div className="animate-slide-in relative">
               {/* Premium Frame for Slider */}
-              <div className="absolute -inset-4 bg-healthcare-gold/20 blur-2xl rounded-[2.5rem] animate-pulse"></div>
-              <div className="relative border-4 border-white/10 rounded-[2.2rem] p-2 bg-white/5 backdrop-blur-sm shadow-2xl">
+              <div className="absolute -inset-4 bg-healthcare-gold/20 blur-2xl rounded-none animate-pulse"></div>
+              <div className="relative border-4 border-white/10 rounded-none p-2 bg-white/5 backdrop-blur-sm shadow-2xl">
                 <HeroSlider />
               </div>
               
