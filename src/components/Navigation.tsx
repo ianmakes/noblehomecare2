@@ -43,32 +43,32 @@ const Navigation = () => {
       <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-300 rounded-2xl ${isScrolled ? 'bg-healthcare-green shadow-xl border border-white/10 py-0' : 'bg-transparent py-1 shadow-none border-none'}`}>
         {/* Main navigation */}
         <div className="container-custom">
-          <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-16' : 'h-20'}`}>
+          <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-14' : 'h-20'}`}>
             <a href="/" className="flex items-center space-x-3 md:space-x-4 group">
-              <div className={`relative flex items-center justify-center p-1.5 transition-all duration-500 ${isScrolled ? 'bg-white/10 shadow-none border-none rounded-full' : 'bg-white/10 shadow-2xl border-2 border-healthcare-gold rounded-full'}`}>
+              <div className={`relative flex items-center justify-center transition-all duration-500 ${isScrolled ? 'bg-white/10 p-1 shadow-none border-none rounded-full' : 'bg-white/10 p-1.5 shadow-2xl border-2 border-healthcare-gold rounded-full'}`}>
                 <img 
                   src="/noble-logo.png" 
                   alt="Noble Homecare Agency Logo" 
-                  className={`object-contain transition-all duration-500 brightness-0 invert ${isScrolled ? 'w-10 h-10 md:w-12 md:h-12' : 'w-14 h-14 md:w-16 md:h-16'}`} 
+                  className={`object-contain transition-all duration-500 brightness-0 invert ${isScrolled ? 'w-8 h-8 md:w-9 md:h-9' : 'w-14 h-14 md:w-16 md:h-16'}`} 
                 />
                 <div className="absolute inset-0 rounded-full border border-white/50 pointer-events-none"></div>
               </div>
               <div className="flex flex-col">
-                <h1 className={`font-serif font-bold leading-none transition-all duration-300 text-white ${isScrolled ? 'text-base md:text-xl' : 'text-lg md:text-2xl'}`}>
+                <h1 className={`font-serif font-bold leading-none transition-all duration-300 text-white ${isScrolled ? 'text-sm md:text-lg' : 'text-lg md:text-2xl'}`}>
                   Noble Homecare
                 </h1>
-                <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 text-healthcare-gold">
+                <span className={`uppercase tracking-[0.2em] font-medium transition-all duration-300 text-healthcare-gold ${isScrolled ? 'text-[8px] md:text-[9px]' : 'text-[10px] md:text-xs'}`}>
                   Agency of Georgia
                 </span>
               </div>
             </a>
 
             {/* Desktop navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navItems.map(item => <Link key={item.name} to={item.path} onClick={handleNavClick} className={`font-medium transition-colors duration-200 text-white/90 hover:text-white ${isActive(item.path) ? 'text-white border-b-2 border-white pb-1' : ''}`}>
+            <div className={`hidden md:flex items-center transition-all duration-300 ${isScrolled ? 'space-x-6' : 'space-x-8'}`}>
+              {navItems.map(item => <Link key={item.name} to={item.path} onClick={handleNavClick} className={`font-medium transition-all duration-200 text-white/90 hover:text-white ${isScrolled ? 'text-sm' : 'text-base'} ${isActive(item.path) ? 'text-white border-b-2 border-white pb-1' : ''}`}>
                   {item.name}
                 </Link>)}
-              <button onClick={() => setIsConsultationModalOpen(true)} className="btn-healthcare bg-healthcare-gold text-white hover:bg-healthcare-gold-dark transition-all duration-300">
+              <button onClick={() => setIsConsultationModalOpen(true)} className={`btn-healthcare bg-healthcare-gold text-white hover:bg-healthcare-gold-dark transition-all duration-300 ${isScrolled ? 'px-4 py-1.5 text-xs' : ''}`}>
                 Get Care Today
               </button>
             </div>
