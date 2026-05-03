@@ -45,7 +45,7 @@ const Home = () => {
   }];
   return <div className="min-h-screen">
       {/* Hero Section - Professional & Branded */}
-      <section className="relative healthcare-gradient text-white min-h-[50vh] md:min-h-[70vh] flex items-center pt-24 pb-8 md:pt-36 md:pb-16 lg:pt-44 lg:pb-24 overflow-hidden">
+      <section className="relative healthcare-gradient text-white min-h-[40vh] md:min-h-[60vh] flex items-center pt-20 pb-6 md:pt-32 md:pb-10 lg:pt-36 lg:pb-14 overflow-hidden">
         {/* Subtle Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-white/5 rounded-full blur-[120px]"></div>
@@ -122,7 +122,7 @@ const Home = () => {
       </section>
 
       {/* Services Overview - Modern & Clean */}
-      <section className="section-padding bg-healthcare-green/[0.02] relative overflow-hidden">
+      <section className="section-padding bg-white relative overflow-hidden">
         {/* Background Decoration */}
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-healthcare-gold/5 rounded-full blur-3xl"></div>
         
@@ -164,7 +164,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us - Elegant & Authoritative */}
-      <section className="section-padding bg-white relative">
+      <section className="section-padding bg-healthcare-green/[0.03] relative">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative animate-slide-in">
@@ -230,7 +230,7 @@ const Home = () => {
       </section>
 
       {/* Comprehensive Care Services - Soft Gradient Background */}
-      <section className="section-padding relative overflow-hidden bg-gradient-to-br from-healthcare-green/5 to-white">
+      <section className="section-padding relative overflow-hidden bg-white">
         <div className="absolute top-1/2 left-0 w-64 h-64 bg-healthcare-green/5 rounded-full blur-3xl -translate-x-1/2"></div>
         
         <div className="container-custom relative z-10">
@@ -286,7 +286,7 @@ const Home = () => {
       </section>
 
       {/* Care Process - Connected Steps Design */}
-      <section className="section-padding bg-white relative overflow-hidden">
+      <section className="section-padding bg-healthcare-green/[0.03] relative overflow-hidden">
         <div className="container-custom relative z-10">
           <div className="text-center mb-10 md:mb-20">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-healthcare-green mb-4 md:mb-6">Easy Steps To Get Started</h2>

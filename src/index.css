@@ -158,7 +158,7 @@
   }
 
   .section-padding {
-    @apply py-8 md:py-16 lg:py-24;
+    @apply py-8 md:py-12 lg:py-14;
   }
 
   .container-custom {
@@ -173,6 +173,6 @@
   }
   
   .section-padding {
-    @apply py-8;
+    @apply py-6;
   }
 }
