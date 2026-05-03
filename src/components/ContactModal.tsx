@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -83,57 +83,7 @@ const ContactModal = ({ isOpen, onClose, type = 'consultation' }: ContactModalPr
     setIsSubmitting(true);
     
     try {
-      // Netlify Form Submission
-      const netlifyData = new URLSearchParams();
-      netlifyData.append("form-name", "contact");
-      Object.entries(formData).forEach(([key, value]) => {
-        if (Array.isArray(value)) {
-          netlifyData.append(key, value.join(', '));
-        } else {
-          netlifyData.append(key, value);
-        }
-      });
-
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: netlifyData.toString(),
-      });
-
-      // Transform data for email service
-      const emailData = {
-        name: formData.clientFullName,
-        email: formData.email,
-        phone: formData.phone,
-        county: formData.county,
-        careType: formData.careType,
-        urgency: formData.urgency,
-        message: `CONSULTATION REQUEST:
-Date: ${formData.date}
-Client Full Name: ${formData.clientFullName}
-Date of Birth: ${formData.clientDOB}
-Age: ${formData.clientAge}
-Phone: ${formData.phone}
-Email: ${formData.email}
-County: ${formData.county}
-City: ${formData.city}
-
-PRIMARY CONTACT:
-Name: ${formData.primaryContactName}
-Phone: ${formData.primaryContactPhone}
-Email: ${formData.primaryContactEmail}
-
-MEDICAL INFORMATION:
-Diagnosis: ${formData.diagnosis}
-
-CARE SERVICES NEEDED: ${formData.careType.join(', ')}
-URGENCY: ${formData.urgency}
-
-ADDITIONAL INFORMATION:
-${formData.message}`,
-      };
-
-      await sendFormEmail(emailData, type);
+      await sendFormEmail(formData, 'contact');
       toast.success('Thank you! Our care team will contact you within 24 hours.');
       
       // Reset form
@@ -180,6 +130,9 @@ ${formData.message}`,
           <DialogTitle className="text-xl md:text-2xl text-healthcare-green font-serif font-bold">
             {type === 'consultation' ? 'Free Consultation Request' : 'Care Needs Assessment'}
           </DialogTitle>
+          <DialogDescription>
+            Please fill out the form below and we will get back to you within 24 hours.
+          </DialogDescription>
         </DialogHeader>
 
         <div className="bg-healthcare-green/5 p-3 md:p-4 rounded-lg mb-4 md:mb-6 border-l-4 border-healthcare-gold">

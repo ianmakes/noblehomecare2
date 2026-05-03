@@ -8,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { toast } from 'sonner';
 import { Heart, Users, Shield, Award, Briefcase, Clock, Star, Mail, FileText, Upload } from 'lucide-react';
 import Footer from '@/components/Footer';
@@ -84,65 +84,8 @@ const Jobs = () => {
   const onSubmit = async (data: JobApplicationForm) => {
     setIsSubmitting(true);
     try {
-      // Netlify Form Submission
-      const netlifyData = new URLSearchParams();
-      netlifyData.append("form-name", "jobs");
-      Object.entries(data).forEach(([key, value]) => {
-        if (Array.isArray(value)) {
-          netlifyData.append(key, value.join(', '));
-        } else {
-          netlifyData.append(key, value.toString());
-        }
-      });
-
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: netlifyData.toString(),
-      });
-
-      // Transform data for email service
-      const emailData = {
-        name: `${data.firstName} ${data.lastName}`,
-        email: data.email,
-        phone: data.phone,
-        county: `${data.city}, ${data.state} ${data.zipCode}`,
-        careType: [data.position],
-        urgency: data.experience,
-        message: `APPLICATION DETAILS:
-Address: ${data.address}, ${data.city}, ${data.state} ${data.zipCode}
-Position Applied For: ${data.position}
-Experience Level: ${data.experience}
-Availability: ${data.availability.join(', ')}
-
-WORK LOCATION & DEMOGRAPHICS:
-Can work anywhere in Georgia: ${data.workAnywhereInGeorgia}
-Counties can work in: ${data.countiesCanWork || 'N/A'}
-Willing to travel: ${data.willingToTravel}
-Education Level: ${data.education}
-Gender: ${data.gender}
-Ethnicity: ${data.ethnicity}
-Languages Spoken: ${data.languagesSpoken}
-
-Certifications: ${data.certifications || 'None specified'}
-
-Cover Letter:
-${data.coverLetter}
-
-Resume: ${data.resume}
-
-Previous Experience:
-${data.previousExperience}
-
-Why Interested:
-${data.whyInterested}
-
-References:
-${data.references}`
-      };
-
-      await sendFormEmail(emailData, 'job-application' as any);
-      toast.success('Application submitted successfully! We will review your application and contact you soon.');
+      await sendFormEmail(data, 'job-application');
+      toast.success("Application submitted successfully! We'll review it and get back to you soon.");
       form.reset();
       setIsDialogOpen(false);
     } catch (error) {
@@ -210,6 +153,9 @@ ${data.references}`
                 <DialogContent className="sm:max-w-[1000px] max-h-[95vh] overflow-y-auto border-t-8 border-healthcare-gold shadow-2xl">
                   <DialogHeader>
                     <DialogTitle className="text-2xl text-healthcare-teal">Job Application</DialogTitle>
+                    <DialogDescription>
+                      Please complete the application form below. All fields marked with * are required.
+                    </DialogDescription>
                   </DialogHeader>
                   <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" name="jobs" data-netlify="true">

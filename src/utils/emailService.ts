@@ -1,59 +1,41 @@
-import { supabase } from '@/integrations/supabase/client';
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  county: string;
-  careType: string[];
-  urgency: string;
-  message: string;
-}
-
-export const sendFormEmail = async (formData: FormData, formType: 'consultation' | 'care-needs' | 'job-application') => {
+export const sendFormEmail = async (formData: any, formName: string) => {
   try {
-    console.log('Sending email via Supabase Edge Function:', { formData, formType });
+    console.log(`Submitting ${formName} form to Netlify...`);
     
-    const { data, error } = await supabase.functions.invoke('send-email', {
-      body: {
-        ...formData,
-        formType
+    const netlifyData = new URLSearchParams();
+    netlifyData.append("form-name", formName);
+    
+    Object.entries(formData).forEach(([key, value]) => {
+      if (Array.isArray(value)) {
+        netlifyData.append(key, value.join(', '));
+      } else if (value !== null && value !== undefined) {
+        netlifyData.append(key, String(value));
       }
     });
 
-    if (error) {
-      console.error('Supabase function error:', error);
-      throw new Error(`Failed to send email: ${error.message}`);
+    const response = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: netlifyData.toString(),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Netlify submission failed with status: ${response.status}`);
     }
 
-    console.log('Email sent successfully:', data);
-    return data;
+    console.log('Netlify form submitted successfully');
+    return true;
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('Error sending form:', error);
     
-    // Fallback to mailto as backup
-    const subject = formType === 'consultation' 
-      ? 'New Free Consultation Request - Noble Homecare Agency'
-      : formType === 'care-needs'
-      ? 'New Care Needs Assessment - Noble Homecare Agency'
-      : 'New Job Application - Noble Homecare Agency';
-
-    const body = `Contact Information:
-- Name: ${formData.name}
-- Phone: ${formData.phone}
-- Email: ${formData.email || 'Not provided'}
-- County: ${formData.county} County
-
-Care Requirements:
-- Services Needed: ${formData.careType.join(', ')}
-- Timeframe: ${formData.urgency || 'Not specified'}
-
-${formData.message ? `Additional Information:\n${formData.message}` : ''}
-
----
-This ${formType === 'consultation' ? 'consultation request' : formType === 'care-needs' ? 'care assessment' : 'job application'} was submitted through noblehomecareagency.com
-Please respond within 24 hours as promised to the ${formType === 'job-application' ? 'applicant' : 'client'}.`;
-
+    // Final fallback to mailto if even Netlify fails
+    const subject = `New ${formName} Submission - Noble Homecare`;
+    let body = 'Form Details:\n';
+    Object.entries(formData).forEach(([key, value]) => {
+      body += `- ${key}: ${Array.isArray(value) ? value.join(', ') : value}\n`;
+    });
+    
     const mailtoLink = `mailto:info@noblehomecarellc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoLink);
     

@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
+import { sendFormEmail } from '@/utils/emailService';
 import Footer from '@/components/Footer';
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,23 +24,7 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Netlify Form Submission
-      const netlifyData = new URLSearchParams();
-      netlifyData.append("form-name", "contact-page");
-      Object.entries(formData).forEach(([key, value]) => {
-        if (Array.isArray(value)) {
-          netlifyData.append(key, value.join(', '));
-        } else {
-          netlifyData.append(key, value.toString());
-        }
-      });
-
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: netlifyData.toString(),
-      });
-
+      await sendFormEmail(formData, 'contact-page');
       toast.success('Thank you! Our care team will contact you within 24 hours.');
       // Reset form
       setFormData({
