@@ -40,7 +40,7 @@ const Navigation = () => {
     window.scrollTo(0, 0);
   };
   return <>
-      <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-300 rounded-2xl ${isScrolled ? 'bg-healthcare-green shadow-xl border border-white/10 py-0' : 'bg-transparent py-1 shadow-none border-none'}`}>
+      <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-300 rounded-2xl ${isScrolled ? 'healthcare-gradient shadow-xl border border-white/10 py-0' : 'bg-transparent py-1 shadow-none border-none'}`}>
         {/* Main navigation */}
         <div className="container-custom">
           <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-14' : 'h-20'}`}>

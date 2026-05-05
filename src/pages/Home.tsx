@@ -127,21 +127,21 @@ const Home = () => {
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-healthcare-gold/5 rounded-full blur-3xl"></div>
         
         <div className="container-custom relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-4 md:gap-6">
-            <div className="max-w-2xl">
-              <div className="inline-block bg-healthcare-green/10 text-healthcare-green px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 md:mb-4 border border-healthcare-green/20">
-                Premium Care
-              </div>
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-healthcare-green mb-2 md:mb-4">
+          <div className="mb-8 md:mb-12">
+            <div className="inline-block bg-healthcare-green/10 text-healthcare-green px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 md:mb-4 border border-healthcare-green/20">
+              Premium Care
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-healthcare-green">
                 Our Specialized <span className="text-healthcare-gold">Services</span>
               </h2>
-              <div className="banner-star-line !justify-start !my-2">
-                <span className="w-6 h-6 text-healthcare-gold">✦</span>
-              </div>
+              <p className="text-gray-600 max-w-md font-medium text-lg leading-relaxed md:text-right">
+                We are committed to providing you with all the resources you need in order to get back on your feet.
+              </p>
             </div>
-            <p className="text-gray-600 max-w-md font-medium text-lg leading-relaxed">
-              We are committed to providing you with all the resources you need in order to get back on your feet.
-            </p>
+            <div className="banner-star-line !justify-start !mt-2 !mb-0 md:!mt-4">
+              <span className="w-6 h-6 text-healthcare-gold">✦</span>
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
