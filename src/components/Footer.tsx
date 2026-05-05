@@ -18,7 +18,6 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-xl font-serif font-bold text-healthcare-gold">Noble Homecare Agency</h3>
-                <p className="text-sm text-gray-300">of Georgia</p>
               </div>
             </div>
             <p className="text-gray-300 mb-4 leading-relaxed font-serif italic">

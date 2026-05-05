@@ -57,8 +57,8 @@ const Navigation = () => {
                 <h1 className={`font-serif font-bold leading-none transition-all duration-300 text-white ${isScrolled ? 'text-sm md:text-lg' : 'text-lg md:text-2xl'}`}>
                   Noble Homecare
                 </h1>
-                <span className={`uppercase tracking-[0.2em] font-medium transition-all duration-300 text-healthcare-gold ${isScrolled ? 'text-[8px] md:text-[9px]' : 'text-[10px] md:text-xs'}`}>
-                  Agency of Georgia
+                <span className={`uppercase tracking-[0.3em] md:tracking-[0.35em] font-medium transition-all duration-300 text-healthcare-gold ${isScrolled ? 'text-[9px] md:text-[10px]' : 'text-[11px] md:text-[12px]'}`}>
+                  Agency
                 </span>
               </div>
             </a>
