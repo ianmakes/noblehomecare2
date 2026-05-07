@@ -92,7 +92,7 @@ const Footer = () => {
               <h5 className="text-md font-medium mb-3">Follow Us</h5>
               <div className="flex space-x-3">
                 <a 
-                  href="https://www.facebook.com/noblehomecarellc/" 
+                  href="https://facebook.com/noblehomecareagency" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-8 h-8 bg-healthcare-green hover:bg-healthcare-gold rounded-full flex items-center justify-center transition-colors"
