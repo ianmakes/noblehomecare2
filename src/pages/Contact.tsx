@@ -255,16 +255,21 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-healthcare-green text-white rounded-2xl p-8 shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
-                <h4 className="font-serif font-bold text-xl mb-3 relative z-10">Need Immediate Help?</h4>
-                <p className="mb-6 relative z-10 text-white/90">Call us now to speak with a care coordinator</p>
-                <Button onClick={() => window.open('tel:1-866-756-7374')} className="btn-healthcare-secondary w-full py-6 text-lg shadow-lg relative z-10">
-                  <Phone className="mr-2" size={20} />
-                  Call 1-866-756-7374
-                </Button>
-              </div>
             </div>
+          </div>
+
+          {/* Immediate Help Banner */}
+          <div className="mt-12 bg-healthcare-green text-white rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between border-b-4 border-healthcare-gold">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full -ml-16 -mb-16"></div>
+            <div className="relative z-10 mb-8 md:mb-0 md:mr-8 text-center md:text-left">
+              <h4 className="font-serif font-bold text-2xl md:text-3xl mb-3">Need Immediate Help?</h4>
+              <p className="text-white/90 text-lg max-w-2xl">Call us now to speak with a care coordinator. We are available to answer your questions and provide the support your family needs.</p>
+            </div>
+            <Button onClick={() => window.open('tel:1-866-756-7374')} className="btn-healthcare-secondary py-6 px-8 text-lg shadow-lg relative z-10 whitespace-nowrap w-full md:w-auto">
+              <Phone className="mr-2" size={20} />
+              Call 1-866-756-7374
+            </Button>
           </div>
         </div>
       </section>
