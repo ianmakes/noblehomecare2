@@ -44,22 +44,14 @@ const Navigation = () => {
         {/* Main navigation */}
         <div className="container-custom">
           <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-14' : 'h-20'}`}>
-            <a href="/" className="flex items-center space-x-3 md:space-x-4 group">
-              <div className={`relative flex items-center justify-center transition-all duration-500 ${isScrolled ? 'bg-white p-1 shadow-none border-none rounded-full' : 'bg-white p-1.5 shadow-2xl border-2 border-healthcare-gold rounded-full'}`}>
+            <a href="/" className="flex items-center group">
+              <div className={`relative flex items-center justify-center transition-all duration-500 ${isScrolled ? 'bg-white p-1.5 shadow-md border-none rounded-xl' : 'bg-white p-2.5 shadow-2xl border-2 border-healthcare-gold rounded-2xl'}`}>
                 <img 
                   src="/noble-logo.png" 
                   alt="Noble Homecare Agency Logo" 
-                  className={`object-contain transition-all duration-500 ${isScrolled ? 'w-8 h-8 md:w-9 md:h-9' : 'w-14 h-14 md:w-16 md:h-16'}`} 
+                  className={`object-contain transition-all duration-500 ${isScrolled ? 'h-10 w-10 md:h-12 md:w-12' : 'h-20 w-20 md:h-28 md:w-28'}`} 
                 />
-                <div className="absolute inset-0 rounded-full border border-white/50 pointer-events-none"></div>
-              </div>
-              <div className="flex flex-col">
-                <h1 className={`font-serif font-bold leading-none transition-all duration-300 text-white ${isScrolled ? 'text-sm md:text-lg' : 'text-lg md:text-2xl'}`}>
-                  Noble Homecare
-                </h1>
-                <span className={`uppercase tracking-[0.3em] md:tracking-[0.35em] font-medium transition-all duration-300 text-healthcare-gold ${isScrolled ? 'text-[9px] md:text-[10px]' : 'text-[11px] md:text-[12px]'}`}>
-                  Agency
-                </span>
+                <div className="absolute inset-0 rounded-xl md:rounded-2xl border border-white/20 pointer-events-none"></div>
               </div>
             </a>
 
