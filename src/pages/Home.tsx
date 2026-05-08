@@ -64,9 +64,8 @@ const Home = () => {
               </div>
               
               <div className="space-y-2 md:space-y-4">
-                <h1 className="text-4xl md:text-6xl lg:text-8xl font-serif font-bold leading-[1.1] text-white">
-                  We <span className="text-healthcare-gold italic">Care</span> <br />
-                  For You!
+                <h1 className="text-[1.75rem] xs:text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-serif font-bold leading-tight text-white whitespace-nowrap">
+                  We <span className="text-healthcare-gold italic">Care</span> For You!
                 </h1>
                 <div className="banner-star-line !justify-start !my-2">
                   <span className="w-6 h-6 text-healthcare-gold">✦</span>
