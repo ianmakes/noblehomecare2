@@ -40,18 +40,18 @@ const Navigation = () => {
     window.scrollTo(0, 0);
   };
   return <>
-      <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-300 rounded-2xl ${isScrolled ? 'healthcare-gradient shadow-xl border border-white/10 py-0' : 'bg-transparent py-1 shadow-none border-none'}`}>
+      <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-300 rounded-2xl overflow-hidden ${isScrolled ? 'healthcare-gradient shadow-2xl py-0' : 'bg-transparent py-1 shadow-none'}`}>
         {/* Main navigation */}
-        <div className={`${isScrolled ? 'pl-0 pr-4 sm:pr-6 lg:pr-8 max-w-7xl mx-auto' : 'container-custom'}`}>
+        <div className={`${isScrolled ? 'pl-0' : 'container-custom'}`}>
           <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-14' : 'h-20'}`}>
-            <a href="/" className={`flex items-start group ${isScrolled ? 'h-full' : '-mt-1'}`}>
-              <div className={`relative flex items-center justify-center transition-all duration-500 ${isScrolled ? 'bg-white h-full px-4 md:px-6 shadow-md border-none rounded-none rounded-l-2xl' : 'bg-white p-1 md:p-1.5 shadow-2xl border-2 border-healthcare-gold rounded-b-3xl rounded-t-none'}`}>
+            <a href="/" className={`flex items-start group ${isScrolled ? 'h-14' : '-mt-1'}`}>
+              <div className={`relative flex items-center justify-center transition-all duration-500 ${isScrolled ? 'bg-white h-14 px-4 md:px-8 border-r-4 border-healthcare-gold rounded-none' : 'bg-white p-1 md:p-1.5 shadow-2xl border-2 border-healthcare-gold rounded-b-3xl rounded-t-none'}`}>
                 <img 
                   src="/noble-logo.png" 
                   alt="Noble Homecare Agency Logo" 
                   className={`object-contain transition-all duration-500 ${isScrolled ? 'h-10 w-10 md:h-12 md:w-12' : 'h-24 w-24 md:h-32 md:w-32'}`} 
                 />
-                <div className={`absolute inset-0 border border-white/20 pointer-events-none ${isScrolled ? 'rounded-l-2xl' : 'rounded-b-3xl rounded-t-none'}`}></div>
+                <div className={`absolute inset-0 border-white/20 pointer-events-none ${isScrolled ? 'border-none' : 'absolute inset-0 border border-white/20 rounded-b-3xl rounded-t-none'}`}></div>
               </div>
             </a>
 
