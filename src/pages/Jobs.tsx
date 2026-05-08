@@ -128,7 +128,7 @@ const Jobs = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="healthcare-gradient text-white min-h-[45vh] flex items-center pt-24 pb-12 md:pt-36 md:pb-16 overflow-hidden relative">
+      <section className="healthcare-gradient text-white min-h-[45vh] flex items-center pt-32 pb-12 md:pt-36 md:pb-16 overflow-hidden relative">
         <div className="absolute inset-0 bg-gradient-to-br from-healthcare-teal/20 to-healthcare-primary/20"></div>
         <div className="container-custom relative z-10">
           <div className="text-center">

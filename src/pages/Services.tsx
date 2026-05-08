@@ -47,7 +47,7 @@ const Services = () => {
   }];
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="healthcare-gradient text-white min-h-[40vh] md:min-h-[45vh] flex items-center pt-24 pb-6 md:pt-36 md:pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
+      <section className="healthcare-gradient text-white min-h-[40vh] md:min-h-[45vh] flex items-center pt-32 pb-6 md:pt-36 md:pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-serif font-bold mb-6">
