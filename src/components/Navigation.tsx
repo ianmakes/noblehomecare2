@@ -42,16 +42,16 @@ const Navigation = () => {
   return <>
       <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-300 rounded-2xl ${isScrolled ? 'healthcare-gradient shadow-xl border border-white/10 py-0' : 'bg-transparent py-1 shadow-none border-none'}`}>
         {/* Main navigation */}
-        <div className="container-custom">
+        <div className={`${isScrolled ? 'pl-0 pr-4 sm:pr-6 lg:pr-8 max-w-7xl mx-auto' : 'container-custom'}`}>
           <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-14' : 'h-20'}`}>
-            <a href="/" className="flex items-center group">
-              <div className={`relative flex items-center justify-center transition-all duration-500 ${isScrolled ? 'bg-white p-1.5 shadow-md border-none rounded-xl' : 'bg-white p-2.5 shadow-2xl border-2 border-healthcare-gold rounded-2xl'}`}>
+            <a href="/" className={`flex items-center group ${isScrolled ? 'h-full' : ''}`}>
+              <div className={`relative flex items-center justify-center transition-all duration-500 ${isScrolled ? 'bg-white h-full px-4 md:px-6 shadow-md border-none rounded-none rounded-l-2xl' : 'bg-white p-2.5 shadow-2xl border-2 border-healthcare-gold rounded-2xl'}`}>
                 <img 
                   src="/noble-logo.png" 
                   alt="Noble Homecare Agency Logo" 
                   className={`object-contain transition-all duration-500 ${isScrolled ? 'h-10 w-10 md:h-12 md:w-12' : 'h-20 w-20 md:h-28 md:w-28'}`} 
                 />
-                <div className="absolute inset-0 rounded-xl md:rounded-2xl border border-white/20 pointer-events-none"></div>
+                <div className={`absolute inset-0 border border-white/20 pointer-events-none ${isScrolled ? 'rounded-l-2xl' : 'rounded-xl md:rounded-2xl'}`}></div>
               </div>
             </a>
 
