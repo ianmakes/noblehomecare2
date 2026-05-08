@@ -45,7 +45,7 @@ const Navigation = () => {
         <div className={`${isScrolled ? 'pl-0' : 'container-custom'}`}>
           <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-14' : 'h-20'}`}>
             <a href="/" className={`flex items-start group ${isScrolled ? 'h-14' : '-mt-1'}`}>
-              <div className={`relative flex items-center justify-center transition-all duration-500 ${isScrolled ? 'bg-white h-14 px-2 md:px-4 border-r-4 border-healthcare-gold rounded-none' : 'bg-white p-1 md:p-1.5 shadow-2xl border-2 border-healthcare-gold rounded-b-3xl rounded-t-none'}`}>
+              <div className={`relative flex items-center justify-center transition-all duration-500 ${isScrolled ? 'bg-white h-14 px-2 md:px-4 border-r-4 border-healthcare-gold rounded-none' : 'bg-white p-2.5 shadow-2xl border-2 border-healthcare-gold rounded-b-3xl rounded-t-none'}`}>
                 <img 
                   src="/noble-logo.png" 
                   alt="Noble Homecare Agency Logo" 
