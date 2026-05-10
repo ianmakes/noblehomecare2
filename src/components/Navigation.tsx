@@ -42,22 +42,22 @@ const Navigation = () => {
   return <>
       <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-300 rounded-2xl ${isScrolled ? 'healthcare-gradient shadow-xl border border-white/10 py-0' : 'bg-transparent py-1 shadow-none border-none'}`}>
         {/* Main navigation */}
-        <div className="container-custom">
+        <div className={`${isScrolled ? 'pl-0 pr-4 sm:pr-6 lg:pr-8 max-w-7xl mx-auto' : 'container-custom'}`}>
           <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-14' : 'h-20'}`}>
-            <a href="/" className="flex items-center space-x-3 md:space-x-4 group">
-              <div className={`relative flex items-center justify-center transition-all duration-500 ${isScrolled ? 'bg-white p-1 shadow-none border-none rounded-full' : 'bg-white p-1.5 shadow-2xl border-2 border-healthcare-gold rounded-full'}`}>
+            <a href="/" className={`flex items-center group transition-all duration-300 ${isScrolled ? 'bg-white h-full px-4 md:px-8 rounded-l-2xl shadow-lg mr-4' : 'space-x-3 md:space-x-4'}`}>
+              <div className={`relative flex items-center justify-center transition-all duration-500 ${isScrolled ? 'bg-transparent p-0 shadow-none border-none rounded-full' : 'bg-white p-1.5 shadow-2xl border-2 border-healthcare-gold rounded-full'}`}>
                 <img 
                   src="/noble-logo.png" 
                   alt="Noble Homecare Agency Logo" 
-                  className={`object-contain transition-all duration-500 ${isScrolled ? 'w-8 h-8 md:w-9 md:h-9' : 'w-14 h-14 md:w-16 md:h-16'}`} 
+                  className={`object-contain transition-all duration-500 ${isScrolled ? 'w-10 h-10 md:w-11 md:h-11' : 'w-14 h-14 md:w-16 md:h-16'}`} 
                 />
-                <div className="absolute inset-0 rounded-full border border-white/50 pointer-events-none"></div>
+                {!isScrolled && <div className="absolute inset-0 rounded-full border border-white/50 pointer-events-none"></div>}
               </div>
               <div className="flex flex-col">
-                <h1 className={`font-serif font-bold leading-none transition-all duration-300 text-white ${isScrolled ? 'text-sm md:text-lg' : 'text-lg md:text-2xl'}`}>
+                <h1 className={`font-serif font-bold leading-none transition-all duration-300 ${isScrolled ? 'text-healthcare-green text-sm md:text-lg' : 'text-white text-lg md:text-2xl'}`}>
                   Noble Homecare
                 </h1>
-                <span className={`uppercase tracking-[0.3em] md:tracking-[0.35em] font-medium transition-all duration-300 text-healthcare-gold ${isScrolled ? 'text-[9px] md:text-[10px]' : 'text-[11px] md:text-[12px]'}`}>
+                <span className={`uppercase tracking-[0.3em] md:tracking-[0.35em] font-medium transition-all duration-300 ${isScrolled ? 'text-healthcare-green/70 text-[9px] md:text-[10px]' : 'text-healthcare-gold text-[11px] md:text-[12px]'}`}>
                   Agency
                 </span>
               </div>
