@@ -12,9 +12,12 @@ const Footer = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Logo and Tagline Column */}
           <div>
-            <div className="flex items-center mb-6">
-              <div className="flex items-center justify-center bg-white p-3 rounded-xl shadow-lg">
-                <img src="/noble-logo.png" alt="Noble Homecare Agency Logo" className="w-24 h-24 md:w-32 md:h-32 object-contain" />
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center justify-center bg-white p-2 rounded-lg">
+                <img src="/noble-logo.png" alt="Noble Homecare Agency Logo" className="w-16 h-16 object-contain" />
+              </div>
+              <div>
+                <h3 className="text-xl font-serif font-bold text-healthcare-gold">Noble Homecare Agency</h3>
               </div>
             </div>
             <p className="text-gray-300 mb-4 leading-relaxed font-serif italic">
