@@ -44,7 +44,7 @@ const Navigation = () => {
         {/* Main navigation */}
         <div className={`${isScrolled ? 'pl-0 pr-4 sm:pr-6 lg:pr-8 max-w-7xl mx-auto' : 'container-custom'}`}>
           <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-14' : 'h-20'}`}>
-            <a href="/" className={`flex items-center group transition-all duration-300 ${isScrolled ? 'bg-white h-full px-4 md:px-8 rounded-l-2xl shadow-lg mr-4 space-x-3 md:space-x-5' : 'space-x-3 md:space-x-4'}`}>
+            <a href="/" className={`flex items-center group transition-all duration-300 ${isScrolled ? 'bg-white h-full px-4 md:px-10 rounded-l-2xl shadow-lg mr-4 space-x-4 md:space-x-6' : 'space-x-3 md:space-x-4'}`}>
               <div className={`relative flex items-center justify-center transition-all duration-500 ${isScrolled ? 'bg-transparent p-0 shadow-none border-none rounded-full' : 'bg-white p-1.5 shadow-2xl border-2 border-healthcare-gold rounded-full'}`}>
                 <img 
                   src="/noble-logo.png" 
