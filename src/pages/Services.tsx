@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Heart, Users, Utensils, Home, Car, Pill, Stethoscope, Clock, Shield, DollarSign, CreditCard, Building } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -87,7 +87,7 @@ const Services = () => {
           }}>
                 <div className="flex items-center space-x-2 md:space-x-3 mb-3 md:mb-4">
                   <div className="p-1.5 md:p-2 bg-healthcare-green/10 rounded-full">
-                    {Object.cloneElement(service.icon as React.ReactElement, { className: "w-6 h-6 md:w-8 md:h-8 text-healthcare-green" })}
+                    {React.cloneElement(service.icon as React.ReactElement, { className: "w-6 h-6 md:w-8 md:h-8 text-healthcare-green" })}
                   </div>
                   <h3 className="text-base md:text-xl font-serif font-bold text-healthcare-green">{service.title}</h3>
                 </div>

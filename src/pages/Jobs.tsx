@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -708,7 +708,7 @@ const Jobs = () => {
             {benefits.map((benefit, index) => (
               <div key={index} className="text-center p-4 md:p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all border-b-4 border-healthcare-gold">
                 <div className="flex justify-center mb-2 md:mb-4">
-                  {Object.cloneElement(benefit.icon as React.ReactElement, { className: "w-8 h-8 md:w-12 md:h-12 text-healthcare-green" })}
+                  {React.cloneElement(benefit.icon as React.ReactElement, { className: "w-8 h-8 md:w-12 md:h-12 text-healthcare-green" })}
                 </div>
                 <h3 className="text-base md:text-xl font-serif font-bold text-healthcare-green mb-1 md:mb-3">{benefit.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-[10px] md:text-base">{benefit.description}</p>

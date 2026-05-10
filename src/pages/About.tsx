@@ -1,3 +1,4 @@
+import React from 'react';
 import { Heart, Users, Award, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -150,7 +151,7 @@ const About = () => {
               <div key={index} className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all p-4 md:p-8">
                 <div className="flex justify-center mb-2 md:mb-4">
                   {/* Clone icon to adjust size on mobile */}
-                  {Object.cloneElement(card.icon as React.ReactElement, { className: "w-8 h-8 md:w-12 md:h-12 text-healthcare-green" })}
+                  {React.cloneElement(card.icon as React.ReactElement, { className: "w-8 h-8 md:w-12 md:h-12 text-healthcare-green" })}
                 </div>
                 <h3 className="text-base md:text-xl font-serif font-bold text-healthcare-green mb-2 md:mb-3">{card.title}</h3>
                 <p className="text-gray-600 text-xs md:text-base leading-relaxed">{card.description}</p>
@@ -219,7 +220,7 @@ const About = () => {
             animationDelay: `${index * 0.1}s`
           }} className="healthcare-card text-center animate-fade-in bg-white shadow-md border-t-4 border-healthcare-gold p-4 md:p-8">
                 <div className="flex justify-center mb-3 md:mb-4">
-                  {Object.cloneElement(value.icon as React.ReactElement, { className: "w-8 h-8 md:w-12 md:h-12 text-healthcare-green" })}
+                  {React.cloneElement(value.icon as React.ReactElement, { className: "w-8 h-8 md:w-12 md:h-12 text-healthcare-green" })}
                 </div>
                 <h3 className="text-base md:text-xl font-serif font-bold text-healthcare-green mb-2 md:mb-3">{value.title}</h3>
                 <p className="text-gray-600 text-xs md:text-base leading-relaxed">{value.description}</p>
