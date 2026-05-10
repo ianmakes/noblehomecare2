@@ -143,18 +143,18 @@ const Home = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {services.map((service, index) => (
-              <Link key={index} to="/services" className="bg-white rounded-xl md:rounded-2xl p-4 md:p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group animate-fade-in block" style={{
+              <Link key={index} to="/services" className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group animate-fade-in block" style={{
                 animationDelay: `${index * 0.1}s`
               }}>
-                <div className="w-10 h-10 md:w-14 md:h-14 bg-healthcare-green/5 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-6 group-hover:bg-healthcare-green group-hover:text-white transition-all duration-500 border border-healthcare-green/10">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-healthcare-green/5 rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:bg-healthcare-green group-hover:text-white transition-all duration-500 border border-healthcare-green/10">
                   {service.icon}
                 </div>
-                <h3 className="text-base md:text-xl font-serif font-bold mb-2 md:mb-4 text-healthcare-green group-hover:text-healthcare-gold transition-colors">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-[11px] md:text-base line-clamp-3 md:line-clamp-none">{service.description}</p>
-                <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-50 flex items-center text-healthcare-gold font-bold text-[10px] md:text-sm group-hover:translate-x-2 transition-transform">
-                  Learn More <CheckCircle size={12} className="ml-1 md:ml-2" />
+                <h3 className="text-xl font-serif font-bold mb-4 text-healthcare-green group-hover:text-healthcare-gold transition-colors">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base">{service.description}</p>
+                <div className="mt-6 pt-6 border-t border-gray-50 flex items-center text-healthcare-gold font-bold text-sm group-hover:translate-x-2 transition-transform">
+                  Learn More <CheckCircle size={14} className="ml-2" />
                 </div>
               </Link>
             ))}
@@ -298,16 +298,16 @@ const Home = () => {
           </div>
           
           <div className="relative">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-12 relative z-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 relative z-10">
               {careProcess.map((process, index) => (
                 <div key={index} className="text-center group animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="relative mb-3 md:mb-8 inline-block">
-                    <div className="w-12 h-12 md:w-20 md:h-20 bg-white border-2 border-healthcare-gold text-healthcare-green rounded-full flex items-center justify-center text-lg md:text-3xl font-serif font-bold mx-auto shadow-xl group-hover:bg-healthcare-green group-hover:text-white group-hover:scale-110 transition-all duration-500">
+                  <div className="relative mb-4 md:mb-8 inline-block">
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-white border-2 border-healthcare-gold text-healthcare-green rounded-full flex items-center justify-center text-2xl md:text-3xl font-serif font-bold mx-auto shadow-xl group-hover:bg-healthcare-green group-hover:text-white group-hover:scale-110 transition-all duration-500">
                       {process.step}
                     </div>
                   </div>
-                  <h3 className="text-base md:text-2xl font-serif font-bold mb-1 md:mb-4 text-healthcare-green group-hover:text-healthcare-gold transition-colors">{process.title}</h3>
-                  <p className="text-gray-600 leading-relaxed font-light text-[11px] md:text-base">{process.description}</p>
+                  <h3 className="text-xl md:text-2xl font-serif font-bold mb-2 md:mb-4 text-healthcare-green group-hover:text-healthcare-gold transition-colors">{process.title}</h3>
+                  <p className="text-gray-600 leading-relaxed font-light text-sm md:text-base">{process.description}</p>
                 </div>
               ))}
             </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Heart, Users, Award, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -146,17 +145,12 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-12">
-            {commitmentCards.map((card, index) => (
-              <div key={index} className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all p-4 md:p-8">
-                <div className="flex justify-center mb-2 md:mb-4">
-                  {/* Clone icon to adjust size on mobile */}
-                  {React.cloneElement(card.icon as React.ReactElement, { className: "w-8 h-8 md:w-12 md:h-12 text-healthcare-green" })}
-                </div>
-                <h3 className="text-base md:text-xl font-serif font-bold text-healthcare-green mb-2 md:mb-3">{card.title}</h3>
-                <p className="text-gray-600 text-xs md:text-base leading-relaxed">{card.description}</p>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {commitmentCards.map((card, index) => <div key={index} className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all">
+                {card.icon}
+                <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">{card.title}</h3>
+                <p className="text-gray-600">{card.description}</p>
+              </div>)}
           </div>
         </div>
       </section>
@@ -215,15 +209,15 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => <div key={index} style={{
             animationDelay: `${index * 0.1}s`
-          }} className="healthcare-card text-center animate-fade-in bg-white shadow-md border-t-4 border-healthcare-gold p-4 md:p-8">
-                <div className="flex justify-center mb-3 md:mb-4">
-                  {React.cloneElement(value.icon as React.ReactElement, { className: "w-8 h-8 md:w-12 md:h-12 text-healthcare-green" })}
+          }} className="healthcare-card text-center animate-fade-in bg-white shadow-md border-t-4 border-healthcare-gold">
+                <div className="flex justify-center mb-4">
+                  {value.icon}
                 </div>
-                <h3 className="text-base md:text-xl font-serif font-bold text-healthcare-green mb-2 md:mb-3">{value.title}</h3>
-                <p className="text-gray-600 text-xs md:text-base leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
               </div>)}
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Heart, Users, Utensils, Home, Car, Pill, Stethoscope, Clock, Shield, DollarSign, CreditCard, Building } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -81,21 +81,19 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-16">
-            {[...personalCareServices, ...specializedServices].map((service, index) => <div key={index} className="healthcare-card healthcare-card-gold-border animate-fade-in flex flex-col h-full p-4 md:p-8" style={{
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {[...personalCareServices, ...specializedServices].map((service, index) => <div key={index} className="healthcare-card healthcare-card-gold-border animate-fade-in flex flex-col h-full" style={{
             animationDelay: `${index * 0.1}s`
           }}>
-                <div className="flex items-center space-x-2 md:space-x-3 mb-3 md:mb-4">
-                  <div className="p-1.5 md:p-2 bg-healthcare-green/10 rounded-full">
-                    {React.cloneElement(service.icon as React.ReactElement, { className: "w-6 h-6 md:w-8 md:h-8 text-healthcare-green" })}
-                  </div>
-                  <h3 className="text-base md:text-xl font-serif font-bold text-healthcare-green">{service.title}</h3>
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="p-2 bg-healthcare-green/10 rounded-full">{service.icon}</div>
+                  <h3 className="text-xl font-serif font-bold text-healthcare-green">{service.title}</h3>
                 </div>
-                <p className="text-gray-600 mb-4 md:mb-6 flex-grow leading-relaxed text-[11px] md:text-base line-clamp-3 md:line-clamp-none">{service.description}</p>
-                <ul className="space-y-1.5 md:space-y-3 mt-auto">
-                  {service.features.slice(0, 4).map((feature, idx) => <li key={idx} className="flex items-center space-x-2 md:space-x-3 text-[10px] md:text-sm text-gray-700">
-                      <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-healthcare-gold rounded-full flex-shrink-0"></div>
-                      <span className="truncate">{feature}</span>
+                <p className="text-gray-600 mb-6 flex-grow leading-relaxed">{service.description}</p>
+                <ul className="space-y-3 mt-auto">
+                  {service.features.map((feature, idx) => <li key={idx} className="flex items-center space-x-3 text-sm text-gray-700">
+                      <div className="w-2 h-2 bg-healthcare-gold rounded-full flex-shrink-0"></div>
+                      <span>{feature}</span>
                     </li>)}
                 </ul>
               </div>)}

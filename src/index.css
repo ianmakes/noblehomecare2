@@ -128,6 +128,11 @@
     background: linear-gradient(90deg, transparent, hsl(var(--secondary)), transparent);
   }
 
+  /* Specific override to remove the gold line from the sticky navigation */
+  .nav-no-accent-line::after {
+    content: none !important;
+  }
+
   .healthcare-card {
     @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 border border-gray-100;
   }

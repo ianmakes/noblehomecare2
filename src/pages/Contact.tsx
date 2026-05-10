@@ -69,31 +69,31 @@ const Contact = () => {
       {/* Contact Information */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-16">
-            <div className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all p-4 md:p-8">
-              <Phone className="w-8 h-8 md:w-12 md:h-12 text-healthcare-green mx-auto mb-3 md:mb-4" />
-              <h3 className="text-base md:text-xl font-serif font-bold text-healthcare-green mb-1 md:mb-3">Call Us</h3>
-              <p className="text-gray-600 mb-2 md:mb-4 leading-relaxed text-[10px] md:text-base">Speak with our coordinators</p>
-              <a href="tel:1-866-756-7374" className="text-healthcare-green font-bold text-sm md:text-xl hover:text-healthcare-gold transition-colors">
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            <div className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all">
+              <Phone className="w-12 h-12 text-healthcare-green mx-auto mb-4" />
+              <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">Call Us</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">Speak with our care coordinators</p>
+              <a href="tel:1-866-756-7374" className="text-healthcare-green font-bold text-xl hover:text-healthcare-gold transition-colors">
                 1-866-756-7374
               </a>
             </div>
             
-            <div className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all p-4 md:p-8">
-              <Mail className="w-8 h-8 md:w-12 md:h-12 text-healthcare-gold mx-auto mb-3 md:mb-4" />
-              <h3 className="text-base md:text-xl font-serif font-bold text-healthcare-green mb-1 md:mb-3">Email Us</h3>
-              <p className="text-gray-600 mb-2 md:mb-4 leading-relaxed text-[10px] md:text-base">Send us your questions</p>
-              <a href="mailto:info@noblehomecarellc.com" className="text-healthcare-green font-bold text-[10px] md:text-lg hover:text-healthcare-gold transition-colors break-all">
+            <div className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all">
+              <Mail className="w-12 h-12 text-healthcare-gold mx-auto mb-4" />
+              <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">Email Us</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">Send us your questions anytime</p>
+              <a href="mailto:info@noblehomecarellc.com" className="text-healthcare-green font-bold hover:text-healthcare-gold transition-colors break-all">
                 info@noblehomecarellc.com
               </a>
             </div>
             
-            <div className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all p-4 md:p-8 col-span-2 lg:col-span-1">
-              <MapPin className="w-8 h-8 md:w-12 md:h-12 text-healthcare-green mx-auto mb-3 md:mb-4" />
-              <h3 className="text-base md:text-xl font-serif font-bold text-healthcare-green mb-1 md:mb-3">Service Areas</h3>
-              <p className="text-gray-600 mb-2 md:mb-4 leading-relaxed text-[10px] md:text-base">Serving Metro Atlanta & GA</p>
-              <p className="text-healthcare-green font-bold text-xs md:text-lg">
-                Metro Atlanta & Surrounding
+            <div className="healthcare-card text-center bg-white border-b-4 border-healthcare-gold shadow-md hover:shadow-xl transition-all">
+              <MapPin className="w-12 h-12 text-healthcare-green mx-auto mb-4" />
+              <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">Service Areas</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">Serving multiple counties across Georgia</p>
+              <p className="text-healthcare-green font-bold text-lg">
+                Metro Atlanta & Surrounding Areas
               </p>
             </div>
           </div>
