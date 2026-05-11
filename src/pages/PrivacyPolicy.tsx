@@ -109,7 +109,7 @@ const PrivacyPolicy = () => {
                       Phone: <a href="tel:1-866-756-7374" className="text-healthcare-teal hover:underline">1-866-756-7374</a>
                     </p>
                     <p className="text-gray-700">
-                      Email: <a href="mailto:info@noblehomecarellc.com" className="text-healthcare-teal hover:underline">info@noblehomecarellc.com</a>
+                      Email: <a href="mailto:info@noblehomecareagency.com" className="text-healthcare-teal hover:underline">info@noblehomecareagency.com</a>
                     </p>
                   </div>
                 </div>

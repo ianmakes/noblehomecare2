@@ -83,8 +83,8 @@ const Contact = () => {
               <Mail className="w-12 h-12 text-healthcare-gold mx-auto mb-4" />
               <h3 className="text-xl font-serif font-bold text-healthcare-green mb-3">Email Us</h3>
               <p className="text-gray-600 mb-4 leading-relaxed">Send us your questions anytime</p>
-              <a href="mailto:info@noblehomecarellc.com" className="text-healthcare-green font-bold hover:text-healthcare-gold transition-colors break-all">
-                info@noblehomecarellc.com
+              <a href="mailto:info@noblehomecareagency.com" className="text-healthcare-green font-bold hover:text-healthcare-gold transition-colors break-all">
+                info@noblehomecareagency.com
               </a>
             </div>
             

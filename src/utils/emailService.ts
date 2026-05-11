@@ -36,7 +36,7 @@ export const sendFormEmail = async (formData: any, formName: string) => {
       body += `- ${key}: ${Array.isArray(value) ? value.join(', ') : value}\n`;
     });
     
-    const mailtoLink = `mailto:info@noblehomecarellc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:info@noblehomecareagency.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoLink);
     
     throw error;
